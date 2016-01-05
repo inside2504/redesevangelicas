@@ -1,4 +1,4 @@
-<main>
+
 	<div class="contenido">
 		<div>
 			<section class="borde">
@@ -143,3 +143,4 @@
 				</aside>
 			</aside>
 		</div>
+	</div>
