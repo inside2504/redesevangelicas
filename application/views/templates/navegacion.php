@@ -6,55 +6,61 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="<?=base_url('')."assets/css/bootstrap.css"?>">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="<?=base_url('')."assets/js/header.js"?>"></script>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,700italic' rel='stylesheet' type='text/css'>
 		</head>
-	<body class="container">
-		<section>
-			<section>
-				<img class="logo" src="<?=base_url('')."assets/img/200x125.png"?>" alt="redes">
-			</section>
-			<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<!--Configuracion para dispositivos moviles--> 
-			<section class="navbar-collapse">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Desplegar Men&uacute;</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</section>
-			<!--Agrupacion de elementos para ocultarlos al minimizar la barra-->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li >
-						<a href="<?php echo site_url('#')?>">Inicio</a>
-					</li>		
-					<li>
-						<a href="#" >Nosotros<b></b></a>
-					</li>
-					<li>
-						<a href="<?php echo site_url('iglesias')?>" >Iglesias afiliadas<b></b></a>
-					</li>
-					<li>
-						<a href="#" >Servicios profesionales<b></b></a>
-					</li>
-					<li>
-						<a href="#">Empresas cristianas</a>
-					</li>
-					<li>
-						<a href="#">Materiales</a>
-					</li>
-					<li>
-						<a href="#">Eventos</a>
-					</li>
-					<li>
-						<a href="#">Noticias</a>
-					</li>
-					<li>
-						<a href="<?php echo site_url('/auth/login')?>" > Ingresar</a>
-					</li>
-				</ul>
-				<!--Barra de busqueda-->			
+	<body class="page">
+		<header>
+			<div class="banner">
+				<section>
+					<img class="logo" src="<?=base_url('')."assets/img/200x125.png"?>" alt="redes">
+				</section>
 			</div>
-			</nav>
-		</section>
+			<div>
+				<nav class=" navbar-inverse navbar-fixed-top" role="navigation">
+				<!--Configuracion para dispositivos moviles--> 
+				<section class="navbar-collapse">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Desplegar Men&uacute;</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</section>
+				<!--Agrupacion de elementos para ocultarlos al minimizar la barra-->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li >
+							<a href="<?php echo site_url('#')?>">Inicio</a>
+						</li>		
+						<li>
+							<a href="#" >Nosotros<b></b></a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('iglesias')?>" >Iglesias afiliadas<b></b></a>
+						</li>
+						<li>
+							<a href="#" >Servicios profesionales<b></b></a>
+						</li>
+						<li>
+							<a href="#">Empresas cristianas</a>
+						</li>
+						<li>
+							<a href="#">Materiales</a>
+						</li>
+						<li>
+							<a href="#">Eventos</a>
+						</li>
+						<li>
+							<a href="#">Noticias</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('/auth/login')?>" > Ingresar</a>
+						</li>
+					</ul>
+					<!--Barra de busqueda-->			
+				</div>
+				</nav>
+			</div>
+		</header>

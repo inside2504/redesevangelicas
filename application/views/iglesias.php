@@ -1,4 +1,5 @@
 <main>
+	<section class="contenido">
 	<div class="head">
 		<section>
 			<h3 class="aline">Iglesias afiliadas</h3>
@@ -61,4 +62,5 @@
 			</aside>
 		</aside>
 	</div>
+</section>
 </main>
