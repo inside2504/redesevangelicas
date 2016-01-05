@@ -56,6 +56,9 @@
 							<a href="#">Noticias</a>
 						</li>
 						<li>
+							<a href="#">Tianguis</a>
+						</li>
+						<li>
 							<a href="<?php echo site_url('/auth/login')?>" > Ingresar</a>
 						</li>
 					</ul>
