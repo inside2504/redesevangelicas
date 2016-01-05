@@ -20,8 +20,21 @@ body {
   padding-right: 11%;
 }
 .aline{
+  padding: 3.5% 2% 0 0;
+}
+.borde{
+  position: relative;
+  font-size: 13px;
+  border-bottom: 10px solid #000;
+  padding-bottom: 5px;
+}
+.cuadro{
+  height: 250px;
+  position: relative;
+  font-size: 13px;
   text-align: center;
-  border: 1px #ccc;
+  border: 10px solid #000;
+  padding: 30px;
 }
 .head{
   background-color: #476A9F;
@@ -38,7 +51,22 @@ body {
   height: 250px;
 }
 .prefoot{
-  background-color: #C1CADE;
+  background-color: #2D4265;
+  padding: 1%;
+}
+.tit{
+  color: #fff;
+  text-align: center;
+}
+.lado{
+  font-size: 13px;
+  text-align: center;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  border-top:1px solid #CCC;
+  padding: 30px;
+  border-radius: 10px;
 }
 body .page{
   background-color: #fff;
@@ -81,7 +109,7 @@ header nav {
 }
  
 .header2 nav {
-  line-height:36px;
+  line-height:10px;
   padding: 0;
 }
 
@@ -100,11 +128,13 @@ header nav {
  
   .header2 {
     height:auto;
+    z-index: 1030;
   }
  
   .header2 .logo,
   .header2 nav {
     line-height:30px;
+    z-index: 1030;
   }
 }
 .section2{
@@ -1216,6 +1246,10 @@ a {
   color: #337ab7;
   text-decoration: none;
 }
+.tit a{
+  color: #fff;
+  text-decoration: underline;
+}
 a:hover,
 a:focus {
   color: #23527c;
@@ -1735,7 +1769,13 @@ pre code {
   margin-right: -15px;
   margin-left: -15px;
 }
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-lg-4{
+  position: relative;
+  min-height: 1px;
+  padding: 30px;
+  text-align: center;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -6078,7 +6118,7 @@ button.close {
   padding: 2.5% 2.5% 1.5% 0%;
   text-align: right;
   border-top: 1px solid #e5e5e5;
-  background-color: #476A9F;
+  background-color: #000;
   color: #fff;
 }
 .modal-footer .btn + .btn {
@@ -6459,22 +6499,12 @@ button.close {
   opacity: .5;
 }
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
-  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
-  background-repeat: repeat-x;
+  
 }
 .carousel-control.right {
   right: 0;
   left: auto;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
-  background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
-  background-repeat: repeat-x;
+  
 }
 .carousel-control:hover,
 .carousel-control:focus {
@@ -6549,11 +6579,9 @@ button.close {
 .carousel-caption {
   position: absolute;
   right: 15%;
-  bottom: 20px;
+  bottom: 5px;
   left: 15%;
   z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
@@ -6580,9 +6608,17 @@ button.close {
     margin-right: -10px;
   }
   .carousel-caption {
-    right: 20%;
-    left: 20%;
-    padding-bottom: 30px;
+    right: 1%;
+    left: 1%;
+    padding-bottom: 50px;
+    padding-top: 100px;
+    background: url("http://the8guild.com/themes/html/bushido/v1.3/img/overlays/overlay-success.png");
+  }
+  .carousel-caption .h1{
+    text-align: left;
+    left: 30%;
+    right: 30%;
+    padding: 10% 0 10% 10%;
   }
   .carousel-indicators {
     bottom: 20px;
