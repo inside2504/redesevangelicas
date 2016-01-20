@@ -23,9 +23,6 @@
 // Errors
 $lang['error_csrf'] = 'Este formulario no pasó nuestras pruebas de seguridad.';
 
-//Action denegation
-$lang['cancel']		= 'Cancelar';
-
 // Login
 $lang['login_heading']         = 'Ingresar';
 $lang['login_subheading']      = 'Por favor, introduce tu email/usuario y contraseña.';
@@ -34,7 +31,6 @@ $lang['login_password_label']  = 'Contraseña:';
 $lang['login_remember_label']  = 'Recuérdame:';
 $lang['login_submit_btn']      = 'Ingresar';
 $lang['login_forgot_password'] = '¿Has olvidado tu contraseña?';
-$lang['bienvenida']			   ='Bienvenido';
 
 // Index
 $lang['index_heading']           = 'Usuarios';
@@ -49,7 +45,6 @@ $lang['index_active_link']       = 'Activo';
 $lang['index_inactive_link']     = 'Inactivo';
 $lang['index_create_user_link']  = 'Crear nuevo usuario';
 $lang['index_create_group_link'] = 'Crear nuevo grupo';
-$lang['contrasena']				 = 'Cambiar contraseña';
 
 // Deactivate User
 $lang['deactivate_heading']                  = 'Desactivar usuario';
@@ -65,6 +60,7 @@ $lang['create_user_heading']                           = 'Crear Usuario';
 $lang['create_user_subheading']                        = 'Por favor, introduzce la información del usuario.';
 $lang['create_user_fname_label']                       = 'Nombre:';
 $lang['create_user_lname_label']                       = 'Apellidos:';
+$lang['create_user_identity_label']                    = 'Identity:';
 $lang['create_user_company_label']                     = 'Compañía:';
 $lang['create_user_email_label']                       = 'Email:';
 $lang['create_user_phone_label']                       = 'Teléfono:';
@@ -73,6 +69,7 @@ $lang['create_user_password_confirm_label']            = 'Confirmar contraseña:
 $lang['create_user_submit_btn']                        = 'Crear Usuario';
 $lang['create_user_validation_fname_label']            = 'Nombre';
 $lang['create_user_validation_lname_label']            = 'Apellidos';
+$lang['create_user_validation_identity_label']         = 'Identity';
 $lang['create_user_validation_email_label']            = 'Correo electrónico';
 $lang['create_user_validation_phone_label']            = 'Teléfono';
 $lang['create_user_validation_company_label']          = 'Nombre de la compañía';

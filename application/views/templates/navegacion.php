@@ -35,28 +35,25 @@
 							<a href="<?php echo site_url('#')?>">Inicio</a>
 						</li>		
 						<li>
-							<a href="#" >Nosotros<b></b></a>
+							<a href="<?php echo site_url('nosotros')?>" >Nosotros<b></b></a>
 						</li>
 						<li>
-							<a href="<?php echo site_url('iglesias')?>" >Iglesias afiliadas<b></b></a>
+							<a href="<?php echo site_url('iglesias')?>" >Iglesias<b></b></a>
 						</li>
 						<li>
-							<a href="#" >Servicios profesionales<b></b></a>
+							<a href="<?php echo site_url('servicios')?>" >Servicios<b></b></a>
 						</li>
 						<li>
-							<a href="#">Empresas cristianas</a>
+							<a href="<?php echo site_url('empresas')?>">Empresas</a>
 						</li>
 						<li>
-							<a href="#">Materiales</a>
+							<a href="<?php echo site_url('materiales')?>">Materiales</a>
 						</li>
 						<li>
-							<a href="#">Eventos</a>
+							<a href="<?php echo site_url('eventos')?>">Eventos</a>
 						</li>
 						<li>
-							<a href="#">Noticias</a>
-						</li>
-						<li>
-							<a href="#">Tianguis</a>
+							<a href="<?php echo site_url('tianguis')?>">Tianguis</a>
 						</li>
 						<li>
 							<a href="<?php echo site_url('/auth/login')?>" > Ingresar</a>

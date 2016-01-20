@@ -2,41 +2,45 @@
 	<div class="contenido">
 		<div>
 			<section class="borde">
-				<h3>Servicios</h3>
+				<h3>Bienvenido</h3>
 			</section>
 		</div>
 		<div>
-			<figure id="carrusel" class="carousel slide" data-ride="carousel">
+			<div id="carrusel" class="carousel slide" data-ride="carousel">
 				<figure class="carousel-inner" role="listbox">
 					<figure class="item active">
 						<img src="<?=base_url('')."assets/img/1carru.jpg"?>" alt="Rectora y Doctor">
 						<section class="carousel-caption">
 							<h1 class="h1">&Uacute;nete a las redes</h1>
-							<p></p>
+							<a class="btn btn-lg btn-primary" href="<?php echo site_url('nosotros')?>" role="button">Conoce m&aacute;s</a>
 						</section>
 					</figure>
 					<figure class="item">
 						<img src="<?=base_url('')."assets/img/2carru.jpg"?>">
 						<section class="carousel-caption">
-							<h1 class="h1">Busca profesionales</h1 class="h1">
+							<h1 class="h1">Busca profesionales</h1>
+							<a class="btn btn-lg btn-primary" href="<?php echo site_url('servicios')?>" role="button">Da clic aqu&iacute;</a>
 						</section>
 					</figure>
 					<figure class="item">
 						<img src="<?=base_url('')."assets/img/3carru.jpg"?>">
 						<section class="carousel-caption">
-							<h1 class="h1">Empresas cristianas</h1 class="h1">
+							<h1 class="h1">Empresas cristianas</h1>
+							<a class="btn btn-lg btn-primary" href="<?php echo site_url('empresas')?>" role="button">M&aacute;s informaci&oacute;n</a>
 						</section>
 					</figure>
 					<figure class="item">
 						<img src="<?=base_url('')."assets/img/4carru.jpg"?>">
 						<section class="carousel-caption">
-							<h1 class="h1">Tianguis cristiano</h1 class="h1">
+							<h1 class="h1">Tianguis cristiano</h1>
+							<a class="btn btn-lg btn-primary" href="<?php echo site_url('tianguis')?>" role="button">Ubica tu art&iacute;culo</a>
 						</section>
 					</figure>
 					<figure class="item">
 						<img src="<?=base_url('')."assets/img/5carru.jpg"?>">
 						<section class="carousel-caption">
-							<h1 class="h1">Iglesias cristianas</h1 class="h1">
+							<h1 class="h1">Iglesias cristianas</h1>
+							<a class="btn btn-lg btn-primary" href="<?php echo site_url('iglesias')?>" role="button">Conoce m&aacute;s iglesias</a>
 						</section>
 					</figure>
 				</figure>
@@ -46,7 +50,7 @@
 				<a class="right carousel-control" href="#carrusel" role="button" data-slide="next">
 					<span class="icon-next" aria-hidden="true"></span>
 				</a>
-			</figure>
+			</div>
 		</div>
 		<div>
 			<div>
@@ -121,7 +125,8 @@
 				</section>
 			</div>
 		</div>
-		<div class="prefoot">
+	</div>
+	<div class="prefoot">
 			<aside class="row">
 				<aside class="col-lg-4">
 					<div class="tit">
@@ -143,4 +148,3 @@
 				</aside>
 			</aside>
 		</div>
-	</div>

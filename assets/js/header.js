@@ -6,14 +6,5 @@ $(document).ready(function(){
 		} else {
 			$('header').removeClass('header2');
 		}
-	});
-
-	$(window).scroll(function(){
-		if( $(this).scrollTop() > 35 ){
-			$('main').addClass('main2');
-		} else {
-			$('main').removeClass('main2');
-		}
-	});
- 
+	}); 
 });

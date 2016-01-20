@@ -138,7 +138,7 @@ class CI_DB_driver {
 
 				if ($this->db_debug)
 				{
-					//$this->display_error('db_unable_to_select', $this->database);
+					$this->display_error('db_unable_to_select', $this->database);
 				}
 				return FALSE;
 			}
