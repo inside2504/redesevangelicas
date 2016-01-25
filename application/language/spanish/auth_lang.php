@@ -45,6 +45,7 @@ $lang['index_active_link']       = 'Activo';
 $lang['index_inactive_link']     = 'Inactivo';
 $lang['index_create_user_link']  = 'Crear nuevo usuario';
 $lang['index_create_group_link'] = 'Crear nuevo grupo';
+$lang['contrasena']				 = 'Cambiar contraseña';
 
 // Deactivate User
 $lang['deactivate_heading']                  = 'Desactivar usuario';
@@ -84,8 +85,8 @@ $lang['edit_user_lname_label']                       = 'Apellidos:';
 $lang['edit_user_company_label']                     = 'Compañía:';
 $lang['edit_user_email_label']                       = 'Email:';
 $lang['edit_user_phone_label']                       = 'Teléfono:';
-$lang['edit_user_password_label']                    = 'Contraseña: (si quieres cambiarla)';
-$lang['edit_user_password_confirm_label']            = 'Confirmar contraseña: (si quieres cambiarla)';
+$lang['edit_user_password_label']                    = 'Contraseña:';
+$lang['edit_user_password_confirm_label']            = 'Confirmar contraseña:';
 $lang['edit_user_groups_heading']                    = 'Miembro de grupos';
 $lang['edit_user_submit_btn']                        = 'Guardar Usuario';
 $lang['edit_user_validation_fname_label']            = 'Nombre';

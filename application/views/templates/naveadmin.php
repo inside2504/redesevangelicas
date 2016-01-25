@@ -7,12 +7,13 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 		<link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200">
 		<!--[if lte IE 8]>
         <link rel="stylesheet" href="/combo/1.18.13?/css/layouts/side-menu-old-ie.css">
     <![endif]-->
     <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
   
 
@@ -56,7 +57,7 @@ ga('send', 'pageview');
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                	<a href="#" class="pure-menu-link">Usuarios</a>
+                	<a href="<?php echo site_url('auth/index')?>" class="pure-menu-link">Usuarios</a>
                 </li>
                 <li class="pure-menu-item">
                 	<a href="#" class="pure-menu-link">Iglesias</a>
@@ -75,6 +76,9 @@ ga('send', 'pageview');
                 </li>
                 <li class="pure-menu-item">
                 	<a href="#" class="pure-menu-link">Tianguis</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>
                 </li>
             </ul>
         </div>

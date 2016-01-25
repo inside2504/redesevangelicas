@@ -1,26 +1,24 @@
-<div class="contenido">
+<div class="main">
   <div>
-    <section class="borde">
-      <h3><?php echo lang('create_user_heading');?></h3>
-      <p><?php echo lang('create_user_subheading');?></p>
+    <section class="header">
+      <h1><?php echo lang('create_user_heading');?></h1>
+      <h2><?php echo lang('create_user_subheading');?></h2>
     </section>
   </div>
-
+  <div class="content">
   <div id="infoMessage"><?php echo $message;?></div>
-
-    <?php echo form_open("auth/create_user");?>
-        <section>
-          <p>
+    <form class="pure-form">
+      <fieldset>
+      <?php echo form_open("auth/create_user");?>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-3">
                 <?php echo lang('create_user_fname_label', 'first_name');?> <br />
                 <?php echo form_input($first_name);?>
-          </p>
-        </section>
-        <section>
-          <p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
                 <?php echo lang('create_user_lname_label', 'last_name');?> <br />
                 <?php echo form_input($last_name);?>
-          </p>
-        </section>
+        </div>
 
           <?php
           if($identity_column!=='email') {
@@ -32,38 +30,28 @@
               echo '</p>';
           }
           ?>
-        <section>
-          <p>
-                <?php echo lang('create_user_company_label', 'company');?> <br />
-                <?php echo form_input($company);?>
-          </p>
-        </section>
-        <section>
-          <p>
+        <div class="pure-u-1 pure-u-md-1-3">
                 <?php echo lang('create_user_email_label', 'email');?> <br />
                 <?php echo form_input($email);?>
-          </p>
-        </section>
-        <section>
-          <p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
                 <?php echo lang('create_user_phone_label', 'phone');?> <br />
                 <?php echo form_input($phone);?>
-          </p>
-        </section>
-        <section>
-          <p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
                 <?php echo lang('create_user_password_label', 'password');?> <br />
                 <?php echo form_input($password);?>
-          </p>
-        </section>
-        <section>
-          <p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
                 <?php echo lang('create_user_password_confirm_label', 'password_confirm');?> <br />
                 <?php echo form_input($password_confirm);?>
-          </p>
-        </section>
+        </div>
+      </div>
 
           <p><?php echo form_submit('submit', lang('create_user_submit_btn'));?></p>
 
-    <?php echo form_close();?>
+      <?php echo form_close();?>
+      </fieldset>
+    </form>
+  </div>
 </div>

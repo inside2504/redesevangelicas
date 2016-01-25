@@ -1,6 +1,6 @@
-<div class="contenido">
+<div class="main">
 	<div>
-		<section class="borde">
+		<section class="header">
 			<h1><?php echo lang('reset_password_heading');?></h1>
 		<section>
 	</div>
