@@ -55,7 +55,7 @@
 
             <?php endif ?>
 
-            <?php echo form_hidden('id', $user->AidiUsuario);?>
+            <?php echo form_hidden('id', $user->id);?>
             <?php echo form_hidden($csrf); ?>
             <p><?php echo form_submit('submit', lang('edit_user_submit_btn'));?></p>
 

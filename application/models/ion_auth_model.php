@@ -794,13 +794,13 @@ class Ion_auth_model extends CI_Model
 			}
 		}
 
-		$this->CodeContraOlvidada = $key;
+		$this->forgotten_password_code = $key;
 
 		$this->trigger_events('extra_where');
 
 		$update = array(
-		    'CodeContraOlvidada' => $key,
-		    'TiempoContraOlvidada' => time()
+		    'forgotten_password_code' => $key,
+		    'forgotten_password_time' => time()
 		);
 
 		$this->db->update($this->tables['Usuario'], $update, array($this->identity_column => $identity));
@@ -907,7 +907,7 @@ class Ion_auth_model extends CI_Model
 		$data = array(
 		    $this->identity_column   => $identity,
 		    'ContraUsuario'   => $password,
-		    'email'      => $email,
+		    'CorreUser'      => $email,
 		    'FechaCreacion' => time(),
 		    'Activo'     => ($manual_activation === false ? 1 : 0)
 		);
@@ -965,7 +965,7 @@ class Ion_auth_model extends CI_Model
 
 		$this->trigger_events('extra_where');
 
-		$query = $this->db->select($this->identity_column . ', email, AidiUsuario, ContraUsuario, Activo, UltimaVez')
+		$query = $this->db->select($this->identity_column . ', CorreUser, AidiUsuario, ContraUsuario, Activo, UltimaVez')
 		                  ->where($this->identity_column, $identity)
 		                  ->limit(1)
 		    			  ->order_by('AidiUsuario', 'desc')
@@ -1726,7 +1726,7 @@ class Ion_auth_model extends CI_Model
 		$session_data = array(
 		    'identity'             => $user->{$this->identity_column},
 		    $this->identity_column             => $user->{$this->identity_column},
-		    'email'	     		=> $user->email,
+		    'email'	     		=> $user->CorreUser,
 		    'user_id'              => $user->AidiUsuario, //everyone likes to overwrite id so we'll use user_id
 		    'old_last_login'       => $user->UltimaVez
 		);
@@ -1813,7 +1813,7 @@ class Ion_auth_model extends CI_Model
 
 		// get the user
 		$this->trigger_events('extra_where');
-		$query = $this->db->select($this->identity_column.', AidiUsuario, email, UltimaVez')
+		$query = $this->db->select($this->identity_column.', AidiUsuario, CorreUser, UltimaVez')
 		                  ->where($this->identity_column, get_cookie($this->config->item('identity_cookie_name', 'ion_auth')))
 		                  ->where('Code_Recordatorio', get_cookie($this->config->item('remember_cookie_name', 'ion_auth')))
 		                  ->limit(1)

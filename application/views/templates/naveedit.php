@@ -5,7 +5,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset = utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="<?=base_url('')."assets/img/16x10.png"?>" type="image/x-icon"/>
     	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 		<link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200">
@@ -54,30 +53,14 @@ ga('send', 'pageview');
 
     <div id="menu">
         <div class="pure-menu">
-            <a class="pure-menu-heading" href="<?php echo site_url('administrador')?>">Bienvenido</a>
+            <a class="pure-menu-heading" href="<?php echo site_url('editor')?>">Bienvenido</a>
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('auth/index')?>" class="pure-menu-link">Usuarios</a>
+                	<a href="#" class="pure-menu-link">Materiales</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/igleadmin')?>" class="pure-menu-link">Iglesias</a>
-                </li>
-                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="<?php echo site_url('administracion/servadmin')?>" class="pure-menu-link">Servicios</a>
-                </li>
-                <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/empreadmin')?>" class="pure-menu-link">Empresas</a>
-                </li>
-                <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/mateadmin')?>" class="pure-menu-link">Materiales</a>
-                </li>
-                <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/evenadmin')?>" class="pure-menu-link">Eventos</a>
-                </li>
-                <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/tianadmin')?>" class="pure-menu-link">Tianguis</a>
-                </li>
+                	<a href="#" class="pure-menu-link">Eventos</a>
                 <li class="pure-menu-item">
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>
                 </li>

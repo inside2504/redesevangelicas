@@ -2,7 +2,7 @@
 	<div>
 		<section class="header">
 			<h1><?php echo lang('index_heading');?></h1>
-			<p><?php echo lang('index_subheading');?></p>
+			<h2><?php echo lang('index_subheading');?></h2>
 		</section>
 	</div>
 	<div class="content">
@@ -24,7 +24,7 @@
 						<tr>
 				            <td><?php echo htmlspecialchars($user->PrimerNameUsuario,ENT_QUOTES,'UTF-8');?></td>
 				            <td><?php echo htmlspecialchars($user->ApelliUsuario,ENT_QUOTES,'UTF-8');?></td>
-				            <td><?php echo htmlspecialchars($user->email,ENT_QUOTES,'UTF-8');?></td>
+				            <td><?php echo htmlspecialchars($user->CorreUser,ENT_QUOTES,'UTF-8');?></td>
 							<td>
 								<?php foreach ($user->groups as $group):?>
 									<?php echo anchor("auth/edit_group/".$group->AidiGrupo, htmlspecialchars($group->NeimGrupo,ENT_QUOTES,'UTF-8')) ;?><br />

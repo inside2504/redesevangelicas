@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset = utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="icon" href="<?=base_url('')."assets/img/16x10.png"?>" type="image/x-icon"/>
 		<link rel="stylesheet" href="<?=base_url('')."assets/css/bootstrap.css"?>">
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="<?=base_url('')."assets/js/header.js"?>"></script>

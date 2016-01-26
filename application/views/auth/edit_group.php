@@ -12,11 +12,11 @@
 
 				<?php echo form_open(current_url());?>
 					<div class="pure-control-group">
-				        <?php echo lang('edit_group_name_label', 'NeimGrupo');?>
+				        <?php echo lang('edit_group_name_label', 'name');?>
 				        <?php echo form_input($group_name);?>
 				    </div>
 					<div class="pure-control-group">
-				            <?php echo lang('edit_group_desc_label', 'DescripcioN');?>
+				            <?php echo lang('edit_group_desc_label', 'description');?>
 				            <?php echo form_input($group_description);?>
 					</div>
 					<div class="pure-controls">

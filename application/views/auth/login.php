@@ -3,6 +3,7 @@
     <section class="borde">
       <h2><?php echo lang('login_heading');?></h2>
     </section>
+  </div>
     <div>
       <h4><?php echo lang('login_subheading');?></h4>
       <div id="infoMessage"><?php echo $message;?></div>

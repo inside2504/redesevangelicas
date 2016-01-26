@@ -2,7 +2,7 @@
 	<div>
 		<section class="header">
 			<h1><?php echo lang('deactivate_heading');?></h1>
-			<h2><?php echo sprintf(lang('deactivate_subheading'), $user->IuserNeim);?></h2>
+			<h2><?php echo sprintf(lang('deactivate_subheading'), $user->PrimerNameUsuario);?></h2>
 		</section>
 	</div>
 	<div class="content">
