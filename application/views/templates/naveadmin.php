@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="<?=base_url('')."assets/img/16x10.png"?>" type="image/x-icon"/>
-    	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/pure.css"?>">
 		<link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200">
 		<!--[if lte IE 8]>
@@ -14,7 +14,7 @@
     <![endif]-->
     <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+        <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/grids-responsive.css"?>">
     <!--<![endif]-->
   
 

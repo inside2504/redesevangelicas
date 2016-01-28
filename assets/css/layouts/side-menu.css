@@ -7,6 +7,16 @@ body {
     height: auto;
 }
 
+.instrucciones{
+  background-color: #1f8dd6;
+  color: #fff;
+  padding: 0.3em 1em;
+  border-radius: 3px;
+  text-align: justify;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
 /*
 Add transition to containers so they can push in and out.
 */

@@ -72,4 +72,22 @@ class Administracion extends CI_Controller {
 		$this->load->view('administracion/tianadmin');
 		$this->load->view('templates/footadmin');
 	}
+
+	public function regempresas(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/regempresas');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editempresas(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/editempresas');
+		$this->load->view('templates/footadmin');
+	}
 }
