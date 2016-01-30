@@ -1,8 +1,8 @@
 <div class="main">
 	<div>
 		<section class="header">
-			<h1>Empresas</h1>
-			<h2>Bienvenido al formulario para registrar una empresa</h2>
+			<h1>Servicios</h1>
+			<h2>Bienvenido al formulario para dar de alta un servicio</h2>
 		</section>
 	</div>
 	<div class="content">
@@ -17,20 +17,28 @@
 						<label for="pastor">Pastor que lo recomienda:</label>
 	            		<input id="pastor" class="pure-input-1-2" type="text" placeholder="Pastor">
 					</div>
-				<legend>Datos de la empresa</legend>
+				<legend>Datos del prestador de servicios </legend>
 					<div class="pure-control-group">
-						<label for="empresa">Nombre de la empresa:</label>
-	            		<input id="empresa" class="pure-input-1-2" type="text" placeholder="Empresa">
+						<label for="nombre">Nombre(s):</label>
+	            		<input id="" class="pure-input-1-2" type="text" placeholder="Nombre(s)">
 					</div>
 					<div class="pure-control-group">
-						<label for="giro">Giro empresarial:</label>
-	            		<input id="giro" class="pure-input-1-2" type="text" placeholder="Giro">
+						<label for="apepat">Apellido paterno:</label>
+	            		<input id="apepat" class="pure-input-1-2" type="text" placeholder="Apellido paterno">
 					</div>
 					<div class="pure-control-group">
-						<label for="descrip">Descripci&oacute;n:</label>
-			       		<textarea id="descripcion" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 100 caracteres)"></textarea>
+						<label for="apemat">Apellido materno:</label>
+	            		<input id="apemat" class="pure-input-1-2" type="text" placeholder="Apellido materno">
+					</div>
+					<div class="pure-control-group">
+						<label for="servofrece">Servicio que ofrece:</label>
+	            		<input id="servofrece" class="pure-input-1-2" type="text" placeholder="Servicio que ofrece">
+					</div>
+					<div class="pure-control-group">
+						<label for="descripbreve">Descripci&oacute;n de servicio(s):</label>
+			       		<textarea id="descripbreve" type="text" cols="45" rows="3" placeholder="Ingrese la descripción breve de servicio(s) aquí (Máximo 100 caracteres)"></textarea>
 			       	</div>
-				<legend>Direcci&oacute;n</legend>
+				<legend>Direcci&oacute;n del servicio</legend>
 					<div class="pure-control-group">
 						<label for="calle">Calle:</label>
 	            		<input id="calle" class="pure-input-1-2" type="text" placeholder="Calle">
@@ -65,8 +73,8 @@
 	            		<input id="correo" class="pure-input-1-2" type="text" placeholder="Correo">
 					</div>
 					<div class="pure-control-group">
-						<label for="descripserv">Descripci&oacute;n de servicios:</label>
-			       		<textarea id="descripserv" type="text" cols="45" rows="3" placeholder="Ingrese la descripción de servicios aquí (Máximo 100 caracteres)"></textarea>
+						<label for="descripserv">Descripci&oacute;n detallada de servicios:</label>
+			       		<textarea id="descripserv" type="text" cols="45" rows="3" placeholder="Ingrese la descripción de servicios aquí (Máximo 250 caracteres)"></textarea>
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="fb">Facebook (si tiene):</label>
@@ -76,34 +84,14 @@
 						<label for="tw">Twitter (si tiene):</label>
 	            		<input id="tw" class="pure-input-1-2" type="text" placeholder="Dirección de Twitter">
 					</div>
+					<legend>Otros datos</legend>
 					<div class="pure-control-group">
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
 	            		<input id="eslogan" class="pure-input-1-2" type="text" placeholder="Eslogan">
 					</div>
 					<div class="pure-control-group">
-						<label for="logo">Logotipo:</label>
-	            		<input id="logo" class="pure-input-1-2" type="file" placeholder="">
-					</div>
-				<legend>Datos del responsable de la empresa</legend>
-					<div class="pure-control-group">
-						<label for="nombre">Nombre(s):</label>
-	            		<input id="" class="pure-input-1-2" type="text" placeholder="Nombre(s)">
-					</div>
-					<div class="pure-control-group">
-						<label for="apepat">Apellido paterno:</label>
-	            		<input id="apepat" class="pure-input-1-2" type="text" placeholder="Apellido paterno">
-					</div>
-					<div class="pure-control-group">
-						<label for="apemat">Apellido materno:</label>
-	            		<input id="apemat" class="pure-input-1-2" type="text" placeholder="Apellido materno">
-					</div>
-					<div class="pure-control-group">
-						<label for="teleres">Tel&eacute;fono:</label>
-	            		<input id="teleres" class="pure-input-1-2" type="text" placeholder="Teléfono">
-					</div>
-					<div class="pure-control-group">
-						<label for="foto">Foto del responsable:</label>
-	            		<input id="foto" class="pure-input-1-2" type="file" placeholder="">
+						<label for="fotoservi">Foto del prestador de servicios:</label>
+	            		<input id="fotoservi" class="pure-input-1-2" type="file" placeholder="">
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Cancelar</button>

@@ -9,7 +9,7 @@
                 <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/editempresas')?>">Editar una empresa</a></p>
                 <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/empreadmin/#')?>">Eliminar una empresa</a></p>
             </section>
-            <section class="instrucciones">
+            <section>
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar una empresa</em></strong> entonces haga clic en <strong><em>"Registrar una empresa"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
                 <p>Si desea <strong><em>editar los datos de una empresa</em></strong> entonces haga clic en <strong><em>"Editar una empresa"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>

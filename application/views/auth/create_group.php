@@ -6,7 +6,7 @@
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned">
+		<form class="pure-form pure-form-aligned" method="POST">
 			<div id="infoMessage"><?php echo $message;?></div>
 
 			<?php echo form_open("auth/create_group");?>

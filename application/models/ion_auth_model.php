@@ -339,12 +339,12 @@ class Ion_auth_model extends CI_Model
 		}
 		else
 		{
-			$salt = substr($hash_password_db->password, 0, $this->salt_length);
+			$salt = substr($hash_password_db->ContraUsuario, 0, $this->salt_length);
 
 			$db_password =  $salt . substr(sha1($salt . $password), 0, -$this->salt_length);
 		}
 
-		if($db_password == $hash_password_db->password)
+		if($db_password == $hash_password_db->ContraUsuario)
 		{
 			return TRUE;
 		}
@@ -472,7 +472,7 @@ class Ion_auth_model extends CI_Model
 			}
 
 			$data = array(
-			    'Codigo_Activ' 	  => NULL,
+			    'Codigo_Activ' => NULL,
 			    'Activo'          => 1
 			);
 
@@ -482,7 +482,7 @@ class Ion_auth_model extends CI_Model
 		else
 		{
 			$data = array(
-			    'Codigo_Activ'	  => NULL,
+			    'Codigo_Activ' => NULL,
 			    'Activo'          => 1
 			);
 
@@ -529,7 +529,7 @@ class Ion_auth_model extends CI_Model
 		$this->activation_code = $activation_code;
 
 		$data = array(
-		    'Codigo_Activ' 	  => $activation_code,
+		    'Codigo_Activ' => $activation_code,
 		    'Activo'          => 0
 		);
 
@@ -656,12 +656,12 @@ class Ion_auth_model extends CI_Model
 
 		$user = $query->row();
 
-		$old_password_matches = $this->hash_password_db($user->id, $old);
+		$old_password_matches = $this->hash_password_db($user->AidiUsuario, $old);
 
 		if ($old_password_matches === TRUE)
 		{
 			// store the new password and reset the remember code so all remembered instances have to re-login
-			$hashed_new_password  = $this->hash_password($new, $user->salt);
+			$hashed_new_password  = $this->hash_password($new, $user->Salt);
 			$data = array(
 			    'ContraUsuario' => $hashed_new_password,
 			    'Code_Recordatorio' => NULL,
@@ -705,7 +705,7 @@ class Ion_auth_model extends CI_Model
 
 		$this->trigger_events('extra_where');
 
-		return $this->db->where('username', $username)
+		return $this->db->where('IuserNeim', $username)
 										->group_by("AidiUsuario")
 										->order_by("AidiUsuario", "ASC")
 										->limit(1)
@@ -729,7 +729,7 @@ class Ion_auth_model extends CI_Model
 
 		$this->trigger_events('extra_where');
 
-		return $this->db->where('email', $email)
+		return $this->db->where('CorreUser', $email)
 										->group_by("AidiUsuario")
 										->order_by("AidiUsuario", "ASC")
 										->limit(1)
@@ -799,8 +799,8 @@ class Ion_auth_model extends CI_Model
 		$this->trigger_events('extra_where');
 
 		$update = array(
-		    'forgotten_password_code' => $key,
-		    'forgotten_password_time' => time()
+		    'CodeContraOlvidada' => $key,
+		    'TiempoContraOlvidada' => time()
 		);
 
 		$this->db->update($this->tables['Usuario'], $update, array($this->identity_column => $identity));
@@ -831,7 +831,7 @@ class Ion_auth_model extends CI_Model
 			return FALSE;
 		}
 
-		$profile = $this->where('CodeContraOlvidada', $code)->users()->row(); //pass the code to profile
+		$profile = $this->where('forgotten_password_code', $code)->users()->row(); //pass the code to profile
 
 		if ($profile) {
 
@@ -889,7 +889,7 @@ class Ion_auth_model extends CI_Model
 
 		// check if the default set in config exists in database
 		$query = $this->db->get_where($this->tables['Grupos'],array('NeimGrupo' => $this->config->item('default_group', 'ion_auth')),1)->row();
-		if( !isset($query->id) && empty($groups) )
+		if( !isset($query->AidiGrupo) && empty($groups) )
 		{
 			$this->set_error('account_creation_invalid_default_group');
 			return FALSE;
@@ -928,9 +928,9 @@ class Ion_auth_model extends CI_Model
 		$id = $this->db->insert_id();
 
 		// add in groups array if it doesn't exits and stop adding into default group if default group ids are set
-		if( isset($default_group->id) && empty($groups) )
+		if( isset($default_group->AidiGrupo) && empty($groups) )
 		{
-			$groups[] = $default_group->id;
+			$groups[] = $default_group->AidiGrupo;
 		}
 
 		if (!empty($groups))
@@ -965,7 +965,7 @@ class Ion_auth_model extends CI_Model
 
 		$this->trigger_events('extra_where');
 
-		$query = $this->db->select($this->identity_column . ', CorreUser, AidiUsuario, ContraUsuario, Activo, UltimaVez')
+		$query = $this->db->select($this->identity_column . ', CorreUser, AidiUsuario, CorreUser, Activo, UltimaVez')
 		                  ->where($this->identity_column, $identity)
 		                  ->limit(1)
 		    			  ->order_by('AidiUsuario', 'desc')
@@ -1058,10 +1058,10 @@ class Ion_auth_model extends CI_Model
             $ip_address = $this->_prepare_ip($this->input->ip_address());
             $this->db->select('1', FALSE);
             if ($this->config->item('track_login_ip_address', 'ion_auth')) {
-            	$this->db->where('DirIp', $ip_address);
-            	$this->db->where('LoginInt', $identity);
-            } else if (strlen($identity) > 0) $this->db->or_where('LoginInt', $identity);
-            $qres = $this->db->get($this->tables['Intentos_Login']);
+            	$this->db->where('ip_address', $ip_address);
+            	$this->db->where('login', $identity);
+            } else if (strlen($identity) > 0) $this->db->or_where('login', $identity);
+            $qres = $this->db->get($this->tables['login_attempts']);
             return $qres->num_rows();
         }
         return 0;
@@ -1089,9 +1089,9 @@ class Ion_auth_model extends CI_Model
 			$ip_address = $this->_prepare_ip($this->input->ip_address());
 
 			$this->db->select_max('time');
-            if ($this->config->item('track_login_ip_address', 'ion_auth')) $this->db->where('DirIp', $ip_address);
-			else if (strlen($identity) > 0) $this->db->or_where('LoginInt', $identity);
-			$qres = $this->db->get($this->tables['Intentos_Login'], 1);
+            if ($this->config->item('track_login_ip_address', 'ion_auth')) $this->db->where('ip_address', $ip_address);
+			else if (strlen($identity) > 0) $this->db->or_where('login', $identity);
+			$qres = $this->db->get($this->tables['login_attempts'], 1);
 
 			if($qres->num_rows() > 0) {
 				return $qres->row()->time;
@@ -1110,7 +1110,7 @@ class Ion_auth_model extends CI_Model
 	public function increase_login_attempts($identity) {
 		if ($this->config->item('track_login_attempts', 'ion_auth')) {
 			$ip_address = $this->_prepare_ip($this->input->ip_address());
-			return $this->db->insert($this->tables['Intentos_Login'], array('DirIp' => $ip_address, 'LoginInt' => $identity, 'HoraInt' => time()));
+			return $this->db->insert($this->tables['login_attempts'], array('ip_address' => $ip_address, 'login' => $identity, 'time' => time()));
 		}
 		return FALSE;
 	}
@@ -1125,11 +1125,11 @@ class Ion_auth_model extends CI_Model
 		if ($this->config->item('track_login_attempts', 'ion_auth')) {
 			$ip_address = $this->_prepare_ip($this->input->ip_address());
 
-			$this->db->where(array('DirIp' => $ip_address, 'LoginInt' => $identity));
+			$this->db->where(array('ip_address' => $ip_address, 'login' => $identity));
 			// Purge obsolete login attempts
-			$this->db->or_where('HoraInt <', time() - $expire_period, FALSE);
+			$this->db->or_where('time <', time() - $expire_period, FALSE);
 
-			return $this->db->delete($this->tables['Intentos_Login']);
+			return $this->db->delete($this->tables['login_attempts']);
 		}
 		return FALSE;
 	}
@@ -1377,7 +1377,7 @@ class Ion_auth_model extends CI_Model
 		$this->trigger_events('user');
 
 		// if no id was passed use the current users id
-		$id || $id = $this->session->userdata('AidiUsuario');
+		$id || $id = $this->session->userdata('user_id');
 
 		$this->limit(1);
 		$this->order_by($this->tables['Usuario'].'.AidiUsuario', 'desc');
@@ -1399,7 +1399,7 @@ class Ion_auth_model extends CI_Model
 		$this->trigger_events('get_users_group');
 
 		// if no id was passed use the current users id
-		$id || $id = $this->session->userdata('AidiUsuario');
+		$id || $id = $this->session->userdata('user_id');
 
 		return $this->db->select($this->tables['Grupos_Usuarios'].'.'.$this->join['Grupos'].' as AidiGrupo, '.$this->tables['Grupos'].'.NeimGrupo, '.$this->tables['Grupos'].'.DescripcioN')
 		                ->where($this->tables['Grupos_Usuarios'].'.'.$this->join['Usuario'], $id)
@@ -1418,7 +1418,7 @@ class Ion_auth_model extends CI_Model
 		$this->trigger_events('add_to_group');
 
 		// if no id was passed use the current users id
-		$user_id || $user_id = $this->session->userdata('AidiGrupo');
+		$user_id || $user_id = $this->session->userdata('user_id');
 
 		if(!is_array($group_ids))
 		{
@@ -1437,7 +1437,7 @@ class Ion_auth_model extends CI_Model
 				}
 				else {
 					$group = $this->group($group_id)->result();
-					$group_name = $group[0]->name;
+					$group_name = $group[0]->NeimGrupo;
 					$this->_cache_groups[$group_id] = $group_name;
 				}
 				$this->_cache_user_in_group[$user_id][$group_id] = $group_name;
@@ -1589,13 +1589,13 @@ class Ion_auth_model extends CI_Model
 		// Filter the data passed
 		$data = $this->_filter_data($this->tables['Usuario'], $data);
 
-		if (array_key_exists($this->identity_column, $data) || array_key_exists('ContraUsuario', $data) || array_key_exists('ContraUsuario', $data))
+		if (array_key_exists($this->identity_column, $data) || array_key_exists('ContraUsuario', $data) || array_key_exists('CorreUser', $data))
 		{
 			if (array_key_exists('ContraUsuario', $data))
 			{
 				if( ! empty($data['ContraUsuario']))
 				{
-					$data['ContraUsuario'] = $this->hash_password($data['ContraUsuario'], $user->salt);
+					$data['ContraUsuario'] = $this->hash_password($data['ContraUsuario'], $user->Salt);
 				}
 				else
 				{
@@ -1726,7 +1726,7 @@ class Ion_auth_model extends CI_Model
 		$session_data = array(
 		    'identity'             => $user->{$this->identity_column},
 		    $this->identity_column             => $user->{$this->identity_column},
-		    'email'	     		=> $user->CorreUser,
+		    'email'                => $user->CorreUser,
 		    'user_id'              => $user->AidiUsuario, //everyone likes to overwrite id so we'll use user_id
 		    'old_last_login'       => $user->UltimaVez
 		);
@@ -1902,7 +1902,7 @@ class Ion_auth_model extends CI_Model
 
 			// bail if the group name already exists
 			$existing_group = $this->db->get_where($this->tables['Grupos'], array('NeimGrupo' => $group_name))->row();
-			if(isset($existing_group->id) && $existing_group->id != $group_id)
+			if(isset($existing_group->AidiGrupo) && $existing_group->AidiGrupo != $group_id)
 			{
 				$this->set_error('group_already_exists');
 				return FALSE;
@@ -1913,7 +1913,7 @@ class Ion_auth_model extends CI_Model
 
 		// restrict change of name of the admin group
         $group = $this->db->get_where($this->tables['Grupos'], array('AidiGrupo' => $group_id))->row();
-        if($this->config->item('admin_group', 'ion_auth') === $group->name && $group_name !== $group->name)
+        if($this->config->item('admin_group', 'ion_auth') === $group->NeimGrupo && $group_name !== $group->NeimGrupo)
         {
             $this->set_error('group_name_admin_not_alter');
             return FALSE;

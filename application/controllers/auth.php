@@ -30,7 +30,7 @@ class Auth extends CI_Controller {
 		}
 		else
 		{
-			//set the flash data error message if there is one
+			// set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
 			//list the users
@@ -39,6 +39,7 @@ class Auth extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
+
 			$this->_render_page('templates/naveadmin');
 			$this->_render_page('auth/index', $this->data);
 			$this->_render_page('templates/footadmin');
@@ -90,6 +91,7 @@ class Auth extends CI_Controller {
 				'id'   => 'password',
 				'type' => 'password',
 			);
+
 			$this->_render_page('templates/navegacion');
 			$this->_render_page('auth/login', $this->data);
 			$this->_render_page('templates/footer');
@@ -183,7 +185,7 @@ class Auth extends CI_Controller {
 	function forgot_password()
 	{
 		// setting validation rules by checking wheather identity is username or email
-		if($this->config->item('identity', 'ion_auth') != 'email' )
+		if($this->config->item('identity', 'ion_auth') != 'CorreUser' )
 		{
 		   $this->form_validation->set_rules('identity', $this->lang->line('forgot_password_identity_label'), 'required');
 		}
@@ -201,7 +203,7 @@ class Auth extends CI_Controller {
 				'id' => 'identity',
 			);
 
-			if ( $this->config->item('identity', 'ion_auth') != 'email' ){
+			if ( $this->config->item('identity', 'ion_auth') != 'CorreUser' ){
 				$this->data['identity_label'] = $this->lang->line('forgot_password_identity_label');
 			}
 			else
@@ -299,7 +301,7 @@ class Auth extends CI_Controller {
 				$this->data['code'] = $code;
 
 				// render
-				$this->_render_page('templates/navegacion');
+				$this->_render_page('templates/naveadmin');
 				$this->_render_page('auth/reset_password', $this->data);
 				$this->_render_page('templates/footadmin');
 			}
@@ -434,31 +436,31 @@ class Auth extends CI_Controller {
         $this->data['identity_column'] = $identity_column;
 
         // validate form input
-        $this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'required');
-        $this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'required');
-        if($identity_column!=='email')
+        $this->form_validation->set_rules('PrimerNameUsuario', $this->lang->line('create_user_validation_fname_label'), 'required');
+        $this->form_validation->set_rules('ApelliUsuario', $this->lang->line('create_user_validation_lname_label'), 'required');
+        if($identity_column!=='CorreUser')
         {
             $this->form_validation->set_rules('identity',$this->lang->line('create_user_validation_identity_label'),'required|is_unique['.$tables['Usuario'].'.'.$identity_column.']');
-            $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email');
+            $this->form_validation->set_rules('CorreUser', $this->lang->line('create_user_validation_email_label'), 'required|valid_email');
         }
         else
         {
-            $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email|is_unique[' . $tables['Usuario'] . '.email]');
+            $this->form_validation->set_rules('CorreUser', $this->lang->line('create_user_validation_email_label'), 'required|valid_email|is_unique[' . $tables['Usuario'] . '.CorreUser]');
         }
-        $this->form_validation->set_rules('phone', $this->lang->line('create_user_validation_phone_label'), 'trim');
-        $this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
+        $this->form_validation->set_rules('TelefUsuario', $this->lang->line('create_user_validation_phone_label'), 'trim');
+        $this->form_validation->set_rules('ContraUsuario', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
         $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
 
         if ($this->form_validation->run() == true)
         {
-            $email    = strtolower($this->input->post('email'));
-            $identity = ($identity_column==='email') ? $email : $this->input->post('identity');
-            $password = $this->input->post('password');
+            $email    = strtolower($this->input->post('CorreUser'));
+            $identity = ($identity_column==='CorreUser') ? $email : $this->input->post('identity');
+            $password = $this->input->post('ContraUsuario');
 
             $additional_data = array(
-                'first_name' => $this->input->post('first_name'),
-                'last_name'  => $this->input->post('last_name'),
-                'phone'      => $this->input->post('phone'),
+                'PrimerNameUsuario' => $this->input->post('PrimerNameUsuario'),
+                'ApelliUsuario'  => $this->input->post('ApelliUsuario'),
+                'TelefUsuario'      => $this->input->post('TelefUsuario'),
             );
         }
         if ($this->form_validation->run() == true && $this->ion_auth->register($identity, $password, $email, $additional_data))
@@ -474,17 +476,17 @@ class Auth extends CI_Controller {
             // set the flash data error message if there is one
             $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
-            $this->data['first_name'] = array(
-                'name'  => 'first_name',
-                'id'    => 'first_name',
+            $this->data['PrimerNameUsuario'] = array(
+                'name'  => 'PrimerNameUsuario',
+                'id'    => 'ApelliUsuario',
                 'type'  => 'text',
-                'value' => $this->form_validation->set_value('first_name'),
+                'value' => $this->form_validation->set_value('PrimerNameUsuario'),
             );
-            $this->data['last_name'] = array(
-                'name'  => 'last_name',
-                'id'    => 'last_name',
+            $this->data['ApelliUsuario'] = array(
+                'name'  => 'ApelliUsuario',
+                'id'    => 'ApelliUsuario',
                 'type'  => 'text',
-                'value' => $this->form_validation->set_value('last_name'),
+                'value' => $this->form_validation->set_value('ApelliUsuario'),
             );
             $this->data['identity'] = array(
                 'name'  => 'identity',
@@ -492,23 +494,23 @@ class Auth extends CI_Controller {
                 'type'  => 'text',
                 'value' => $this->form_validation->set_value('identity'),
             );
-            $this->data['email'] = array(
-                'name'  => 'email',
-                'id'    => 'email',
+            $this->data['CorreUser'] = array(
+                'name'  => 'CorreUser',
+                'id'    => 'CorreUser',
                 'type'  => 'text',
-                'value' => $this->form_validation->set_value('email'),
+                'value' => $this->form_validation->set_value('CorreUser'),
             );
-            $this->data['phone'] = array(
-                'name'  => 'phone',
-                'id'    => 'phone',
+            $this->data['TelefUsuario'] = array(
+                'name'  => 'TelefUsuario',
+                'id'    => 'TelefUsuario',
                 'type'  => 'text',
-                'value' => $this->form_validation->set_value('phone'),
+                'value' => $this->form_validation->set_value('TelefUsuario'),
             );
-            $this->data['password'] = array(
-                'name'  => 'password',
-                'id'    => 'password',
+            $this->data['ContraUsuario'] = array(
+                'name'  => 'ContraUsuario',
+                'id'    => 'ContraUsuario',
                 'type'  => 'password',
-                'value' => $this->form_validation->set_value('password'),
+                'value' => $this->form_validation->set_value('ContraUsuario'),
             );
             $this->data['password_confirm'] = array(
                 'name'  => 'password_confirm',
@@ -516,6 +518,7 @@ class Auth extends CI_Controller {
                 'type'  => 'password',
                 'value' => $this->form_validation->set_value('password_confirm'),
             );
+
             $this->_render_page('templates/naveadmin');
             $this->_render_page('auth/create_user', $this->data);
             $this->_render_page('templates/footadmin');
@@ -537,38 +540,37 @@ class Auth extends CI_Controller {
 		$currentGroups = $this->ion_auth->get_users_groups($id)->result();
 
 		// validate form input
-		$this->form_validation->set_rules('first_name', $this->lang->line('edit_user_validation_fname_label'), 'required');
-		$this->form_validation->set_rules('last_name', $this->lang->line('edit_user_validation_lname_label'), 'required');
-		$this->form_validation->set_rules('phone', $this->lang->line('edit_user_validation_phone_label'), 'required');
-		$this->form_validation->set_rules('company', $this->lang->line('edit_user_validation_company_label'), 'required');
+		$this->form_validation->set_rules('PrimerNameUsuario', $this->lang->line('edit_user_validation_fname_label'), 'required');
+		$this->form_validation->set_rules('ApelliUsuario', $this->lang->line('edit_user_validation_lname_label'), 'required');
+		$this->form_validation->set_rules('TelefUsuario', $this->lang->line('edit_user_validation_phone_label'), 'required');
 
 		if (isset($_POST) && !empty($_POST))
 		{
 			// do we have a valid request?
-			if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
+			if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('AidiUsuario'))
 			{
 				show_error($this->lang->line('error_csrf'));
 			}
 
 			// update the password if it was posted
-			if ($this->input->post('password'))
+			if ($this->input->post('ContraUsuario'))
 			{
-				$this->form_validation->set_rules('password', $this->lang->line('edit_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
+				$this->form_validation->set_rules('ContraUsuario', $this->lang->line('edit_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
 				$this->form_validation->set_rules('password_confirm', $this->lang->line('edit_user_validation_password_confirm_label'), 'required');
 			}
 
 			if ($this->form_validation->run() === TRUE)
 			{
 				$data = array(
-					'first_name' => $this->input->post('first_name'),
-					'last_name'  => $this->input->post('last_name'),
-					'phone'      => $this->input->post('phone'),
+					'PrimerNameUsuario' => $this->input->post('PrimerNameUsuario'),
+					'ApelliUsuario'  => $this->input->post('ApelliUsuario'),
+					'TelefUsuario'      => $this->input->post('TelefUsuario'),
 				);
 
 				// update the password if it was posted
-				if ($this->input->post('password'))
+				if ($this->input->post('ContraUsuario'))
 				{
-					$data['password'] = $this->input->post('password');
+					$data['ContraUsuario'] = $this->input->post('ContraUsuario');
 				}
 
 
@@ -577,7 +579,7 @@ class Auth extends CI_Controller {
 				if ($this->ion_auth->is_admin())
 				{
 					//Update the groups user belongs to
-					$groupData = $this->input->post('groups');
+					$groupData = $this->input->post('Grupos');
 
 					if (isset($groupData) && !empty($groupData)) {
 
@@ -591,7 +593,7 @@ class Auth extends CI_Controller {
 				}
 
 			// check to see if we are updating the user
-			   if($this->ion_auth->update($user->id, $data))
+			   if($this->ion_auth->update($user->AidiUsuario, $data))
 			    {
 			    	// redirect them back to the admin page if admin, or to the base url if non admin
 				    $this->session->set_flashdata('message', $this->ion_auth->messages() );
@@ -630,31 +632,31 @@ class Auth extends CI_Controller {
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
 		// pass the user to the view
-		$this->data['user'] = $user;
-		$this->data['groups'] = $groups;
+		$this->data['Usuario'] = $user;
+		$this->data['Grupos'] = $groups;
 		$this->data['currentGroups'] = $currentGroups;
 
-		$this->data['first_name'] = array(
-			'name'  => 'first_name',
-			'id'    => 'first_name',
+		$this->data['PrimerNameUsuario'] = array(
+			'name'  => 'PrimerNameUsuario',
+			'id'    => 'PrimerNameUsuario',
 			'type'  => 'text',
-			'value' => $this->form_validation->set_value('first_name', $user->PrimerNameUsuario),
+			'value' => $this->form_validation->set_value('PrimerNameUsuario', $user->PrimerNameUsuario),
 		);
-		$this->data['last_name'] = array(
-			'name'  => 'last_name',
-			'id'    => 'last_name',
+		$this->data['ApelliUsuario'] = array(
+			'name'  => 'ApelliUsuario',
+			'id'    => 'ApelliUsuario',
 			'type'  => 'text',
-			'value' => $this->form_validation->set_value('last_name', $user->ApelliUsuario),
+			'value' => $this->form_validation->set_value('ApelliUsuario', $user->ApelliUsuario),
 		);
-		$this->data['phone'] = array(
-			'name'  => 'phone',
-			'id'    => 'phone',
+		$this->data['TelefUsuario'] = array(
+			'name'  => 'TelefUsuario',
+			'id'    => 'TelefUsuario',
 			'type'  => 'text',
-			'value' => $this->form_validation->set_value('phone', $user->TelefUsuario),
+			'value' => $this->form_validation->set_value('TelefUsuario', $user->TelefUsuario),
 		);
-		$this->data['password'] = array(
-			'name' => 'password',
-			'id'   => 'password',
+		$this->data['ContraUsuario'] = array(
+			'name' => 'ContraUsuario',
+			'id'   => 'ContraUsuario',
 			'type' => 'password'
 		);
 		$this->data['password_confirm'] = array(
@@ -662,6 +664,7 @@ class Auth extends CI_Controller {
 			'id'   => 'password_confirm',
 			'type' => 'password'
 		);
+
 		$this->_render_page('templates/naveadmin');
 		$this->_render_page('auth/edit_user', $this->data);
 		$this->_render_page('templates/footadmin');
@@ -709,6 +712,7 @@ class Auth extends CI_Controller {
 				'type'  => 'text',
 				'value' => $this->form_validation->set_value('description'),
 			);
+
 			$this->_render_page('templates/naveadmin');
 			$this->_render_page('auth/create_group', $this->data);
 			$this->_render_page('templates/footadmin');
@@ -758,7 +762,7 @@ class Auth extends CI_Controller {
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
 		// pass the user to the view
-		$this->data['group'] = $group;
+		$this->data['Grupos'] = $group;
 
 		$readonly = $this->config->item('admin_group', 'ion_auth') === $group->NeimGrupo ? 'readonly' : '';
 
@@ -775,6 +779,7 @@ class Auth extends CI_Controller {
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('group_description', $group->DescripcioN),
 		);
+
 		$this->_render_page('templates/naveadmin');
 		$this->_render_page('auth/edit_group', $this->data);
 		$this->_render_page('templates/footadmin');

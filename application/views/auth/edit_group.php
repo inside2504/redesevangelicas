@@ -6,7 +6,7 @@
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned">
+		<form class="pure-form pure-form-aligned" method="POST">
 			<fieldset>
 				<div id="infoMessage"><?php echo $message;?></div>
 

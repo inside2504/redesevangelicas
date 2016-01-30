@@ -6,7 +6,7 @@
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form">
+		<form class="pure-form" method="POST">
 			<fieldset>
 				<?php echo form_open("auth/deactivate/".$user->id);?>
 				<div>

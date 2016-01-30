@@ -12,7 +12,7 @@
                 <p class="pure-u-1-3"><?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
                 <p class="pure-u-1-3"><?php echo anchor('auth/change_password', lang('contrasena'))?></p>
             </section>
-		<section class="instrucciones">
+		<section>
 			<h2>Instrucciones</h2>
 			<p>Si desea <strong><em>registrar un nuevo usuario</em></strong> entonces haga clic en <strong><em>"Crear nuevo usuario"</em></strong> para entrar al formulario de <strong><em>registro de un nuevo usuario.</em></strong></p>
 			<p>Si desea <strong><em>registrar un nuevo grupo</em></strong> entonces haga clic en <strong><em>"Crear nuevo grupo"</em></strong> para entrar al formulario de <strong><em>registro de un nuevo tipo de usuario</em></strong></p>
