@@ -42,8 +42,8 @@
         	$this->db->update(('iglesia'), $data);
     	}
 
-    	
-
-
+    	public function delete($id){
+        	$this->db->where('idIgle', $id)->delete('iglesia');
+    	}
 
 	}

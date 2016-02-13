@@ -97,7 +97,9 @@
 	public function editar($id){
 		$this->data['item'] 	= $this->my_model->find($id);
 		$this->data['errors'] 	= $this->session->flashdata('errors');
-		echo $this->render->view('path/to/view/editiglesia.php', $this->data); 
+		$this->load->view('templates/naveadmin');
+		echo $this->load->view('iglesia/editiglesia.php', $this->data); 
+		$this->load->view('templates/footadmin');
 	}
 
 	public function actualizar($id){
@@ -109,23 +111,27 @@
 			redirect('iglesia/editiglesia/'.$id);
 
 		} else {
-			$data['nomIgle'] = $this->input->post('iglesia');
-			$data['pasIgle'] = $this->input->post('pastor');
-			$data['descIgle'] = $this->input->post('descripcion');
-			$data['eslogIgle'] = $this->input->post('eslogan');
-			$data['logo'] = $this->input->post('logo');
-			$data['calleIgle'] = $this->input->post('calle');
-			$data['numExtIgle'] = $this->input->post('numexterior');
-			$data['numInteIgle'] = $this->input->post('numinterior');
-			$data['coloIgle'] = $this->input->post('colonia');
-			$data['codPostIgle'] = $this->input->post('codigo');
-			$data['ciudadIgle'] = $this->input->post('ciudad');
-			$data['edoIgle'] = $this->input->post('edo');
-			$data['telIgle'] = $this->input->post('telefono');
-			$data['correEleIgle'] = $this->input->post('correo');
-			$data['fbIgle'] = $this->input->post('fb');
-			$data['twIgle'] = $this->input->post('tw');
-			$data['otrasRedesIgle'] = $this->input->post('otrasred');
+			$id = $this->input->post('id');
+			$data = array(
+				'nomIgle' => $this->input->post('iglesia'),
+				'pasIgle' => $this->input->post('pastor'),
+				'descIgle' => $this->input->post('descripcion'),
+				'eslogIgle' => $this->input->post('eslogan'),
+				'logo' => $this->input->post('logo'),
+				'calleIgle' => $this->input->post('calle'),
+				'numExtIgle' => $this->input->post('numexterior'),
+				'numInteIgle' => $this->input->post('numinterior'),
+				'coloIgle' => $this->input->post('colonia'),
+				'codPostIgle' => $this->input->post('codigo'),
+				'ciudadIgle' => $this->input->post('ciudad'),
+				'edoIgle' => $this->input->post('edo'),
+				'telIgle' => $this->input->post('telefono'),
+				'correEleIgle' => $this->input->post('correo'),
+				'fbIgle' => $this->input->post('fb'),
+				'twIgle' => $this->input->post('tw'),
+				'otrasRedesIgle' => $this->input->post('otrasred')
+			);
+			var_dump($data);
 			$this->my_model->update($id,$data);
 			redirect('iglesia/igleadmin');
 		}
@@ -133,5 +139,6 @@
 
 	public function eliminar($id){
 		echo $this->my_model->delete($id);
+		redirect('iglesia/igleadmin');
 	}
 }
