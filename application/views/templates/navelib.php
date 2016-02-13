@@ -1,19 +1,20 @@
 <!DOCTYPE HTML>
 <html lang="es">
-	<head>
-		<title>Redes evang&eacute;licas</title>
-		<meta http-equiv="Content-Type" content="text/html; charset = utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-		<link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
+    <head>
+        <title>Redes evang&eacute;licas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset = utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="<?=base_url('')."assets/img/16x10.png"?>" type="image/x-icon"/>
+        <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/pure.css"?>">
+        <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200">
-		<!--[if lte IE 8]>
+        <!--[if lte IE 8]>
         <link rel="stylesheet" href="/combo/1.18.13?/css/layouts/side-menu-old-ie.css">
     <![endif]-->
     <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/side-menu.css"?>">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+        <link rel="stylesheet" href="<?=base_url('')."assets/css/layouts/grids-responsive.css"?>">
     <!--<![endif]-->
   
 
@@ -53,11 +54,11 @@ ga('send', 'pageview');
 
     <div id="menu">
         <div class="pure-menu">
-            <a class="pure-menu-heading" href="<?php echo site_url('libreria')?>">Bienvenido</a>
+            <a class="pure-menu-heading" href="<?php echo site_url('auth/panel')?>">Bienvenido</a>
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                	<a href="#" class="pure-menu-link">Tianguis</a>
+                	<a href="<?php echo site_url('auth/tianadmin')?>" class="pure-menu-link">Tianguis</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>

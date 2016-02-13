@@ -54,29 +54,29 @@ ga('send', 'pageview');
 
     <div id="menu">
         <div class="pure-menu">
-            <a class="pure-menu-heading" href="<?php echo site_url('administrador')?>">Bienvenido</a>
+            <a class="pure-menu-heading" href="<?php echo site_url('auth/panel')?>">Bienvenido</a>
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
                 	<a href="<?php echo site_url('auth/index')?>" class="pure-menu-link">Usuarios</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/igleadmin')?>" class="pure-menu-link">Iglesias</a>
+                	<a href="<?php echo site_url('iglesia/igleadmin')?>" class="pure-menu-link">Iglesias</a>
                 </li>
                 <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="<?php echo site_url('administracion/servadmin')?>" class="pure-menu-link">Servicios</a>
+                    <a href="<?php echo site_url('auth/servadmin')?>" class="pure-menu-link">Servicios</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/empreadmin')?>" class="pure-menu-link">Empresas</a>
+                	<a href="<?php echo site_url('auth/empreadmin')?>" class="pure-menu-link">Empresas</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/mateadmin')?>" class="pure-menu-link">Materiales</a>
+                	<a href="<?php echo site_url('auth/mateadmin')?>" class="pure-menu-link">Materiales</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/evenadmin')?>" class="pure-menu-link">Eventos</a>
+                	<a href="<?php echo site_url('auth/evenadmin')?>" class="pure-menu-link">Eventos</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('administracion/tianadmin')?>" class="pure-menu-link">Tianguis</a>
+                	<a href="<?php echo site_url('auth/tianadmin')?>" class="pure-menu-link">Tianguis</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>

@@ -1,8 +1,9 @@
 
 	<div class="contenido">
 		<div>
-			<section class="borde">
+			<section>
 				<h3>Bienvenido</h3>
+				<hr>
 			</section>
 		</div>
 		<div>

@@ -46,6 +46,211 @@ class Auth extends CI_Controller {
 		}
 	}
 
+	public function panel(){	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('auth/administrador');
+			$this->load->view('templates/footadmin');
+		}
+		elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			$this->load->view('auth/editor');
+			$this->load->view('templates/footedit');
+		}
+		elseif ($this->ion_auth->in_group('Tianguis')) {
+			$this->load->view('templates/navelib');
+			$this->load->view('auth/libreria');
+			$this->load->view('templates/footlib');
+		}
+	}
+
+	public function servadmin()
+	{	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('auth/servadmin');
+			$this->load->view('templates/footadmin');
+		}
+		else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	public function empreadmin()
+	{	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('auth/empreadmin');
+			$this->load->view('templates/footadmin');
+			}
+		else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	public function mateadmin()
+	{	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('auth/mateadmin');
+			$this->load->view('templates/footadmin');
+		}
+		elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			$this->load->view('auth/mateadmin');
+			$this->load->view('templates/footedit');
+		}
+		else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	public function evenadmin()
+	{	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('auth/evenadmin');
+			$this->load->view('templates/footadmin');
+		}
+		elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			$this->load->view('auth/evenadmin');
+			$this->load->view('templates/footedit');
+		}
+		else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	public function tianadmin()
+	{	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('auth/tianadmin');
+			$this->load->view('templates/footadmin');
+		}
+		elseif ($this->ion_auth->in_group('Tianguis')) {
+			$this->load->view('templates/navelib');
+			$this->load->view('auth/tianadmin');
+			$this->load->view('templates/footlib');
+		}
+		else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	//Controladores de todas las vistas para dar de alta
+
+	public function regservicio(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/regservicio');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function regempresas(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/regempresas');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function regmaterial(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/regmaterial');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function regevento(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/regevento');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function regproducto(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/regproducto');
+		$this->load->view('templates/footadmin');
+	}
+
+	//Controladores de todas las vistas para editar
+
+	public function editservicio(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/editservicio');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editempresas(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/editempresas');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editmaterial(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/editmaterial');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editevento(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/editevento');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editproducto(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('auth/editproducto');
+		$this->load->view('templates/footadmin');
+	}
+
 	// log the user in
 	function login()
 	{
@@ -66,7 +271,7 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/administrador', 'refresh');
+				redirect('/auth/panel', 'refresh');
 			}
 			else
 			{

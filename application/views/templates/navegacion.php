@@ -15,7 +15,7 @@
 		<header>
 			<div class="banner">
 				<section>
-					<img class="logo" src="<?=base_url('')."assets/img/200x125.png"?>" alt="redes">
+					<img class="img-responsive" src="<?=base_url('')."assets/img/200x125.png"?>" alt="redes">
 				</section>
 			</div>
 			<div>
@@ -36,25 +36,25 @@
 							<a href="<?php echo site_url('#')?>">Inicio</a>
 						</li>		
 						<li>
-							<a href="<?php echo site_url('nosotros')?>" >Nosotros<b></b></a>
+							<a href="<?php echo site_url('nosotrosview')?>" >Nosotros<b></b></a>
 						</li>
 						<li>
-							<a href="<?php echo site_url('iglesias')?>" >Iglesias<b></b></a>
+							<a href="<?php echo site_url('iglesiasview')?>" >Iglesias<b></b></a>
 						</li>
 						<li>
-							<a href="<?php echo site_url('servicios')?>" >Servicios<b></b></a>
+							<a href="<?php echo site_url('serviciosview')?>" >Servicios<b></b></a>
 						</li>
 						<li>
-							<a href="<?php echo site_url('empresas')?>">Empresas</a>
+							<a href="<?php echo site_url('empresasview')?>">Empresas</a>
 						</li>
 						<li>
-							<a href="<?php echo site_url('materiales')?>">Materiales</a>
+							<a href="<?php echo site_url('materialesview')?>">Materiales</a>
 						</li>
 						<li>
-							<a href="<?php echo site_url('eventos')?>">Eventos</a>
+							<a href="<?php echo site_url('eventosview')?>">Eventos</a>
 						</li>
 						<li>
-							<a href="<?php echo site_url('tianguis')?>">Tianguis</a>
+							<a href="<?php echo site_url('tianguisview')?>">Tianguis</a>
 						</li>
 						<li>
 							<a href="<?php echo site_url('/auth/login')?>" > Ingresar</a>
