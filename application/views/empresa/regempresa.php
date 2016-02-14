@@ -1,34 +1,35 @@
 <div class="main">
 	<div>
 		<section class="header">
-			<h1>Iglesias</h1>
-			<h2>Bienvenido al formulario para registrar una iglesia</h2>
+			<h1>Empresas</h1>
+			<h2>Bienvenido al formulario para registrar una empresa</h2>
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/iglesia/guardar');?>">
+		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/empresa/guardar');?>">
 			<fieldset>
-				<legend>Datos de la iglesia</legend>
+				<legend>Datos de la iglesia que lo recomienda</legend>
 					<div class="pure-control-group">
-						<label for="iglesia">Nombre de la iglesia:</label>
-	            		<input name="iglesia" class="pure-input-1-2" type="text" placeholder="Nombre">
+						<label for="iglesia">Iglesia perteneciente:</label>
+	            		<input name="iglesia" class="pure-input-1-2" type="text" placeholder="Iglesia">
 					</div>
 					<div class="pure-control-group">
-						<label for="pastor">Pastor de la iglesia:</label>
+						<label for="pastor">Pastor que lo recomienda:</label>
 	            		<input name="pastor" class="pure-input-1-2" type="text" placeholder="Pastor">
 					</div>
+				<legend>Datos de la empresa</legend>
 					<div class="pure-control-group">
-						<label for="descripcion">Descripci&oacute;n:</label>
-	            		<textarea name="descripcion" class="pure-input-1-2" type="text" placeholder="Descripcion"></textarea>
+						<label for="empresa">Nombre de la empresa:</label>
+	            		<input name="empresa" class="pure-input-1-2" type="text" placeholder="Empresa">
 					</div>
 					<div class="pure-control-group">
-						<label for="eslogan">Eslogan (si cuenta con uno):</label>
-	            		<input name="eslogan" class="pure-input-1-2" type="text" placeholder="Eslogan">
+						<label for="giro">Giro empresarial:</label>
+	            		<input name="giro" class="pure-input-1-2" type="text" placeholder="Giro">
 					</div>
 					<div class="pure-control-group">
-						<label for="logo">Logotipo:</label>
-	            		<input name="logo" class="pure-input-1-2" type="file" placeholder="">
-					</div>
+						<label for="descrip">Descripci&oacute;n:</label>
+			       		<textarea name="descripcion" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 100 caracteres)"></textarea>
+			       	</div>
 				<legend>Direcci&oacute;n</legend>
 					<div class="pure-control-group">
 						<label for="calle">Calle:</label>
@@ -43,7 +44,7 @@
 	            		<input name="numinterior" class="pure-input-1-2" type="text" placeholder="Número interior">
 					</div>
 					<div class="pure-control-group">
-						<label for=colonia"">Colonia:</label>
+						<label for="colonia">Colonia:</label>
 	            		<input name="colonia" class="pure-input-1-2" type="text" placeholder="Colonia">
 					</div>
 					<div class="pure-control-group">
@@ -67,6 +68,10 @@
 						<label for="correo">Correo electrónico:</label>
 	            		<input name="correo" class="pure-input-1-2" type="text" placeholder="Correo">
 					</div>
+					<div class="pure-control-group">
+						<label for="descripserv">Descripci&oacute;n de servicios:</label>
+			       		<textarea name="descripserv" type="text" cols="45" rows="3" placeholder="Ingrese la descripción de servicios aquí (Máximo 100 caracteres)"></textarea>
+			       	</div>
 			       	<div class="pure-control-group">
 						<label for="fb">Facebook (si tiene):</label>
 	            		<input name="fb" class="pure-input-1-2" type="text" placeholder="Dirección de Facebook">
@@ -78,6 +83,35 @@
 					<div class="pure-control-group">
 						<label for="otrasred">Otras redes (si tiene):</label>
 	            		<textarea name="otrasred" class="pure-input-1-2" type="text" placeholder="Ingrese los enlaces de sus otras redes."></textarea>
+					</div>
+					<div class="pure-control-group">
+						<label for="eslogan">Eslogan (si cuenta con uno):</label>
+	            		<input name="eslogan" class="pure-input-1-2" type="text" placeholder="Eslogan">
+					</div>
+					<div class="pure-control-group">
+						<label for="logo">Logotipo:</label>
+	            		<input name="logo" class="pure-input-1-2" type="file" placeholder="">
+					</div>
+				<legend>Datos del responsable de la empresa</legend>
+					<div class="pure-control-group">
+						<label for="nombre">Nombre(s):</label>
+	            		<input name="nombre" class="pure-input-1-2" type="text" placeholder="Nombre(s)">
+					</div>
+					<div class="pure-control-group">
+						<label for="apepat">Apellido paterno:</label>
+	            		<input name="apepat" class="pure-input-1-2" type="text" placeholder="Apellido paterno">
+					</div>
+					<div class="pure-control-group">
+						<label for="apemat">Apellido materno:</label>
+	            		<input name="apemat" class="pure-input-1-2" type="text" placeholder="Apellido materno">
+					</div>
+					<div class="pure-control-group">
+						<label for="teleres">Tel&eacute;fono:</label>
+	            		<input name="teleres" class="pure-input-1-2" type="text" placeholder="Teléfono">
+					</div>
+					<div class="pure-control-group">
+						<label for="foto">Foto del responsable:</label>
+	            		<input name="foto" class="pure-input-1-2" type="file" placeholder="">
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>

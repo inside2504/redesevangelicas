@@ -1,35 +1,39 @@
 <div class="main">
 	<div>
 		<section class="header">
-			<h1>Iglesias</h1>
-			<h2>Bienvenido al formulario para registrar una iglesia</h2>
+			<h1>Tianguis</h1>
+			<h2>Bienvenido al formulario para registrar un producto a ofertar en el tianguis</h2>
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/iglesia/guardar');?>">
+		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/tianguis/guardar');?>">
 			<fieldset>
-				<legend>Datos de la iglesia</legend>
+				<legend>Datos del producto</legend>
 					<div class="pure-control-group">
-						<label for="iglesia">Nombre de la iglesia:</label>
-	            		<input name="iglesia" class="pure-input-1-2" type="text" placeholder="Nombre">
+						<label for="nombreprod">Nombre del producto:</label>
+	            		<input name="nombreprod" class="pure-input-1-2" type="text" placeholder="Nombre del producto">
 					</div>
 					<div class="pure-control-group">
-						<label for="pastor">Pastor de la iglesia:</label>
-	            		<input name="pastor" class="pure-input-1-2" type="text" placeholder="Pastor">
+						<label for="autorprod">Autor:</label>
+	            		<input name="autorprod" class="pure-input-1-2" type="text" placeholder="Autor del producto">
 					</div>
 					<div class="pure-control-group">
-						<label for="descripcion">Descripci&oacute;n:</label>
-	            		<textarea name="descripcion" class="pure-input-1-2" type="text" placeholder="Descripcion"></textarea>
+						<label for="descripprod">Descripci&oacute;n:</label>
+			       		<textarea name="descripcionprod" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 100 caracteres)"></textarea>
+			       	</div>
+			       	<div class="pure-control-group">
+						<label for="precioprod">Precio:</label>
+			       		<input name="precioprod" class="pure-input-1-2" type="text" placeholder="Precio del producto (moneda nacional)">
+			       	</div>
+			       	<div class="pure-control-group">
+						<label for="imagen">Imagen del material:</label>
+	            		<input name="imagen" class="pure-input-1-2" type="file" placeholder="">
 					</div>
+				<legend>Localizaci&oacute;n del producto</legend>
 					<div class="pure-control-group">
-						<label for="eslogan">Eslogan (si cuenta con uno):</label>
-	            		<input name="eslogan" class="pure-input-1-2" type="text" placeholder="Eslogan">
+						<label for="nombrelib">Nombre de la Librer&iacute;a:</label>
+	            		<input name="nombrelib" class="pure-input-1-2" type="text" placeholder="Nombre de la librería">
 					</div>
-					<div class="pure-control-group">
-						<label for="logo">Logotipo:</label>
-	            		<input name="logo" class="pure-input-1-2" type="file" placeholder="">
-					</div>
-				<legend>Direcci&oacute;n</legend>
 					<div class="pure-control-group">
 						<label for="calle">Calle:</label>
 	            		<input name="calle" class="pure-input-1-2" type="text" placeholder="Calle">
@@ -39,7 +43,7 @@
 	            		<input name="numexterior" class="pure-input-1-2" type="text" placeholder="Número exterior">
 					</div>
 					<div class="pure-control-group">
-						<label for="numinterior">N&uacute;mero interior (si tiene):</label>
+						<label for="numinterior">N&uacute;mero interior (si existe):</label>
 	            		<input name="numinterior" class="pure-input-1-2" type="text" placeholder="Número interior">
 					</div>
 					<div class="pure-control-group">
@@ -58,9 +62,9 @@
 						<label for="edo">Estado:</label>
 	            		<input name="edo" class="pure-input-1-2" type="text" placeholder="Estado">
 					</div>
-				<legend>Contacto</legend>
+				<legend>Contacto con la librer&iacute;a</legend>
 					<div class="pure-control-group">
-						<label for="telefono">Tel&eacute;fono(s):</label>
+						<label for="telefono">Tel&eacute;fonos:</label>
 	            		<input name="telefono" class="pure-input-1-2" type="text" placeholder="Teléfonos">
 					</div>
 					<div class="pure-control-group">

@@ -7,11 +7,6 @@
 	</div>
 	<div class="content">
 		<div id="infoMessage"><?php echo $message;?></div>
-		<section class="acciones">
-                <p class="pure-u-1-3"><?php echo anchor('auth/create_user', lang('index_create_user_link'))?></p>
-                <p class="pure-u-1-3"><?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
-                <p class="pure-u-1-3"><?php echo anchor('auth/change_password', lang('contrasena'))?></p>
-            </section>
 		<section>
 			<h2>Instrucciones</h2>
 			<p>Si desea <strong><em>registrar un nuevo usuario</em></strong> entonces haga clic en <strong><em>"Crear nuevo usuario"</em></strong> para entrar al formulario de <strong><em>registro de un nuevo usuario.</em></strong></p>
@@ -21,6 +16,11 @@
 			<p>El <strong><em>"estado"</em></strong> hace referencia a lo siguiente: Si el usuario se encuentra <strong><em>"Activo"</em></strong> quiere decir que puede acceder al sistema, si se encuenta <strong><em>"Inactivo"</em></strong> quiere decir que no tiene permitido ingresar al sistema.</p>
 			<p>La <strong><em>acci&oacute;n "Editar"</em></strong> sirve para entrar al <strong><em>formulario de edici&oacute;n de los datos del usuario.</em></strong> Si desea realizar alg&uacute;n cambio en los datos del usuario haga clic en <strong><em>"Editar"</em></strong>.</p>
 		</section>
+		<section class="acciones">
+                <p class="pure-u-1-3"><?php echo anchor('auth/create_user', lang('index_create_user_link'))?></p>
+                <p class="pure-u-1-3"><?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
+                <p class="pure-u-1-3"><?php echo anchor('auth/change_password', lang('contrasena'))?></p>
+            </section>
 		<section>
 			<table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
 				<thead>

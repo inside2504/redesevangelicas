@@ -20,7 +20,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="descripcion">Descripci&oacute;n:</label>
-	            		<textarea name="descripcion" class="pure-input-1-2" type="text"  value="<?php echo $item->descIgle ?>"></textarea>
+	            		<textarea name="descripcion" class="pure-input-1-2" type="text" cols="45" rows="3"><?php echo $item->descIgle?></textarea>
 					</div>
 					<div class="pure-control-group">
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
@@ -78,10 +78,9 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="otrasred">Otras redes (si tiene):</label>
-	            		<textarea name="otrasred" class="pure-input-1-2" type="text"  value="<?php echo $item->otrasRedesIgle ?>"></textarea>
+	            		<textarea name="otrasred" class="pure-input-1-2" type="text"><?php echo $item->otrasRedesIgle?></textarea>
 					</div>
 					<div class="pure-controls">
-						<button type="reset" class="pure-button pure-button-cancel">Cancelar</button>
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>
 					</div>
 			</fieldset>
