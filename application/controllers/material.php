@@ -61,7 +61,23 @@
 	}
 
 	public function guardar(){
-		if($this->form_validation->run('controller_validation') != false){
+			$nombremate = $this->input->post('nombremate');
+			$filename = uniqid().$nombremate;
+			$config['file_name'] =$filename;
+			$img = 'imagen';
+	        $config['upload_path'] = "assets/uploads/";
+	        $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	        $config['max_size'] = "50000";
+	        $config['max_width'] = "2000";
+	        $config['max_height'] = "2000";
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+        }elseif($this->form_validation->run('controller_validation') != false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -71,11 +87,14 @@
 			$data['nombMate'] 	= $this->input->post('nombremate');
 			$data['autMate'] 	= $this->input->post('autor');
 			$data['descMate'] 	= $this->input->post('descripcion');
-			$data['imgMate'] 	= $this->input->post('imagen');
+			$data['imgMate'] 	= $filename;
+			$this->upload->do_upload($img);
 			$this->my_model->create($data);
 			redirect('material/mateadmin');
 		}
 	}
+
+
 
 	public function mostrar($id){
 		$this->data['item'] = $this->my_model->find($id);
@@ -91,8 +110,18 @@
 	}
 
 	public function actualizar($id){
+		$nombremate = $this->input->post('nombremate');
+		$filename = uniqid().$nombremate;
+		$config['file_name'] =$filename;
+		$img = 'imagen';
 		$this->form_validation->set_rules('');
-		if($this->form_validation->run('controller_validation')!=false){
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+		}elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -105,7 +134,8 @@
 				'nombMate'	 => $this->input->post('nombremate'),
 				'autMate'	 => $this->input->post('autor'),
 				'descMate'	 => $this->input->post('descripcion'),
-				'imgMate'	 => $this->input->post('imagen'),
+				'imgMate' 	 => $filename,
+				$this->upload->do_upload($img)
 			);
 			var_dump($data);
 			$this->my_model->update($id,$data);

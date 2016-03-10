@@ -61,7 +61,23 @@
 	}
 
 	public function guardar(){
-		if($this->form_validation->run('controller_validation') != false){
+		$imagen = $this->input->post('imagen');
+		$filename = uniqid().$imagen;
+		$config['file_name'] =$filename;
+		$img = 'imagen';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+	    $this->form_validation->set_rules('');
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+        }elseif($this->form_validation->run('controller_validation') != false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -71,7 +87,7 @@
 			$data['autoProd'] 			= $this->input->post('autorprod');
 			$data['descrProd'] 			= $this->input->post('descripcionprod');
 			$data['precProd'] 			= $this->input->post('precioprod');
-			$data['imagProd'] 			= $this->input->post('imagen');
+			$data['imagProd'] 			= $filename;
 			$data['nombLibProd'] 		= $this->input->post('nombrelib');
 			$data['calleLibProd'] 		= $this->input->post('calle');
 			$data['numExtLibProd'] 		= $this->input->post('numexterior');
@@ -85,6 +101,7 @@
 			$data['fBLibProd'] 			= $this->input->post('fb');
 			$data['tWLibProd'] 			= $this->input->post('tw');
 			$data['otrasRedLibProd'] 	= $this->input->post('otrasred');
+			$this->upload->do_upload($img);
 			$this->my_model->create($data);
 			redirect('tianguis/tianadmin');
 		}
@@ -104,8 +121,23 @@
 	}
 
 	public function actualizar($id){
-		$this->form_validation->set_rules('');
-		if($this->form_validation->run('controller_validation')!=false){
+		$logo = $this->input->post('imagen');
+		$filename = uniqid().$logo;
+		$config['file_name'] =$filename;
+		$img = 'imagen';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+	    $this->form_validation->set_rules('');
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+        }elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -118,7 +150,7 @@
 				'autoProd' 			=> $this->input->post('autorprod'),
 				'descrProd' 		=> $this->input->post('descripcionprod'),
 				'precProd' 			=> $this->input->post('precioprod'),
-				'imagProd' 			=> $this->input->post('imagen'),
+				'imagProd' 			=> $filename,
 				'nombLibProd' 		=> $this->input->post('nombrelib'),
 				'calleLibProd' 		=> $this->input->post('calle'),
 				'numExtLibProd' 	=> $this->input->post('numexterior'),
@@ -134,6 +166,7 @@
 				'otrasRedLibProd' 	=> $this->input->post('otrasred')
 			);
 			var_dump($data);
+			$this->upload->do_upload($img);
 			$this->my_model->update($id,$data);
 			redirect('tianguis/tianadmin');
 		}

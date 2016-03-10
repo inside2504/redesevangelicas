@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/redesevangelicas/';
+$config['base_url'] = 'http://localhost/redesev/';
 
 /*
 |--------------------------------------------------------------------------

@@ -61,7 +61,23 @@
 	}
 
 	public function guardar(){
-		if($this->form_validation->run('controller_validation') != false){
+		$nombremate = $this->input->post('nombremate');
+		$filename = uniqid().$nombremate;
+		$config['file_name'] =$filename;
+		$img = 'logo';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+        }elseif($this->form_validation->run('controller_validation') != false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -71,7 +87,7 @@
 			$data['pasIgle'] = $this->input->post('pastor');
 			$data['descIgle'] = $this->input->post('descripcion');
 			$data['eslogIgle'] = $this->input->post('eslogan');
-			$data['logo'] = $this->input->post('logo');
+			$data['logo'] = $filename;
 			$data['calleIgle'] = $this->input->post('calle');
 			$data['numExtIgle'] = $this->input->post('numexterior');
 			$data['numInteIgle'] = $this->input->post('numinterior');
@@ -84,6 +100,7 @@
 			$data['fbIgle'] = $this->input->post('fb');
 			$data['twIgle'] = $this->input->post('tw');
 			$data['otrasRedesIgle'] = $this->input->post('otrasred');
+			$this->upload->do_upload($img);
 			$this->my_model->create($data);
 			redirect('iglesia/igleadmin');
 		}
@@ -103,8 +120,23 @@
 	}
 
 	public function actualizar($id){
-		$this->form_validation->set_rules('');
-		if($this->form_validation->run('controller_validation')!=false){
+		$logo = $this->input->post('logo');
+		$filename = uniqid().$logo;
+		$config['file_name'] =$filename;
+		$img = 'logo';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+	    $this->form_validation->set_rules('');
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+        }elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -117,7 +149,7 @@
 				'pasIgle' 			=> $this->input->post('pastor'),
 				'descIgle' 			=> $this->input->post('descripcion'),
 				'eslogIgle'			=> $this->input->post('eslogan'),
-				'logo' 				=> $this->input->post('logo'),
+				'logo' 				=> $filename,
 				'calleIgle' 		=> $this->input->post('calle'),
 				'numExtIgle' 		=> $this->input->post('numexterior'),
 				'numInteIgle' 		=> $this->input->post('numinterior'),
@@ -129,9 +161,10 @@
 				'correEleIgle' 		=> $this->input->post('correo'),
 				'fbIgle' 			=> $this->input->post('fb'),
 				'twIgle' 			=> $this->input->post('tw'),
-				'otrasRedesIgle' 	=> $this->input->post('otrasred')
+				'otrasRedesIgle' 	=> $this->input->post('otrasred'),
 			);
 			var_dump($data);
+			$this->upload->do_upload($img);
 			$this->my_model->update($id,$data);
 			redirect('iglesia/igleadmin');
 		}

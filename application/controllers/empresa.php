@@ -61,7 +61,24 @@
 	}
 
 	public function guardar(){
-		if($this->form_validation->run('controller_validation') != false){
+		$logo = $this->input->post('id');
+		$filename = uniqid().$id;
+		$config['file_name'] =$filename;
+		$logo = 'logo';
+		$foto = 'foto';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+
+		$this->load->library('upload', $config);
+		if ((!$this->upload->do_upload($logo)) & (!$this->upload->do_upload($foto))) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+		}elseif($this->form_validation->run('controller_validation') != false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -86,12 +103,14 @@
 			$data['TwEmpr'] 			= $this->input->post('tw');
 			$data['OtrasRedEmpr']		= $this->input->post('otrasred');
 			$data['EslogEmpr'] 			= $this->input->post('eslogan');
-			$data['LogoEmpr'] 			= $this->input->post('logo');
+			$data['LogoEmpr'] 			= $filename;
 			$data['NombRespEmpr'] 		= $this->input->post('nombre');
 			$data['ApePatRespEmpr'] 	= $this->input->post('apepat');
 			$data['ApeMatRespEmpr'] 	= $this->input->post('apemat');
 			$data['TelefRespEmpr'] 		= $this->input->post('teleres');
-			$data['FotoRespEmpr'] 		= $this->input->post('foto');
+			$data['FotoRespEmpr'] 		= $filename;
+			$this->upload->do_upload($logo);
+			$this->upload->do_upload($foto);
 			var_dump($data);
 			$this->my_model->create($data);
 			redirect('empresa/empreadmin');
@@ -112,8 +131,25 @@
 	}
 
 	public function actualizar($id){
+		$logo = $this->input->post('id');
+		$filename = uniqid().$id;
+		$config['file_name'] =$filename;
+		$logo = 'logo';
+		$foto = 'foto';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+
+		$this->load->library('upload', $config);
 		$this->form_validation->set_rules('');
-		if($this->form_validation->run('controller_validation')!=false){
+		if ((!$this->upload->do_upload($logo)) & (!$this->upload->do_upload($foto))) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+		}elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -149,6 +185,8 @@
 				'FotoRespEmpr'	 		=> $this->input->post('foto')
 			);
 			var_dump($data);
+			$this->upload->do_upload($logo);
+			$this->upload->do_upload($foto);
 			$this->my_model->update($id,$data);
 			redirect('empresa/empreadmin');
 		}

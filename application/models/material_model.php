@@ -42,6 +42,13 @@
         	$this->db->update(('material'), $data);
     	}
 
+        public function get_image($id){
+           $this->db->where('idMate', $id);
+           $result = $this->db->get('material');
+           header("Content-type: image/jpeg");
+           echo $result['image'];
+        }
+
     	public function delete($id){
         	$this->db->where('idMate', $id)->delete('material');
     	}

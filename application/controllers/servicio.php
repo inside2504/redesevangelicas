@@ -61,7 +61,23 @@
 	}
 
 	public function guardar(){
-		if($this->form_validation->run('controller_validation') != false){
+		$imagen = $this->input->post('fotoservi');
+		$filename = uniqid().$imagen;
+		$config['file_name'] =$filename;
+		$img = 'fotoservi';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+	    $this->form_validation->set_rules('');
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+        }elseif($this->form_validation->run('controller_validation') != false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -89,7 +105,8 @@
 			$data['TwServ'] = $this->input->post('tw');
 			$data['OtrasRedesServ'] = $this->input->post('otrasred');
 			$data['EslogServ'] = $this->input->post('eslogan');
-			$data['ImgPrestServ'] = $this->input->post('fotoservi');
+			$data['ImgPrestServ'] = $filename;
+			$this->upload->do_upload($img);
 			$this->my_model->create($data);
 			redirect('servicio/servadmin');
 		}
@@ -109,8 +126,23 @@
 	}
 
 	public function actualizar($id){
-		$this->form_validation->set_rules('');
-		if($this->form_validation->run('controller_validation')!=false){
+		$logo = $this->input->post('fotoservi');
+		$filename = uniqid().$logo;
+		$config['file_name'] =$filename;
+		$img = 'fotoservi';
+	    $config['upload_path'] = "assets/uploads/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "50000";
+	    $config['max_width'] = "2000";
+	    $config['max_height'] = "2000";
+	    $this->form_validation->set_rules('');
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload($img)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+        }elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -141,9 +173,10 @@
 				'TwServ'			 => $this->input->post('tw'),
 				'OtrasRedesServ'	 => $this->input->post('otrasred'),
 				'EslogServ'			 => $this->input->post('eslogan'),
-				'ImgPrestServ'		 => $this->input->post('fotoservi')
+				'ImgPrestServ'		 => $filename
 			);
 			var_dump($data);
+			$this->upload->do_upload($img);
 			$this->my_model->update($id,$data);
 			redirect('servicio/servadmin');
 		}
