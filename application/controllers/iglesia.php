@@ -120,16 +120,18 @@
 	}
 
 	public function actualizar($id){
-		$logo = $this->input->post('logo');
-		$filename = uniqid();
+		$nombremate = $this->input->post('logo');
+		$path = $_FILES['logo']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+		$filename = uniqid().".{$ext}";
 		$config['file_name'] =$filename;
 		$img = 'logo';
-	    $config['upload_path'] = "assets/uploads/";
-	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
-	    $config['max_size'] = "50000";
-	    $config['max_width'] = "2000";
-	    $config['max_height'] = "2000";
-	    $this->form_validation->set_rules('');
+		$config['upload_path'] = "assets/uploads/";
+		$config['allowed_types'] = "jpg|jpeg|png|bmp";
+		$config['max_size'] = "5000";
+		$config['max_width'] = "2000";
+		$config['max_height'] = "2000";
+		$this->form_validation->set_rules('');
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload($img)) {
             //*** ocurrio un error
