@@ -1,6 +1,6 @@
 <div id="main">
         <div class="header">
-            <h1>Tianguis/Libreria</h1>
+            <h1>Libreria</h1>
             <h2>En este apartado podr&aacute;s administrar los articulos del tianguis</h2>
         </div>
         <div class="content">
@@ -12,6 +12,7 @@
             </section>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('tianguis/regproducto')?>">Registrar un producto</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('tianguisview')?>">Ir al apartado de Librer&iacute;a</a></p>
             </section>
         </div>
         <div class="tablas">

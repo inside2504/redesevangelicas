@@ -1,40 +1,50 @@
 
-	<div class="contenido">
-		<div>
-			<section>
-				<h3>Materiales</h3>
-				<hr>
-			</section>
-		</div>
-		<div class="row">
-	        <div class="col-md-2">
-	            <div class="list-group">
-	                <a href="#" class="list-group-item">Libros</a>
-	            </div>
-	        </div>
-	        <div class="row text-center">
-	            <div class="col-md-3 col-sm-6 hero-feature">
-	                <div class="thumbnail">
-	                    <img src="<?=base_url('')."assets/img/radical.jpg"?>" alt="radical">
-	                    <div class="caption">
-	                        <h3>Radical</h3>
-	                        <p>En Radical, David Platt te desaf&iacute;a a considerar con coraz&oacute;n abierto c&oacute;mo hemos manipulado el evangelio a fin de que encaje en nuestras preferencias culturales.</p>
-	                        <p><a href="#" class="btn btn-primary">M&aacute;s informaci&oacute;n</a></p>
-	                    </div>
-	                </div>
-            	</div>
+		<section id="title">
+			<div class="center">
+		        <h2>Materiales</h2>
+		        <p class="lead">Bienvenido al apartado de materiales, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de los materiales que Redes evang&eacute;licas te ofrece.</p>
+		    </div>
+		</section>
+		<section id="about-us">
+		    <div class="team">
+		        <div class="container">
+		        	<div class="col-md-6">
+					    <div class="list-group">
+					        <a href="#" class="list-group-item">Libros</a>
+					    </div>
+					</div>
+					<div class="col-md-6">
+					    <div class="list-group">
+					        <a href="#" class="list-group-item">Audio</a>
+					    </div>
+					</div>
+			        <div class="team">			        	
+						<div class="row clearfix">
+				        	</div>
+							<?php  if ($this->my_model->get() !=0):?>
+							    <?php foreach ($this->my_model->get() as $row): ?>
+									<div class="col-md-3 col-sm-6">	
+										<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+											<div class="media">
+												<div class="pull-left">
+													<img class="caratula" src="<?=base_url('')."assets/uploads/"."$row->imgMate".".jpg"?>" alt="">
+												</div>
+											</div><!--/.media -->
+											<h4><?php echo $row->nombMate ?></h4>
+											<h3><?php echo $row->autMate ?></h3>
+											<ul class="tag clearfix">
+												<li class="btn"><a href="#"><?php echo $row->cateMate ?></a></li>
+											</ul>
+											<p class="lead"><?php echo $row->descMate ?></p>
+											<a href="#" class="btn-primary">Ver datos</a>
+										</div>
+									</div><!--/.col-lg-4 -->
+								<?php endforeach;?>
+							<?php endif;?>
+						</div>
 
-	            <div class="col-md-3 col-sm-6 hero-feature">
-	                <div class="thumbnail">
-	                    <img src="<?=base_url('')."assets/img/sigueme.png"?>" alt="sigueme">
-	                    <div class="caption">
-	                        <h3>S&iacute;gueme</h3>
-	                        <p>¿«Qué quiso decir realmente Jesús cuando dijo: “S&iacute;gueme”?». Para muchos cristianos, seguir a Jes&uacute;s es mejor visto desde lejos.</p>
-	                        <p><br><a href="#" class="btn btn-primary">M&aacute;s informaci&oacute;n</a></p>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-		</div>
-	</div>
-		
+					</div>
+				</div>
+			</div>
+		</section>
+	

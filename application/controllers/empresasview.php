@@ -8,6 +8,7 @@ class Empresasview extends CI_Controller {
 		
 		$this->load->database();
 		$this->load->helper('url');
+		$this->load->model('empresa_model','my_model');
 	}
 
 	public function index()
@@ -16,5 +17,10 @@ class Empresasview extends CI_Controller {
 		
 		$this->load->view('empresas');
 		$this->load->view('templates/footer');
+	}
+
+	public function mostrar($id){
+		$this->data['item'] = $this->my_model->find($id);
+		echo $this->render->view('path/to/view/mostrar.html');
 	}
 }

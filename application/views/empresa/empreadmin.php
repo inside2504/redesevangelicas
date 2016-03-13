@@ -12,6 +12,7 @@
             </section>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('empresa/regempresa')?>">Registrar una empresa</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('empresasview')?>">Ir al apartado de empresas</a></p>
             </section>
         </div>
         <div class="tablas">

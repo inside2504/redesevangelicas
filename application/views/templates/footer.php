@@ -14,7 +14,33 @@
 	</footer>
 		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD3v08DqpB_oPV6UYljRryuk7ZEKR9yOF4&libraries=places"></script>
 		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script type="text/javascript" src="../assets/js/maps.js"></script>
+		<script type="text/javascript" src="../assets/js/api.js"></script>
+		<script type="text/javascript">
+		  (function(){
+		    var widgetIframe = document.getElementById('sc-widget'),
+		        widget       = SC.Widget(widgetIframe);
+
+		    widget.bind(SC.Widget.Events.READY, function() {
+		      widget.bind(SC.Widget.Events.PLAY, function() {
+		        // get information about currently playing sound
+		        widget.getCurrentSound(function(currentSound) {
+		          console.log('sound ' + currentSound.get('') + 'began to play');
+		        });
+		      });
+		      // get current level of volume
+		      widget.getVolume(function(volume) {
+		        console.log('current volume value is ' + volume);
+		      });
+		      // set new volume level
+		      widget.setVolume(50);
+		      // get the value of the current position
+		    });
+
+		  }());
+		</script>
+		</script>
 	    <script type="text/javascript">
 	        google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
 	    </script>
@@ -56,7 +82,7 @@
             }
 
         </script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
 		<script src="<?=base_url('')."assets/js/bootstrap.min.js"?>"></script>
 	</body>
 </html>

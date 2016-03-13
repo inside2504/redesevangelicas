@@ -10,29 +10,27 @@
 			<fieldset>
 				<legend>Datos del material</legend>
 					<div class="pure-control-group">
-						<label for="categoria">Categoria:</label>
-						<select name="categoria">
-							<option selected>Seleccione la categoria del material</option>
+						<label for="categoria">Categoria (Seleccione una):</label>
+						<select name="categoria" required maxlength="40">
 							<option>Libros</option>
 							<option>Audio</option>
-							<option>Kids</option>
 						</select>
 					</div>
 					<div class="pure-control-group">
 						<label for="nombremate">Nombre del material:</label>
-	            		<input name="nombremate" class="pure-input-1-2" type="text" placeholder="Nombre del material">
+	            		<input name="nombremate" class="pure-input-1-2" type="text" placeholder="Nombre del material" required maxlength="50">
 					</div>
 					<div class="pure-control-group">
 						<label for="autor">Autor:</label>
-	            		<input name="autor" class="pure-input-1-2" type="text" placeholder="Autor del material">
+	            		<input name="autor" class="pure-input-1-2" type="text" placeholder="Autor del material" required maxlength="60">
 					</div>
 					<div class="pure-control-group">
 						<label for="descrip">Descripci&oacute;n:</label>
-			       		<textarea name="descripcion" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 100 caracteres)"></textarea>
+			       		<textarea name="descripcion" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 100 caracteres)" required maxlength="100"></textarea>
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="imagen">Imagen del material:</label>
-	            		<input name="imagen" class="pure-input-1-2" type="file" placeholder="">
+	            		<input name="imagen" class="pure-input-1-2" type="file" placeholder="" required maxlength="50">
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>

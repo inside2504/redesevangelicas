@@ -13,6 +13,7 @@
             </section>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('servicio/regservicio')?>">Registrar un servicio</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('serviciosview')?>">Ir al apartado de servicios</a></p>
             </section>
         </div>
         <div>

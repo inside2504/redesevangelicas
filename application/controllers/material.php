@@ -62,7 +62,7 @@
 
 	public function guardar(){
 			$nombremate = $this->input->post('nombremate');
-			$filename = uniqid().$nombremate;
+			$filename = uniqid();
 			$config['file_name'] =$filename;
 			$img = 'imagen';
 	        $config['upload_path'] = "assets/uploads/";
@@ -111,7 +111,7 @@
 
 	public function actualizar($id){
 		$nombremate = $this->input->post('nombremate');
-		$filename = uniqid().$nombremate;
+		$filename = uniqid();
 		$config['file_name'] =$filename;
 		$img = 'imagen';
 		$this->form_validation->set_rules('');
@@ -134,10 +134,10 @@
 				'nombMate'	 => $this->input->post('nombremate'),
 				'autMate'	 => $this->input->post('autor'),
 				'descMate'	 => $this->input->post('descripcion'),
-				'imgMate' 	 => $filename,
-				$this->upload->do_upload($img)
+				'imgMate' 	 => $filename				
 			);
 			var_dump($data);
+			$this->upload->do_upload($img);
 			$this->my_model->update($id,$data);
 			redirect('material/mateadmin');
 		}

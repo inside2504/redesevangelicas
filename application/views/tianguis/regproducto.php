@@ -11,77 +11,77 @@
 				<legend>Datos del producto</legend>
 					<div class="pure-control-group">
 						<label for="nombreprod">Nombre del producto:</label>
-	            		<input name="nombreprod" class="pure-input-1-2" type="text" placeholder="Nombre del producto">
+	            		<input name="nombreprod" class="pure-input-1-2" type="text" placeholder="Nombre del producto" required maxlength="40">
 					</div>
 					<div class="pure-control-group">
 						<label for="autorprod">Autor:</label>
-	            		<input name="autorprod" class="pure-input-1-2" type="text" placeholder="Autor del producto">
+	            		<input name="autorprod" class="pure-input-1-2" type="text" placeholder="Autor del producto" required maxlength="50">
 					</div>
 					<div class="pure-control-group">
 						<label for="descripprod">Descripci&oacute;n:</label>
-			       		<textarea name="descripcionprod" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 100 caracteres)"></textarea>
+			       		<textarea name="descripcionprod" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 200 caracteres)" required maxlength="200"></textarea>
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="precioprod">Precio:</label>
-			       		<input name="precioprod" class="pure-input-1-2" type="text" placeholder="Precio del producto (moneda nacional)">
+			       		<input name="precioprod" class="pure-input-1-2" type="text" placeholder="Precio del producto (moneda nacional)" required maxlength="11">
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="imagen">Imagen del material:</label>
-	            		<input name="imagen" class="pure-input-1-2" type="file" placeholder="">
+	            		<input name="imagen" class="pure-input-1-2" type="file" placeholder="" required maxlength="50">
 					</div>
 				<legend>Localizaci&oacute;n del producto</legend>
 					<div class="pure-control-group">
 						<label for="nombrelib">Nombre de la Librer&iacute;a:</label>
-	            		<input name="nombrelib" class="pure-input-1-2" type="text" placeholder="Nombre de la librería">
+	            		<input name="nombrelib" class="pure-input-1-2" type="text" placeholder="Nombre de la librería" required maxlength="50">
 					</div>
 					<div class="pure-control-group">
 						<label for="calle">Calle:</label>
-	            		<input name="calle" class="pure-input-1-2" type="text" placeholder="Calle">
+	            		<input name="calle" class="pure-input-1-2" type="text" placeholder="Calle" required maxlength="40">
 					</div>
 					<div class="pure-control-group">
 						<label for="numexterior">N&uacute;mero exterior:</label>
-	            		<input name="numexterior" class="pure-input-1-2" type="text" placeholder="Número exterior">
+	            		<input name="numexterior" class="pure-input-1-2" type="text" placeholder="Número exterior" required maxlength="5">
 					</div>
 					<div class="pure-control-group">
 						<label for="numinterior">N&uacute;mero interior (si existe):</label>
-	            		<input name="numinterior" class="pure-input-1-2" type="text" placeholder="Número interior">
+	            		<input name="numinterior" class="pure-input-1-2" type="text" placeholder="Número interior" maxlength="5">
 					</div>
 					<div class="pure-control-group">
 						<label for=colonia"">Colonia:</label>
-	            		<input name="colonia" class="pure-input-1-2" type="text" placeholder="Colonia">
+	            		<input name="colonia" class="pure-input-1-2" type="text" placeholder="Colonia" required maxlength="35">
 					</div>
 					<div class="pure-control-group">
 						<label for="codigo">C&oacute;digo postal:</label>
-	            		<input name="codigo" class="pure-input-1-2" type="text" placeholder="Código postal">
+	            		<input name="codigo" class="pure-input-1-2" type="text" placeholder="Código postal" required maxlength="5">
 					</div>
 					<div class="pure-control-group">
 						<label for="ciudad">Ciudad:</label>
-	            		<input name="ciudad" class="pure-input-1-2" type="text" placeholder="Ciudad">
+	            		<input name="ciudad" class="pure-input-1-2" type="text" placeholder="Ciudad" required maxlength="40">
 					</div>
 					<div class="pure-control-group">
 						<label for="edo">Estado:</label>
-	            		<input name="edo" class="pure-input-1-2" type="text" placeholder="Estado">
+	            		<input name="edo" class="pure-input-1-2" type="text" placeholder="Estado" required maxlength="40">
 					</div>
 				<legend>Contacto con la librer&iacute;a</legend>
 					<div class="pure-control-group">
-						<label for="telefono">Tel&eacute;fonos:</label>
-	            		<input name="telefono" class="pure-input-1-2" type="text" placeholder="Teléfonos">
+						<label for="telefono">Tel&eacute;fono:</label>
+	            		<input name="telefono" class="pure-input-1-2" type="text" placeholder="Teléfono" required maxlength="12">
 					</div>
 					<div class="pure-control-group">
 						<label for="correo">Correo electrónico:</label>
-	            		<input name="correo" class="pure-input-1-2" type="text" placeholder="Correo">
+	            		<input name="correo" class="pure-input-1-2" type="text" placeholder="Correo" required maxlength="50">
 					</div>
 			       	<div class="pure-control-group">
 						<label for="fb">Facebook (si tiene):</label>
-	            		<input name="fb" class="pure-input-1-2" type="text" placeholder="Dirección de Facebook">
+	            		<input name="fb" class="pure-input-1-2" type="text" placeholder="Dirección de Facebook" maxlength="50">
 					</div>
 					<div class="pure-control-group">
 						<label for="tw">Twitter (si tiene):</label>
-	            		<input name="tw" class="pure-input-1-2" type="text" placeholder="Dirección de Twitter">
+	            		<input name="tw" class="pure-input-1-2" type="text" placeholder="Dirección de Twitter" maxlength="50">
 					</div>
 					<div class="pure-control-group">
 						<label for="otrasred">Otras redes (si tiene):</label>
-	            		<textarea name="otrasred" class="pure-input-1-2" type="text" placeholder="Ingrese los enlaces de sus otras redes."></textarea>
+	            		<textarea name="otrasred" class="pure-input-1-2" type="text" placeholder="Ingrese los enlaces de sus otras redes." maxlength="100"></textarea>
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>

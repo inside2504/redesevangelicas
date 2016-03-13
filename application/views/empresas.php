@@ -4,36 +4,41 @@
         <p class="lead">Bienvenido al apartado de empresas, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las empresas que se encuentran afiliadas a Redes evang&eacute;licas.</p>
     </div>
 </section>
-<section id="about-us">
-    <div class="team">
-        <div class="row clearfix">
-            <div class="col-md-10 col-sm-6 col-md-offset-1"> 
-                <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="media">
-                        <div class="pull-left">
-                            <a href="#"><img class="media-object" src="<?=base_url('')."assets/img/creative.png"?>" alt=""></a>
+
+<?php  if ($this->my_model->get() !=0):?>
+    <?php foreach ($this->my_model->get() as $row): ?>
+        <section id="about-us">
+            <div class="team">
+                <div class="row clearfix">
+                    <div class="col-md-10 col-sm-6 col-md-offset-1"> 
+                        <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" src="<?=base_url('')."assets/uploads/"."$row->LogoEmpr".".jpg"?>" alt="">
+                                </div>
+                                <div class="media-body">  
+                                    <h4><?php echo $row->NameEmpr ?></h4>
+                                    <h5>Responsable de la empresa: <strong><em><?php echo $row->NombRespEmpr ?> <?php echo $row->ApePatRespEmpr ?> <?php echo $row->ApeMatRespEmpr ?></em></strong></h5>
+                                    <ul class="tag clearfix">
+                                        <li class="btn"><a href="#"><?php echo $row->GiroEmpres ?></a></li>
+                                    </ul>
+                                    <ul class="social_icons">
+                                        <li><a href="<?php echo $row->FbEmpr;?>" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-twitter"></i></a></li> 
+                                        <li><a href="#" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div><!--/.media -->
+                        <p class="lead"><?php echo $row->DescrEmpr ?></p>
+                        <p class="lead">Recomendado por el pastor <strong><em><?php echo $row->PastRecEmpr ?></em></strong> de la iglesia <em><strong><?php echo $row->IglePertEmpr ?></em></strong></p>
+                        <p class="lead">Dirección: <strong><em><?php echo $row->CalleEmpr ?></em></strong>, n&uacute;mero exterior <strong><em><?php echo $row->NumExtEmpr ?></em></strong>, n&uacute;mero interior: <strong><em><?php echo $row->NumIntEmpr ?></em></strong> , colonia <strong><em><?php echo $row->ColEmpr ?></em></strong>. Código postal: <strong><em><?php echo $row->CodPostEmpr ?></em></strong>, <strong><em><?php echo $row->CiudadEmpr ?></em></strong>, <strong><em><?php echo $row->EdoEmpr ?></em></strong>.</p>
+                        <p class="lead">Teléfonos: <strong><em><?php echo $row->TelefEmpr ?></em></strong>, <strong><em><?php echo $row->TelefRespEmpr ?>.</em></strong></p>
+                        <p class="lead">Correo electrónico: <strong><em><?php echo $row->CorreElectEmpr ?></em></strong></p>
+                        <a href="#" class="btn-primary">M&aacute;s informaci&oacute;n</a>
                         </div>
-                        <div class="media-body">
-                            <h4>Grupo Creative</h4>
-                            <h5>Decoraci&oacute;n</h5>
-                            <ul class="tag clearfix">
-                                <li class="btn"><a href="#">Decoraci&oacute;n</a></li>
-                                <li class="btn"><a href="#">Fiestas</a></li>
-                            </ul>
-                            <ul class="social_icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
-                    </div><!--/.media -->
-                <p>Organizaci&oacute;n de todo tipo de eventos (armamos paquetes personalizados, encarg&aacute;ndonos de todo para que usted s&oacute;lo disfrute), decoraci&oacute;n de cualquier tipo de espacio, elaboraci&oacute;n de detalles que le puedan dar un plus a su negocio o empresa.</p>
-                <p>Recomendado por Semillas de fuego</p>
-                <p>Dirección: Manuel Doblado número 3, colonia José Cardel, Código postal: 91030, Xalapa, Veracruz.</p>
-                <p>Teléfonos: 2281502225 celular y 8150965 oficina.</p>
-                <p>Correo electrónico: jespa30@hotmail.com</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+    <?php endforeach;?>
+<?php endif;?>

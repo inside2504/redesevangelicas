@@ -52,6 +52,7 @@
 
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
+                
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -67,12 +68,40 @@
                         <li><a href="<?php echo site_url('#')?>">Inicio</a></li>
                         <li><a href="<?php echo site_url('nosotrosview')?>">Nosotros</a></li>
                         <li><a href="<?php echo site_url('iglesiasview')?>">Iglesias</a></li>
-                        <li><a href="<?php echo site_url('serviciosview')?>">Servicios</a></li>
-                        <li><a href="<?php echo site_url('empresasview')?>">Empresas</a></li> 
-                        <li><a href="<?php echo site_url('eventosview')?>">Eventos</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="<?php echo site_url('empresasview')?>">Empresas</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('serviciosview')?>">Profesionales</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('taxiview')?>">Taxi</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Secciones <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="<?php echo site_url('materialesview')?>">Materiales</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('eventosview')?>">Eventos</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('radioview')?>">Radio</a>
+                                </li>
+                            </ul>
+                        </li> 
                         <li><a href="<?php echo site_url('tianguisview')?>">Librer&iacute;a</a></li>
                         <li><a href="<?php echo site_url('kidsview')?>">Kids</a></li>
-                        <li><a href="<?php echo site_url('auth/login')?>">Ingresar</a></li>                             
+                        <li><a href="<?php echo site_url('auth/login')?>">Ingresar</a></li>
+                        <!-- Escribir codigo para el redireccionamiento dependiendo del tipo de usuario que exista, si no esta logueado entonces
+                        que aparezca la leyenda ingresar que redireccione al formulario para iniciar sesion, si es administrador entonces que
+                        redireccione al panel de administrador, si es editor al de editor y si es de la libreria al de la libreria.-->                             
                     </ul>
                 </div>
             </div><!--/.container-->

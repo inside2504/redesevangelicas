@@ -61,8 +61,8 @@
 	}
 
 	public function guardar(){
-		$nombremate = $this->input->post('nombremate');
-		$filename = uniqid().$nombremate;
+		$nombremate = $this->input->post('logo');
+		$filename = uniqid();
 		$config['file_name'] =$filename;
 		$img = 'logo';
 	    $config['upload_path'] = "assets/uploads/";
@@ -121,7 +121,7 @@
 
 	public function actualizar($id){
 		$logo = $this->input->post('logo');
-		$filename = uniqid().$logo;
+		$filename = uniqid();
 		$config['file_name'] =$filename;
 		$img = 'logo';
 	    $config['upload_path'] = "assets/uploads/";

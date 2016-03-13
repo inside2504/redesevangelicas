@@ -13,6 +13,7 @@
             </section>
              <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('iglesia/regiglesia')?>">Registrar una iglesia</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('iglesiasview')?>">Ir al apartado de iglesias</a></p>
             </section>
         </div>
         <div class="tablas">

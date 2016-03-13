@@ -101,7 +101,7 @@
 		<div class="center">
 			<p class="lead">Taxi seguro es una modalidad ofrecida por Redes evang&eacute;licas para brindar seguridad en el traslado en taxi a
 				las personas, <br>con la confianza de que el chofer es cristiano recomendado por su pastor.</p><br>
-			<a class="btn-primary" href="#">Pide tu Taxi</a>
+			<a class="btn-primary" href="<?php echo site_url('taxiview')?>">Pide tu Taxi</a>
 		</div>
 	</section>
 

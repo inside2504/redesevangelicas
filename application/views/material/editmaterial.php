@@ -11,29 +11,27 @@
 				<legend>Datos del material</legend>
 				<input name="id" class="pure-input-1-2" type="text" style="visibility:hidden" value="<?php echo $item->idMate ?>">
 					<div class="pure-control-group">
-						<label for="categoria">Categoria:</label>
-						<select name="categoria" value="<?php echo $item->cateMate ?>">
-							<option selected>Seleccione la categoria del material</option>
+						<label for="categoria">Categoria (Seleccione una):</label>
+						<select name="categoria" value="<?php echo $item->cateMate ?>" required maxlength="40">
 							<option>Libros</option>
 							<option>Audio</option>
-							<option>Kids</option>
 						</select>
 					</div>
 					<div class="pure-control-group">
 						<label for="nombremate">Nombre del material:</label>
-	            		<input name="nombremate" class="pure-input-1-2" type="text" value="<?php echo $item->nombMate ?>">
+	            		<input name="nombremate" class="pure-input-1-2" type="text" value="<?php echo $item->nombMate ?>" required maxlength="50">
 					</div>
 					<div class="pure-control-group">
 						<label for="autor">Autor:</label>
-	            		<input name="autor" class="pure-input-1-2" type="text" value="<?php echo $item->autMate ?>">
+	            		<input name="autor" class="pure-input-1-2" type="text" value="<?php echo $item->autMate ?>" required maxlength="60">
 					</div>
 					<div class="pure-control-group">
 						<label for="descrip">Descripci&oacute;n:</label>
-			       		<textarea name="descripcion" type="text" cols="45" rows="3"><?php echo $item->descMate?></textarea>
+			       		<textarea name="descripcion" type="text" cols="45" rows="3" required maxlength="100"><?php echo $item->descMate?></textarea>
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="imagen">Imagen del material:</label>
-	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?= $item->imgMate; ?>" ></span>
+	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?= $item->imgMate; ?>" required maxlength="50"></span>
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

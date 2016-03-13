@@ -63,11 +63,14 @@ ga('send', 'pageview');
                 <li class="pure-menu-item">
                 	<a href="<?php echo site_url('iglesia/igleadmin')?>" class="pure-menu-link">Iglesias</a>
                 </li>
-                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="<?php echo site_url('servicio/servadmin')?>" class="pure-menu-link">Servicios</a>
-                </li>
                 <li class="pure-menu-item">
                 	<a href="<?php echo site_url('empresa/empreadmin')?>" class="pure-menu-link">Empresas</a>
+                </li>
+                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
+                    <a href="<?php echo site_url('servicio/servadmin')?>" class="pure-menu-link">Profesionales</a>
+                </li>
+                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
+                    <a href="<?php echo site_url('taxi/taxiadmin')?>" class="pure-menu-link">Taxi</a>
                 </li>
                 <li class="pure-menu-item">
                 	<a href="<?php echo site_url('material/mateadmin')?>" class="pure-menu-link">Materiales</a>
@@ -76,7 +79,10 @@ ga('send', 'pageview');
                 	<a href="<?php echo site_url('evento/evenadmin')?>" class="pure-menu-link">Eventos</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('tianguis/tianadmin')?>" class="pure-menu-link">Tianguis</a>
+                	<a href="<?php echo site_url('tianguis/tianadmin')?>" class="pure-menu-link">Librer&iacute;a</a>
+                </li>
+                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
+                    <a href="<?php echo site_url('kids/kidsadmin')?>" class="pure-menu-link">Kids</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>
