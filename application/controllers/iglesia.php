@@ -128,21 +128,12 @@
 		$filename = uniqid().".{$ext}";
 		$config['file_name'] =$filename;
 		$img = 'logo';
-<<<<<<< HEAD
 	    $config['upload_path'] = "assets/iglesias/";
 	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
 	    $config['max_size'] = "5000";
 	    $config['max_width'] = "500";
 	    $config['max_height'] = "500";
 	    $this->form_validation->set_rules('');
-=======
-		$config['upload_path'] = "assets/uploads/";
-		$config['allowed_types'] = "jpg|jpeg|png|bmp";
-		$config['max_size'] = "5000";
-		$config['max_width'] = "2000";
-		$config['max_height'] = "2000";
-		$this->form_validation->set_rules('');
->>>>>>> origin/master
 		$this->load->library('upload', $config);
 		
         if($this->form_validation->run('controller_validation')!=false){
