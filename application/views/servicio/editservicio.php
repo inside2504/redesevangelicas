@@ -104,7 +104,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="fotoservi">Foto del prestador de servicios:</label>
-	            		<input name="fotoservi" class="pure-input-1-2" type="file" value="<?php echo $item->ImgPrestServ ?>" required maxlength="50">
+	            		<input name="fotoservi" class="pure-input-1-2" type="file" value="<?php echo $item->ImgPrestServ ?>" maxlength="50">
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

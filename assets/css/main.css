@@ -2226,6 +2226,28 @@ ul.faq li > div h3 {
   width:100%;
 }
 
+.blog .blog-item .img-dato {
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width:70%;
+}
+
+.tit-letters{
+  font-size: 38px;
+  margin-top: 10px;
+}
+
+.sub-letters{
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.bod-letters{
+  font-size: 18px;
+  margin-top: 10px;
+}
+
 .blog .blog-item .blog-content {
   padding-bottom: 25px;
 }

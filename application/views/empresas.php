@@ -14,7 +14,7 @@
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<?=base_url('')."assets/uploads/"."$row->LogoEmpr".".jpg"?>" alt="">
+                                    <img class="media-object" src="<?=base_url('')."assets/empresa/"."$row->LogoEmpr"?>" alt="">
                                 </div>
                                 <div class="media-body">  
                                     <h4><?php echo $row->NameEmpr ?></h4>
@@ -34,7 +34,7 @@
                         <p class="lead">Dirección: <strong><em><?php echo $row->CalleEmpr ?></em></strong>, n&uacute;mero exterior <strong><em><?php echo $row->NumExtEmpr ?></em></strong>, n&uacute;mero interior: <strong><em><?php echo $row->NumIntEmpr ?></em></strong> , colonia <strong><em><?php echo $row->ColEmpr ?></em></strong>. Código postal: <strong><em><?php echo $row->CodPostEmpr ?></em></strong>, <strong><em><?php echo $row->CiudadEmpr ?></em></strong>, <strong><em><?php echo $row->EdoEmpr ?></em></strong>.</p>
                         <p class="lead">Teléfonos: <strong><em><?php echo $row->TelefEmpr ?></em></strong>, <strong><em><?php echo $row->TelefRespEmpr ?>.</em></strong></p>
                         <p class="lead">Correo electrónico: <strong><em><?php echo $row->CorreElectEmpr ?></em></strong></p>
-                        <a href="#" class="btn-primary">M&aacute;s informaci&oacute;n</a>
+                        <a href=<?php echo site_url("empresasview/datos/".$row->AidiEmpr) ?> class="btn-primary">M&aacute;s informaci&oacute;n</a>
                         </div>
                     </div>
                 </div>

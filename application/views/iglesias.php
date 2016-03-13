@@ -16,7 +16,7 @@
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<?=base_url('')."assets/uploads/"."$row->logo".".jpg"?>" alt="">
+                                    <img class="media-object" src="<?=base_url('')."assets/iglesias/"."$row->logo"?>" alt="">
                                 </div>
                                 <div class="media-body">
                                     <h4><?php echo $row->nomIgle ?></h4>
@@ -33,7 +33,7 @@
                         <p class="lead">Direcci&oacute;n: <strong><em><?php echo $row->calleIgle ?></em></strong> n&uacute;mero exterior <strong><em><?php echo $row->numExtIgle ?></em></strong>, n&uacute;mero interior <strong><em><?php echo $row->numInteIgle ?></em></strong>, c&oacute;digo postal: <strong><em><?php echo $row->codPostIgle ?></em></strong>, <strong><em><?php echo $row->ciudadIgle ?></em></strong>, <strong><em><?php echo $row->edoIgle ?></em></strong>.</p>
                         <p class="lead">Teléfonos: <strong><em><?php echo $row->telIgle ?></em></strong>.</p>
                         <p class="lead">Correo electrónico: <strong><em><?php echo $row->correEleIgle ?></em></strong></p>
-                        <a href="#" class="btn-primary">M&aacute;s informaci&oacute;n</a>
+                        <a href=<?php echo site_url("iglesiasview/datos/".$row->idIgle) ?> class="btn-primary">M&aacute;s informaci&oacute;n</a>
                         </div>
                     </div>
                 </div>

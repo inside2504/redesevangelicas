@@ -91,7 +91,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="logo">Logotipo:</label>
-	            		<input name="logo" class="pure-input-1-2" type="file" value="<?php echo $item->LogoEmpr ?>" required maxlength="50">
+	            		<input name="logo" class="pure-input-1-2" type="file" value="<?php echo $item->LogoEmpr ?>" maxlength="50">
 					</div>
 				<legend>Datos del responsable de la empresa</legend>
 					<div class="pure-control-group">
@@ -112,7 +112,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="foto">Foto del responsable:</label>
-	            		<input name="foto" class="pure-input-1-2" type="file" value="<?php echo $item->FotoRespEmpr ?>" required maxlength="50">
+	            		<input name="foto" class="pure-input-1-2" type="file" value="<?php echo $item->FotoRespEmpr ?>" maxlength="50">
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

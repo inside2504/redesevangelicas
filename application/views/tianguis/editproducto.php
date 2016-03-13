@@ -28,7 +28,7 @@
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="imagen">Imagen del material:</label>
-	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?php echo $item->imagProd ?>" required maxlength="50">
+	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?php echo $item->imagProd ?>" maxlength="50">
 					</div>
 				<legend>Localizaci&oacute;n del producto</legend>
 					<div class="pure-control-group">

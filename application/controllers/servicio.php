@@ -62,15 +62,16 @@
 
 	public function guardar(){
 		$imagen = $this->input->post('fotoservi');
-		$filename = uniqid().$imagen;
+		$path = $_FILES['logo']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+		$filename = uniqid().".{$ext}";
 		$config['file_name'] =$filename;
 		$img = 'fotoservi';
-	    $config['upload_path'] = "assets/uploads/";
+	    $config['upload_path'] = "assets/servicio/";
 	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
-	    $config['max_size'] = "50000";
-	    $config['max_width'] = "2000";
-	    $config['max_height'] = "2000";
-	    $this->form_validation->set_rules('');
+	    $config['max_size'] = "5000";
+	    $config['max_width'] = "500";
+	    $config['max_height'] = "500";
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload($img)) {
             //*** ocurrio un error
@@ -126,23 +127,20 @@
 	}
 
 	public function actualizar($id){
-		$logo = $this->input->post('fotoservi');
-		$filename = uniqid().$logo;
+		$imagen = $this->input->post('fotoservi');
+		$path = $_FILES['logo']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+		$filename = uniqid().".{$ext}";
 		$config['file_name'] =$filename;
 		$img = 'fotoservi';
-	    $config['upload_path'] = "assets/uploads/";
+	    $config['upload_path'] = "assets/servicio/";
 	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
-	    $config['max_size'] = "50000";
-	    $config['max_width'] = "2000";
-	    $config['max_height'] = "2000";
+	    $config['max_size'] = "5000";
+	    $config['max_width'] = "500";
+	    $config['max_height'] = "500";
 	    $this->form_validation->set_rules('');
 		$this->load->library('upload', $config);
-		if (!$this->upload->do_upload($img)) {
-            //*** ocurrio un error
-            $data['uploadError'] = $this->upload->display_errors();
-            echo $this->upload->display_errors();
-            return;
-        }elseif($this->form_validation->run('controller_validation')!=false){
+		if($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');

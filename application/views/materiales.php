@@ -27,7 +27,7 @@
 										<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 											<div class="media">
 												<div class="pull-left">
-													<img class="caratula" src="<?=base_url('')."assets/uploads/"."$row->imgMate".".jpg"?>" alt="">
+													<img class="caratula" src="<?=base_url('')."assets/material/"."$row->imgMate"?>" alt="">
 												</div>
 											</div><!--/.media -->
 											<h4><?php echo $row->nombMate ?></h4>
@@ -36,7 +36,7 @@
 												<li class="btn"><a href="#"><?php echo $row->cateMate ?></a></li>
 											</ul>
 											<p class="lead"><?php echo $row->descMate ?></p>
-											<a href="#" class="btn-primary">Ver datos</a>
+											<a href=<?php echo site_url("materialesview/datos/".$row->idMate) ?> class="btn-primary">Ver datos</a>
 										</div>
 									</div><!--/.col-lg-4 -->
 								<?php endforeach;?>

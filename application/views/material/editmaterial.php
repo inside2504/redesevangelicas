@@ -31,7 +31,7 @@
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="imagen">Imagen del material:</label>
-	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?= $item->imgMate; ?>" required maxlength="50"></span>
+	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?= $item->imgMate; ?>" maxlength="50"></span>
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

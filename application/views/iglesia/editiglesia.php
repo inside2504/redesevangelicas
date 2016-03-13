@@ -28,7 +28,8 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="logo">Logotipo:</label>
-	            		<input name="logo" class="pure-input-1-2" type="file"  value="<?php echo $item->logo ?>" required maxlength="50">
+						<img class="img-form" src="<?=base_url('')."assets/iglesias/"."$item->logo"?>">
+	            		<input name="logo" class="pure-input-1-2" type="file" maxlength="50">
 					</div>
 				<legend>Direcci&oacute;n</legend>
 					<div class="pure-control-group">

@@ -16,21 +16,20 @@
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
 										<div class="pull-left">
-											<img class="caratula" src="<?=base_url('')."assets/uploads/"."$row->imagProd".".jpg"?>" alt="">
+											<img class="caratula" src="<?=base_url('')."assets/tianguis/"."$row->imagProd"?>" alt="">
 										</div>
 										
 									</div><!--/.media -->
 									<h4><?php echo $row->nombProd ?></h4>
 									<h5><?php echo $row->autoProd ?></h5>
 									<p class="lead"><?php echo $row->descrProd ?></p>
-									<a href="#" class="btn-primary">Ver m&aacute;s</a>
+									<a href=<?php echo site_url("tianguisview/datos/".$row->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>
 							</div><!--/.col-lg-4 -->
 						<?php endforeach;?>
 					<?php endif;?>
 				</div>
 			</div>
-			<p class="lead pull-right">Todos los precios se muestran en moneda nacional.</p>
 		</div>
 	</div>
 </section>

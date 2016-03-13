@@ -51,7 +51,7 @@
 					</div>
 			       	<div class="pure-control-group">
 						<label for="fotoTax">Foto del taxista:</label>
-	            		<input name="fotoTax" class="pure-input-1-2" type="file" value="<?php echo $item->FotoTaxista ?>" required maxlength="50">
+	            		<input name="fotoTax" class="pure-input-1-2" type="file" value="<?php echo $item->FotoTaxista ?>" maxlength="50">
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>

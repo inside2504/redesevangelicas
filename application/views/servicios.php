@@ -15,7 +15,7 @@
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<?=base_url('')."assets/uploads/"."$row->ImgPrestServ".".jpg"?>">
+                                    <img class="media-object" src="<?=base_url('')."assets/servicio/"."$row->ImgPrestServ"?>">
                                 </div>
                                 <div class="media-body">
                                     <h4><?php echo $row->NamePrestServ ?> <?php echo $row->ApePatPrestServ ?> <?php echo $row->ApeMatPrestServ ?></h4>
@@ -36,7 +36,7 @@
                         <p class="lead">Recomendado por <strong><em><?php echo $row->IglePert ?></em></strong>.</p>
                         <p class="lead">Direcci&oacute;n: <strong><em><?php echo $row->CalleServ ?></em></strong> n&uacute;mero exterior <strong><em><?php echo $row->NumExtSer ?></em></strong>, n&uacute;mero interior <strong><em><?php echo $row->NumIntServ ?></em></strong>, colonia <strong><em><?php echo $row->ColServ ?></em></strong>, C&oacute;digo postal <strong><em><?php echo $row->CodPostServ ?></em></strong>, <strong><em><?php echo $row->CiudadServ ?></em></strong>, <strong><em><?php echo $row->EdoServ ?></em></strong>.</p>
                         <p class="lead">Tel&eacute;fonos: <strong><em><?php echo $row->TelefServ ?></em></strong> y <strong><em><?php echo $row->telCelServ ?></em></strong>.</p>
-                        <a href="#" class="btn-primary">M&aacute;s informaci&oacute;n</a>
+                        <a href=<?php echo site_url("serviciosview/datos/".$row->AidiServi) ?> class="btn-primary">M&aacute;s informaci&oacute;n</a>
                         </div>
                     </div>
                 </div>

@@ -62,14 +62,17 @@
 
 	public function guardar(){
 		$imagen = $this->input->post('imagen');
-		$filename = uniqid().$imagen;
+		$path = $_FILES['logo']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+		$filename = uniqid().".{$ext}";
 		$config['file_name'] =$filename;
 		$img = 'imagen';
-	    $config['upload_path'] = "assets/uploads/";
+	    $config['upload_path'] = "assets/tianguis/";
 	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
-	    $config['max_size'] = "50000";
-	    $config['max_width'] = "2000";
-	    $config['max_height'] = "2000";
+	    $config['max_size'] = "5000";
+	    $config['max_width'] = "500";
+	    $config['max_height'] = "500";
+
 	    $this->form_validation->set_rules('');
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload($img)) {
@@ -121,15 +124,17 @@
 	}
 
 	public function actualizar($id){
-		$logo = $this->input->post('imagen');
-		$filename = uniqid().$logo;
+		$imagen = $this->input->post('imagen');
+		$path = $_FILES['logo']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+		$filename = uniqid().".{$ext}";
 		$config['file_name'] =$filename;
 		$img = 'imagen';
-	    $config['upload_path'] = "assets/uploads/";
+	    $config['upload_path'] = "assets/tianguis/";
 	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
-	    $config['max_size'] = "50000";
-	    $config['max_width'] = "2000";
-	    $config['max_height'] = "2000";
+	    $config['max_size'] = "5000";
+	    $config['max_width'] = "500";
+	    $config['max_height'] = "500";
 	    $this->form_validation->set_rules('');
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload($img)) {

@@ -62,14 +62,16 @@
 
 	public function guardar(){
 		$nombremate = $this->input->post('fotoTax');
-		$filename = uniqid();
+		$path = $_FILES['logo']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+		$filename = uniqid().".{$ext}";
 		$config['file_name'] =$filename;
 		$img = 'fotoTax';
-	    $config['upload_path'] = "assets/uploads/";
-	    $config['allowed_types'] = "jpg";
-	    $config['max_size'] = "50000";
-	    $config['max_width'] = "2000";
-	    $config['max_height'] = "2000";
+	    $config['upload_path'] = "assets/taxi/";
+	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
+	    $config['max_size'] = "5000";
+	    $config['max_width'] = "500";
+	    $config['max_height'] = "500";
 
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload($img)) {
@@ -117,7 +119,7 @@
 		$filename = uniqid();
 		$config['file_name'] =$filename;
 		$img = 'fotoTax';
-	    $config['upload_path'] = "assets/uploads/";
+	    $config['upload_path'] = "assets/taxi/";
 	    $config['allowed_types'] = "jpg|jpeg|png|bmp";
 	    $config['max_size'] = "50000";
 	    $config['max_width'] = "2000";
