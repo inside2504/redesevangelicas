@@ -10,11 +10,19 @@
 			if($rows){
 				return $this->db->select('*')->from($this->taxi)->order_by('AidiTaxi',$order)->limit($rows)->get()->result();
 			} else{
+                $this->db->order_by('AidiTaxi', 'desc');
 				$consulta = $this->db->get('taxi');
 
 				return $consulta->result();
 			}
 		}
+
+        public function get_taxistas($pagination, $segment) {
+            $this->db->order_by('AidiTaxi', 'desc');
+            $this->db->limit($pagination, $segment);
+            $query = $this->db->get('taxi')->result();
+            return $query;
+        }
 
 		public function find($id){
         	if (is_array($id)) {

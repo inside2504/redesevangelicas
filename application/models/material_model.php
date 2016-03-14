@@ -10,11 +10,19 @@
 			if($rows){
 				return $this->db->select('*')->from($this->material)->order_by('idMate',$order)->limit($rows)->get()->result();
 			} else{
+                $this->db->order_by('idMate', 'desc');
 				$consulta = $this->db->get('material');
 
 				return $consulta->result();
 			}
 		}
+
+        public function get_material($pagination, $segment) {
+            $this->db->order_by('idMate', 'desc');
+            $this->db->limit($pagination, $segment);
+            $query = $this->db->get('material')->result();
+            return $query;
+        }
 
 		public function find($id){
         	if (is_array($id)) {

@@ -1218,6 +1218,36 @@ a.accordion-toggle  i{
   margin: 60px 0;
 }
 
+.elementos {
+  margin-top: 0px;
+  margin-bottom: -50px;
+}
+
+.elementos {
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.elementos h4 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.elementos h5 {
+  font-weight: 300;
+}
+
+.elementos .btn {
+  background:transparent;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 3px;
+  padding: 1px 5px;
+  text-transform: uppercase;
+  border:1px solid#ddd;
+  margin-right: 3px;
+}
+
 .team h4 {
   margin-top: 0;
   text-transform: uppercase;

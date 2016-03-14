@@ -15,8 +15,8 @@
 		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD3v08DqpB_oPV6UYljRryuk7ZEKR9yOF4&libraries=places"></script>
 		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script type="text/javascript" src="../assets/js/maps.js"></script>
-		<script type="text/javascript" src="../assets/js/api.js"></script>
+		<script type="text/javascript" src="<?=base_url('')."/assets/js/maps.js"?>"></script>
+		<script type="text/javascript" src="<?=base_url('')."/assets/js/api.js"?>"></script>
 		<script type="text/javascript">
 		  (function(){
 		    var widgetIframe = document.getElementById('sc-widget'),

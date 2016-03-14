@@ -10,11 +10,19 @@
 			if($rows){
 				return $this->db->select('*')->from($this->producto)->order_by('idProd',$order)->limit($rows)->get()->result();
 			} else{
+                $this->db->order_by('idProd', 'desc');
 				$consulta = $this->db->get('producto');
 
 				return $consulta->result();
 			}
 		}
+
+        public function get_producto($pagination, $segment) {
+            $this->db->order_by('idProd', 'desc');
+            $this->db->limit($pagination, $segment);
+            $query = $this->db->get('producto')->result();
+            return $query;
+        }
 
 		public function find($id){
         	if (is_array($id)) {

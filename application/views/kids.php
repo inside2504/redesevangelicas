@@ -43,7 +43,7 @@
         	</div>
             <div class="row">
             	<?php  if ($this->my_model->get() !=0):?>
-					<?php foreach ($this->my_model->get() as $row): ?>
+					<?php foreach ($results as $row): ?>
 		                 <div class="col-md-12">
 		                    <div class="blog-item">
 		                        <div class="row">
@@ -68,5 +68,10 @@
 				<?php endif;?>
             </div>
         </div>
+        <div class="container">
+	        <div class="pull-right">
+	            <h2><?=$this->pagination->create_links(); ?></h2>
+	        </div>
+	    </div>
     </div>
 </section>

@@ -10,11 +10,19 @@
 			if($rows){
 				return $this->db->select('*')->from($this->iglesia)->order_by('idIgle',$order)->limit($rows)->get()->result();
 			} else{
+                $this->db->order_by('idIgle', 'desc');
 				$consulta = $this->db->get('iglesia');
 
 				return $consulta->result();
 			}
 		}
+
+        public function get_iglesias($pagination, $segment) {
+            $this->db->order_by('idIgle', 'desc');
+            $this->db->limit($pagination, $segment);
+            $query = $this->db->get('iglesia')->result();
+            return $query;
+        }
 
 		public function find($id){
         	if (is_array($id)) {

@@ -6,10 +6,11 @@
     </div>
 </section>
 
+<section>
 <?php if ($this->my_model->get() !=0):?>
-    <?php foreach ($this->my_model->get() as $row): ?>
-        <section id="about-us">
-            <div class="team">
+    <?php foreach ($results as $row): ?>
+        <section>
+            <div class="elementos">
                 <div class="row clearfix">
                     <div class="col-md-10 col-sm-6 col-md-offset-1"> 
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
@@ -43,4 +44,10 @@
             </div>
         </section>
     <?php endforeach;?>
+    <div class="container">
+        <div class="pull-right">
+            <h2><?=$this->pagination->create_links(); ?></h2>
+        </div>
+    </div>
 <?php endif;?>
+</section>

@@ -10,11 +10,19 @@
 			if($rows){
 				return $this->db->select('*')->from($this->servicio)->order_by('AidiServi',$order)->limit($rows)->get()->result();
 			} else{
+                $this->db->order_by('AidiServi', 'desc');
 				$consulta = $this->db->get('servicio');
 
 				return $consulta->result();
 			}
 		}
+
+        public function get_servicio($pagination, $segment) {
+            $this->db->order_by('AidiServi', 'desc');
+            $this->db->limit($pagination, $segment);
+            $query = $this->db->get('servicio')->result();
+            return $query;
+        }
 
 		public function find($id){
         	if (is_array($id)) {

@@ -11,7 +11,7 @@
 	        <div class="team">
 				<div class="row clearfix">
 		        	<?php  if ($this->my_model->get() !=0):?>
-    					<?php foreach ($this->my_model->get() as $row): ?>
+    					<?php foreach ($results as $row): ?>
 							<div class="col-md-3 col-sm-6">	
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
@@ -32,4 +32,9 @@
 			</div>
 		</div>
 	</div>
+	<div class="container">
+        <div class="pull-right">
+            <h2><?=$this->pagination->create_links(); ?></h2>
+        </div>
+    </div>
 </section>

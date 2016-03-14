@@ -10,11 +10,19 @@
 			if($rows){
 				return $this->db->select('*')->from($this->empresa)->order_by('AidiEmpr',$order)->limit($rows)->get()->result();
 			} else{
+                $this->db->order_by('AidiEmpr', 'desc');
 				$consulta = $this->db->get('empresa');
 
 				return $consulta->result();
 			}
 		}
+
+        public function get_empresas($pagination, $segment) {
+            $this->db->order_by('AidiEmpr', 'desc');
+            $this->db->limit($pagination, $segment);
+            $query = $this->db->get('empresa')->result();
+            return $query;
+        }
 
 		public function find($id){
         	if (is_array($id)) {

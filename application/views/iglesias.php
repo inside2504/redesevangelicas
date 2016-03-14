@@ -6,11 +6,12 @@
     </div>
 </section>
 
-<?php if ($this->my_model->get() !=0):?>
-    <?php foreach ($this->my_model->get() as $row): ?>
-        <section class="about-us">
-            <div class="team">
-                
+
+<section>
+    <?php if ($results !=0):?>
+    <?php foreach ($results as $row): ?>
+        <section>
+            <section class="elementos">
                 <div class="row clearfix">
                     <div class="col-md-10 col-sm-6 col-md-offset-1"> 
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
@@ -37,7 +38,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </section>
     <?php endforeach;?>
-<?php endif;?>
+    <div class="container">
+        <div class="pull-right">
+            <h2><?=$this->pagination->create_links(); ?></h2>
+        </div>
+    </div>
+    <?php endif;?>
+    
+</section>
+    

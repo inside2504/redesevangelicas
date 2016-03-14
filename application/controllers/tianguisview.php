@@ -9,13 +9,27 @@ class Tianguisview extends CI_Controller {
 		$this->load->database();
 		$this->load->helper('url');
 		$this->load->model('tianguis_model','my_model');
+		$this->load->library('pagination');
 	}
 
 	public function index()
 	{
+		$pagination = 12;
+	    $config['base_url'] = base_url().'tianguisview/index/';
+	    $config['total_rows'] = $this->db->get('producto')->num_rows();
+	    $config['per_page'] = $pagination;
+	    $config['num_links'] = 4;
+	    $config['uri_segment']  = 3;
+	    $config['next_link'] = 'Siguiente »';
+	    $config['prev_link'] = '« Anterior';
+	    $config['last_link'] = 'Último';
+
+	    $this->pagination->initialize($config);
+
+	    $data['results'] = $this->my_model->get_producto($pagination, $this->uri->segment(3));
+	    
 		$this->load->view('templates/navegacion');
-		
-		$this->load->view('tianguis');
+		$this->load->view('tianguis',$data);
 		$this->load->view('templates/footer');
 	}
 

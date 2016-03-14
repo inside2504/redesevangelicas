@@ -5,13 +5,14 @@
     </div>
 </section>
 
+<section>
 <?php if ($this->my_model->get() !=0):?>
-    <section id="about-us">
-        <div class="team">
+    <section>
+        <div class="elementos">
             <div class="container">
                <div class="team">
                     <div class="row clearfix">
-                        <?php foreach ($this->my_model->get() as $row): ?>
+                        <?php foreach ($results as $row): ?>
                             <div class="col-md-3 col-sm-6">  
                                 <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                                     <div class="media">
@@ -27,11 +28,16 @@
                                     <p class="lead">Teléfono: <strong><em><?php echo $row->TelefTaxi ?></em></strong>.</p>
                                 </div>
                             </div>
-                            <?php endforeach;?>
+                        <?php endforeach;?>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="pull-right">
+                <h2><?=$this->pagination->create_links(); ?></h2>
+            </div>
+        </div>
     </section>
 <?php endif;?>
-     
+</section>
