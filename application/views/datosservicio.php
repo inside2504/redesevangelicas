@@ -30,8 +30,6 @@
 									<p class="bod-letters">Correo electr&oacute;nico: <strong><?php echo $item->CorreElectServ ?></strong></p>
 									<p class="bod-letters">P&aacute;gina de facebook: <a href=<?php echo $item->FbServ ?>><?php echo $item->FbServ ?></a></p>
 									<p class="bod-letters">P&aacute;gina de twitter: <a href=<?php echo $item->TwServ ?>><?php echo $item->TwServ ?></a></p>
-									<p class="bod-letters">Otras redes: <a href=<?php echo $item->OtrasRedesServ ?>><?php echo $item->OtrasRedesServ ?></a></p>
-
 								</div>
 							</div>
 				       </div>

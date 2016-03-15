@@ -12,7 +12,8 @@
 				<input name="id" class="pure-input-1-2" type="text" style="visibility:hidden" value="<?php echo $item->idMate ?>">
 					<div class="pure-control-group">
 						<label for="categoria">Categoria (Seleccione una):</label>
-						<select name="categoria" value="<?php echo $item->cateMate ?>" required maxlength="40">
+						<select name="categoria" required maxlength="40">
+							<option value="<?php echo $item->cateMate ?>"><?php echo $item->cateMate ?></option>
 							<option>Libros</option>
 							<option>Audio</option>
 						</select>
@@ -32,6 +33,10 @@
 			       	<div class="pure-control-group">
 						<label for="imagen">Imagen del material:</label>
 	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?= $item->imgMate; ?>" maxlength="50"></span>
+					</div>
+					<div class="pure-control-group">
+						<label for="link" required>Link del material:</label>
+	            		<textarea name="link" class="pure-input-1-2" type="text" maxlength="100"><?php echo $item->linkMate?></textarea>
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

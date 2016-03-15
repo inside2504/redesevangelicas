@@ -82,10 +82,6 @@
 	            		<input name="tw" class="pure-input-1-2" type="text" value="<?php echo $item->TwEmpr ?>" maxlength="30">
 					</div>
 					<div class="pure-control-group">
-						<label for="otrasred">Otras redes (si tiene):</label>
-	            		<textarea name="otrasred" class="pure-input-1-2" type="text" maxlength="100"><?php echo $item->OtrasRedEmpr?></textarea>
-					</div>
-					<div class="pure-control-group">
 						<label for="eslogan">Eslogan:</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text" value="<?php echo $item->EslogEmpr ?>" maxlength="100">
 					</div>

@@ -102,7 +102,6 @@
 			$data['DescServEmpr'] 		= $this->input->post('descripserv');
 			$data['FbEmpr'] 			= $this->input->post('fb');
 			$data['TwEmpr'] 			= $this->input->post('tw');
-			$data['OtrasRedEmpr']		= $this->input->post('otrasred');
 			$data['EslogEmpr'] 			= $this->input->post('eslogan');
 			$data['LogoEmpr'] 			= $filename;
 			$data['NombRespEmpr'] 		= $this->input->post('nombre');
@@ -173,7 +172,6 @@
 				'DescServEmpr'	 		=> $this->input->post('descripserv'),
 				'FbEmpr' 				=> $this->input->post('fb'),
 				'TwEmpr' 				=> $this->input->post('tw'),
-				'OtrasRedEmpr'			=> $this->input->post('otrasred'),
 				'EslogEmpr' 			=> $this->input->post('eslogan'),
 				'LogoEmpr'	 			=> $this->input->post('logo'),
 				'NombRespEmpr'	 		=> $this->input->post('nombre'),

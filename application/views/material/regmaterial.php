@@ -36,6 +36,10 @@
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>
 					</div>
+					<div class="pure-control-group">
+						<label for="link" required>Link del material:</label>
+			       		<textarea name="link" type="text" cols="45" rows="3" placeholder="Ingrese la descripción aquí (Máximo 100 caracteres)" required maxlength="100"></textarea>
+			       	</div>
 			</fieldset>
 		</form>
 	</div>

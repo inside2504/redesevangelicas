@@ -104,7 +104,6 @@
 			$data['DescDetServ'] = $this->input->post('descripserv');
 			$data['FbServ'] = $this->input->post('fb');
 			$data['TwServ'] = $this->input->post('tw');
-			$data['OtrasRedesServ'] = $this->input->post('otrasred');
 			$data['EslogServ'] = $this->input->post('eslogan');
 			$data['ImgPrestServ'] = $filename;
 			$this->upload->do_upload($img);
@@ -140,7 +139,12 @@
 	    $config['max_height'] = "500";
 	    $this->form_validation->set_rules('');
 		$this->load->library('upload', $config);
-		if($this->form_validation->run('controller_validation')!=false){
+		if ((!$this->upload->do_upload($img))) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+		}elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -169,7 +173,6 @@
 				'DescDetServ'		 => $this->input->post('descripserv'),
 				'FbServ'			 => $this->input->post('fb'),
 				'TwServ'			 => $this->input->post('tw'),
-				'OtrasRedesServ'	 => $this->input->post('otrasred'),
 				'EslogServ'			 => $this->input->post('eslogan'),
 				'ImgPrestServ'		 => $filename
 			);

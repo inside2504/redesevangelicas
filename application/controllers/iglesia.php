@@ -101,7 +101,7 @@
 			$data['correEleIgle'] = $this->input->post('correo');
 			$data['fbIgle'] = $this->input->post('fb');
 			$data['twIgle'] = $this->input->post('tw');
-			$data['otrasRedesIgle'] = $this->input->post('otrasred');
+			$data['mapaIgle'] = $this->input->post('mapa');
 			$this->upload->do_upload($img);
 			$this->my_model->create($data);
 			redirect('iglesia/igleadmin');
@@ -135,8 +135,12 @@
 	    $config['max_height'] = "500";
 	    $this->form_validation->set_rules('');
 		$this->load->library('upload', $config);
-		
-        if($this->form_validation->run('controller_validation')!=false){
+		if ((!$this->upload->do_upload($logo))) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+		}elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -161,7 +165,7 @@
 				'correEleIgle' 		=> $this->input->post('correo'),
 				'fbIgle' 			=> $this->input->post('fb'),
 				'twIgle' 			=> $this->input->post('tw'),
-				'otrasRedesIgle' 	=> $this->input->post('otrasred'),
+				'mapaIgle' 			=> $this->input->post('mapa'),
 			);
 			var_dump($data);
 			$this->upload->do_upload($img);

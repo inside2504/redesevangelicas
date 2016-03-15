@@ -13,7 +13,6 @@ class Eventosview extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('templates/navegacion');
-		
 		$this->load->view('eventos');
 		$this->load->view('templates/footer');
 	}

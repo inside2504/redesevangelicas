@@ -29,13 +29,19 @@
 									<p class="bod-letters">Correo electr&oacute;nico: <strong><?php echo $item->correEleIgle ?></strong></p>
 									<p class="bod-letters">P&aacute;gina de facebook: <a href=<?php echo $item->fBIgle ?>><?php echo $item->fBIgle ?></a></p>
 									<p class="bod-letters">P&aacute;gina de twitter: <a href=<?php echo $item->tWIgle ?>><?php echo $item->tWIgle ?></a></p>
-									<p class="bod-letters">Otras redes: <a href=<?php echo $item->otrasRedesIgle ?>><?php echo $item->otrasRedesIgle ?></a></p>
+									<div class="map-responsive">
+										<h2 class="h2">Ubicaci&oacute;n en el mapa</h2>
+						     			<iframe class="encap" src=<?php echo $item->mapaIgle ?> allowfullscreen><?php echo $item->mapaIgle ?></iframe>
+						    		</div>
+									<!--<p class="bod-letters">Otras redes: <a href=<?php echo $item->mapaIgle ?>><?php echo $item->mapaIgle ?></a></p>
+								-->
 								</div>
 							</div>
 				       </div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </section>

@@ -90,6 +90,7 @@
 			$data['autMate'] 	= $this->input->post('autor');
 			$data['descMate'] 	= $this->input->post('descripcion');
 			$data['imgMate'] 	= $filename;
+			$data['linkMate']	= $this->input->post('link');
 			$this->upload->do_upload($img);
 			$this->my_model->create($data);
 			redirect('material/mateadmin');
@@ -123,7 +124,13 @@
 	    $config['max_size'] = "5000";
 	    $config['max_width'] = "500";
 	    $config['max_height'] = "500";
-		if($this->form_validation->run('controller_validation')!=false){
+	    $this->load->library('upload', $config);
+	    if ((!$this->upload->do_upload($img))) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            return;
+		}elseif($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -132,11 +139,12 @@
 		} else {
 			$id = $this->input->post('id');
 			$data = array(
-				'cateMate'	 => $this->input->post('categoria'),
-				'nombMate'	 => $this->input->post('nombremate'),
-				'autMate'	 => $this->input->post('autor'),
-				'descMate'	 => $this->input->post('descripcion'),
-				'imgMate' 	 => $filename				
+				'cateMate'	=> $this->input->post('categoria'),
+				'nombMate'	=> $this->input->post('nombremate'),
+				'autMate'	=> $this->input->post('autor'),
+				'descMate'	=> $this->input->post('descripcion'),
+				'imgMate' 	=> $filename,
+				'linkMate'	=> $this->input->post('link'),
 			);
 			var_dump($data);
 			$this->upload->do_upload($img);

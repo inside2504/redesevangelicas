@@ -23,6 +23,7 @@
 									<h2 class="sub-letters"><?php echo $item->autMate ?></h2>
 									<p class="bod-letters"><?php echo $item->cateMate ?></p>
 									<p class="bod-letters"><?php echo $item->descMate ?></p>
+									<a class="btn-primary" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo $item->linkMate ?>">Descargar</a>
 								</div>
 							</div>
 				       </div>

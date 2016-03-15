@@ -30,7 +30,6 @@
 									<p class="bod-letters">Correo electr&oacute;nico: <strong><?php echo $item->correEleLibProd ?></strong></p>
 									<p class="bod-letters">P&aacute;gina de facebook: <a href=<?php echo $item->fBLibProd ?>><?php echo $item->fBLibProd ?></a></p>
 									<p class="bod-letters">P&aacute;gina de twitter: <a href=<?php echo $item->tWLibProd ?>><?php echo $item->tWLibProd ?></a></p>
-									<p class="bod-letters">Otras redes: <a href=<?php echo $item->otrasRedLibProd ?>></a></p>
 								</div>
 							</div>
 				       </div>

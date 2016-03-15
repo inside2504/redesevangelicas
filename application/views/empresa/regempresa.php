@@ -81,10 +81,6 @@
 	            		<input name="tw" class="pure-input-1-2" type="text" placeholder="Dirección de Twitter" maxlength="30">
 					</div>
 					<div class="pure-control-group">
-						<label for="otrasred">Otras redes (si tiene):</label>
-	            		<textarea name="otrasred" class="pure-input-1-2" type="text" placeholder="Ingrese los enlaces de sus otras redes." maxlength="100"></textarea>
-					</div>
-					<div class="pure-control-group">
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text" placeholder="Eslogan" maxlength="100">
 					</div>

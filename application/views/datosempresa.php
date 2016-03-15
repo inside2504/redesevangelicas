@@ -31,7 +31,6 @@
 									<p class="bod-letters">Correo electr&oacute;nico: <strong><?php echo $item->CorreElectEmpr ?></strong></p>
 									<p class="bod-letters">P&aacute;gina de facebook: <a href=<?php echo $item->FbEmpr ?>><?php echo $item->FbEmpr ?></a></p>
 									<p class="bod-letters">P&aacute;gina de twitter: <a href=<?php echo $item->TwEmpr ?>><?php echo $item->TwEmpr ?></a></p>
-									<p class="bod-letters">Otras redes: <a href=<?php echo $item->OtrasRedEmpr ?>><?php echo $item->OtrasRedEmpr ?></a></p>
 								</div>
 							</div>
 				       </div>

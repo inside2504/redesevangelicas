@@ -80,10 +80,6 @@
 						<label for="tw">Twitter (si tiene):</label>
 	            		<input name="tw" class="pure-input-1-2" type="text" value="<?php echo $item->tWLibProd ?>" maxlength="50">
 					</div>
-					<div class="pure-control-group">
-						<label for="otrasred">Otras redes (si tiene):</label>
-	            		<textarea name="otrasred" class="pure-input-1-2" type="text" maxlength="100"?><?php echo $item->otrasRedLibProd?></textarea>
-					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>
 					</div>

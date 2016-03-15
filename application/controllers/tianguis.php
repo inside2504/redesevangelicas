@@ -103,7 +103,6 @@
 			$data['correEleLibProd'] 	= $this->input->post('correo');
 			$data['fBLibProd'] 			= $this->input->post('fb');
 			$data['tWLibProd'] 			= $this->input->post('tw');
-			$data['otrasRedLibProd'] 	= $this->input->post('otrasred');
 			$this->upload->do_upload($img);
 			$this->my_model->create($data);
 			redirect('tianguis/tianadmin');
@@ -167,8 +166,7 @@
 				'telefLibProd' 		=> $this->input->post('telefono'),
 				'correEleLibProd' 	=> $this->input->post('correo'),
 				'fBLibProd' 		=> $this->input->post('fb'),
-				'tWLibProd' 		=> $this->input->post('tw'),
-				'otrasRedLibProd' 	=> $this->input->post('otrasred')
+				'tWLibProd' 		=> $this->input->post('tw')
 			);
 			var_dump($data);
 			$this->upload->do_upload($img);

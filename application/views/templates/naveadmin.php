@@ -76,7 +76,7 @@ ga('send', 'pageview');
                 	<a href="<?php echo site_url('material/mateadmin')?>" class="pure-menu-link">Materiales</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('evento/evenadmin')?>" class="pure-menu-link">Eventos</a>
+                	<a href="<?php echo site_url('evento/eventoadmin')?>" class="pure-menu-link">Eventos</a>
                 </li>
                 <li class="pure-menu-item">
                 	<a href="<?php echo site_url('tianguis/tianadmin')?>" class="pure-menu-link">Librer&iacute;a</a>
