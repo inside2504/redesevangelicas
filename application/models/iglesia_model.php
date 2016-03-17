@@ -37,7 +37,7 @@
     	}
 
     	public function get_like($conditions){
-        	return $this->db->select('*')->from($this->iglesia)->like($conditions)->get()->result();
+        	return $this->db->select('*')->from('iglesia')->like('nomIgle',$conditions)->get()->result();
     	}
 
 		public function create($array){

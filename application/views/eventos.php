@@ -60,7 +60,7 @@
 
 		//establecemos los valores del calendario
 		var options = {
-			events_source: '<?php echo base_url() ?>evento/getAll',
+			events_source: '<?php echo base_url() ?>eventosview/getAll',
 			view: 'month',
 			language: 'es-ES',
 			tmpl_path: '<?php echo base_url() ?>bower_components/bootstrap-calendar/tmpls/',

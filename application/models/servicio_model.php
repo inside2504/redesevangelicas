@@ -33,12 +33,17 @@
     	}
 
     	public function get_where($conditions){
-        	return $this->db->get_where($this->servicio, $conditions)->result();
+        	return $this->db->get_where('servicio', $conditions)->get()->result();
     	}
 
     	public function get_like($conditions){
-        	return $this->db->select('*')->from($this->servicio)->like($conditions)->get()->result();
+        	return $this->db->select('*')->from('servicio')->like('ServOfrecido',$conditions)->get()->result();
     	}
+
+         public function count(){
+            $result = $this->db->count_all_results();
+            return $result;
+        }
 
 		public function create($array){
 	        $this->db->insert(('servicio'), $array);

@@ -41,8 +41,12 @@ class Materialesview extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	public function mostrar($id){
-		$this->data['item'] = $this->my_model->find($id);
-		echo $this->render->view('path/to/view/mostrar.html');
+	public function buscar(){
+		$q=$_GET['buscar'];
+		$this->dato['total'] = $this->my_model->get();
+		$this->data['item'] = $this->my_model->get_like($q);
+		$this->load->view('templates/navegacion');
+		echo $this->load->view('buscmate.php', $this->data, $this->dato); 
+		$this->load->view('templates/footer');
 	}
 }

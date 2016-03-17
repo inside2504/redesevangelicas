@@ -34,14 +34,19 @@ class Serviciosview extends CI_Controller {
 	}
 
 	public function datos($id){
-		$this->data['item'] 	= $this->my_model->find($id);
+		$this->data['item'] = $this->my_model->find($id);
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('datosservicio.php', $this->data); 
 		$this->load->view('templates/footer');
 	}
 
-	public function mostrar($id){
-		$this->data['item'] = $this->my_model->find($id);
-		echo $this->render->view('path/to/view/mostrar.html');
+	public function buscar(){
+		$q=$_GET['buscar'];
+		$this->dato['total'] = $this->my_model->get();
+		$this->data['item'] = $this->my_model->get_like($q);
+		$this->load->view('templates/navegacion');
+		echo $this->load->view('buscserv.php', $this->data, $this->dato); 
+		$this->load->view('templates/footer');
 	}
+
 }

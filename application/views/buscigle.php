@@ -24,8 +24,7 @@
 
 
 <section>
-    <?php if ($results !=0):?>
-    <?php foreach ($results as $row): ?>
+    <?php foreach ($item as $row): ?>
         <section>
             <section class="elementos">
                 <div class="row clearfix">
@@ -62,6 +61,5 @@
             <h2><?=$this->pagination->create_links(); ?></h2>
         </div>
     </div>
-    <?php endif;?>
     
 </section>

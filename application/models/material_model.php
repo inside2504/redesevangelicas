@@ -37,7 +37,7 @@
     	}
 
     	public function get_like($conditions){
-        	return $this->db->select('*')->from($this->material)->like($conditions)->get()->result();
+        	return $this->db->select('*')->from('material')->like('cateMate',$conditions)->get()->result();
     	}
 
 		public function create($array){

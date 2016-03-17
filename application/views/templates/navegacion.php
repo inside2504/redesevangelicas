@@ -38,12 +38,6 @@
                                 <li><a href="#"><span class="fa fa-facebook"></span></a></li>
                                 <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                             </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Buscar">
-                                    <span class="fa fa-search"></span>
-                                </form>
-                           </div>
                        </div>
                     </div>
                 </div>

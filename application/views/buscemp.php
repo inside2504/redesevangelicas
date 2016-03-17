@@ -23,7 +23,7 @@
 
 <section>
 <?php  if ($this->my_model->get() !=0):?>
-    <?php foreach ($results as $row): ?>
+    <?php foreach ($item as $row): ?>
         <section>
             <div class="elementos">
                 <div class="row clearfix">

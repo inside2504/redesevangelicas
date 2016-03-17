@@ -7,7 +7,7 @@
         <div class="pull-right">
             <form action="<?php echo base_url('/tianguisview/buscar');?>" method="GET" >
                 <fieldset>
-                    <h3>Filtrar por nombre
+                    <h3>Buscar por nombre
                         <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
                         <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
                      </h3>
@@ -23,7 +23,7 @@
 	        <div class="team">
 				<div class="row clearfix">
 		        	<?php  if ($this->my_model->get() !=0):?>
-    					<?php foreach ($results as $row): ?>
+    					<?php foreach ($item as $row): ?>
 							<div class="col-md-3 col-sm-6">	
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
@@ -50,3 +50,9 @@
         </div>
     </div>
 </section>
+
+<?php  if ($this->my_model->get() ==0):?>
+<section>
+	<h2>No se encontr&oacute;</h2>
+</section>
+<?php endif;?>
