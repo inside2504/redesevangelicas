@@ -12,10 +12,10 @@
             </section>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('empresa/regempresa')?>">Registrar una empresa</a></p>
-                <p class="pure-u-1-3"><a href="<?php echo site_url('empresasview')?>">Ir al apartado de empresas</a></p>
+                <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('empresasview')?>">Ir al apartado de empresas</a></p>
             </section>
         </div>
-        <div class="tablas">
+        <div class="content">
             <section>
                 <div>
                     <table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
@@ -49,6 +49,68 @@
                                     ";
                                 }
                             ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="content">
+            <section class="acciones">
+                <p class="pure-u-1-3"><a href="<?php echo site_url('empresa/reglogo')?>">Registrar un logo</a></p>
+            </section>
+        </div>
+        <div class="content">
+            <section>
+                <div>
+                    <table  class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
+                        <thead>
+                            <th>Empresa</th>
+                            <th>Logo de la empresa</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                    foreach ($this->my_model->getAllLogo() as $col) {
+                                        echo "<tr>
+                                                <td>$col->NameEmpr</td>
+                                                <td><img class='".'media-object'."' src='".base_url('')."".'assets/empresa/'."".$col->logoEmpr."'></td>
+                                                <td><a href='".site_url('empresa/editarLogo/'.$col->idLogoEmpr)."'>Editar logo</a></td> 
+                                            </tr>
+                                        ";
+                                    }
+                                ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="content">
+            <section class="acciones">
+                <p class="pure-u-1-3"><a href="<?php echo site_url('empresa/regimg')?>">Registrar una foto</a></p>
+            </section>
+        </div>
+        <div class="content">
+            <section>
+                <div>
+                    <table  class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
+                        <thead>
+                            <th>Nombre</th>
+                            <th>Empresa</th>
+                            <th>Foto del responsable</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                    foreach ($this->my_model->getAllFoto() as $item) {
+                                        echo "<tr>
+                                                <td>$item->NombRespEmpr $item->ApePatRespEmpr $item->ApeMatRespEmpr </td>
+                                                <td>$item->NameEmpr</td>
+                                                <td><img class='".'media-object'."' src='".base_url('')."".'assets/empresa/'."".$item->fotoResp."'></td>
+                                                <td><a href='".site_url('empresa/editarImg/'.$item->idFotoResp)."'>Editar foto</a></td> 
+                                            </tr>
+                                        ";
+                                    }
+                                ?>
                         </tbody>
                     </table>
                 </div>

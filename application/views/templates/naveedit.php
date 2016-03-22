@@ -58,11 +58,11 @@ ga('send', 'pageview');
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('auth/mateadmin')?>" class="pure-menu-link">Materiales</a>
+                    <a href="<?php echo site_url('material/mateadmin')?>" class="pure-menu-link">Materiales</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('auth/evenadmin')?>" class="pure-menu-link">Eventos</a>
-                <li class="pure-menu-item">
+                    <a href="<?php echo site_url('evento/eventoadmin')?>" class="pure-menu-link">Eventos</a>
+                </li>
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>
                 </li>
             </ul>

@@ -13,17 +13,16 @@
             </section>
              <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('taxi/regtaxi')?>">Registrar un taxista</a></p>
-                <p class="pure-u-1-3"><a href="<?php echo site_url('taxiview')?>">Ir al apartado de Taxi</a></p>
+                <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('taxiview')?>">Ir al apartado de Taxi</a></p>
             </section>
         </div>
-        <div class="tablas">
+        <div class="content">
             <section>
                 <div>
                     <table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
                         <thead>
+                            <th>N&uacute;mero</th>
                             <th>Nombre</th>
-                            <th></th>
-                            <th></th>
                             <th>Iglesia</th>
                             <th>Pastor</th>
                             <th>N&uacute;mero</th>
@@ -36,9 +35,8 @@
                             <?php
                                 foreach ($this->my_model->get() as $row) {
                                     echo "<tr>
-                                            <td>$row->NombTaxista</td>
-                                            <td>$row->ApePatTaxista</td>
-                                            <td>$row->ApeMatTaxista</td>
+                                            <td>$row->AidiTaxi</td>
+                                            <td>$row->NombTaxista $row->ApePatTaxista $row->ApeMatTaxista</td>
                                             <td>$row->IglePerTaxi</td>
                                             <td>$row->PastIgleTaxi</td>
                                             <td>$row->NumEcoTaxi</td>
@@ -50,6 +48,38 @@
                                     ";
                                 }
                             ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="content">
+            <section class="acciones">
+                <p class="pure-u-1-3"><a href="<?php echo site_url('taxi/regimg')?>">Registrar foto</a></p>
+            </section>
+        </div>
+        <div class="content">
+            <section>
+                <div>
+                    <table  class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
+                        <thead>
+                            <th>N&uacute;mero</th>
+                            <th>Placa</th>
+                            <th>Foto</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                    foreach ($this->my_model->getAll() as $item) {
+                                        echo "<tr>
+                                                <td>$item->NombTaxista $item->ApePatTaxista $item->ApeMatTaxista</td>
+                                                <td>$item->PlacaNumTaxi</td>
+                                                <td><img class='".'media-object'."' src='".base_url('')."".'assets/taxi/'."".$item->fotoTaxi."'></td>
+                                                <td><a href='".site_url('taxi/editarImg/'.$item->idfotoTaxi)."'>Editar foto</a></td> 
+                                            </tr>
+                                        ";
+                                    }
+                                ?>
                         </tbody>
                     </table>
                 </div>

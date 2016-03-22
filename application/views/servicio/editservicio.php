@@ -33,7 +33,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="servofrece">Servicio que ofrece:</label>
-	            		<input name="servofrece" class="pure-input-1-2" type="text" value="<?php echo $item->ServOfrecido ?>" required maxlength="50">
+	            		<input name="servofrece" class="pure-input-1-2" type="text" value="<?php echo $item->ServOfrecido ?>" required maxlength="255">
 					</div>
 					<div class="pure-control-group">
 						<label for="descripbreve">Descripci&oacute;n de servicio(s):</label>
@@ -97,10 +97,6 @@
 					<div class="pure-control-group">
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text" value="<?php echo $item->EslogServ ?>" maxlength="100">
-					</div>
-					<div class="pure-control-group">
-						<label for="fotoservi">Foto del prestador de servicios:</label>
-	            		<input name="fotoservi" class="pure-input-1-2" type="file" value="<?php echo $item->ImgPrestServ ?>" maxlength="50">
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

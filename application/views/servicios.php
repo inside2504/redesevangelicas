@@ -32,7 +32,7 @@
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<?=base_url('')."assets/servicio/"."$row->ImgPrestServ"?>">
+                                    <img src="<?= base_url('').'assets/servicio/'.$this->my_model->getImg($row->AidiServi) ?>" class="media-object">
                                 </div>
                                 <div class="media-body">
                                     <h4><?php echo $row->NamePrestServ ?> <?php echo $row->ApePatPrestServ ?> <?php echo $row->ApeMatPrestServ ?></h4>

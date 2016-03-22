@@ -48,10 +48,6 @@
 						<label for="telefono">Tel&eacute;fono:</label>
 	            		<input name="telefono" class="pure-input-1-2" type="text" placeholder="Teléfono" required maxlength="12">
 					</div>
-			       	<div class="pure-control-group">
-						<label for="fotoTax">Foto del taxista:</label>
-	            		<input name="fotoTax" class="pure-input-1-2" type="file" placeholder="" required maxlength="50">
-					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>

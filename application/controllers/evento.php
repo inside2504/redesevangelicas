@@ -7,7 +7,9 @@
 			$this->load->helper('url');
 			$this->load->library(array('ion_auth','form_validation'));
 			$this->load->model('evento_model','my_model');
-			if (!$this->ion_auth->in_group('admin')){
+			$this->load->model('material_model','my_model');
+			$grupos = array('admin','Poster');
+			if (!$this->ion_auth->in_group($grupos)){
 				redirect('/');
 			}
 		}
@@ -20,13 +22,15 @@
 	public function eventoadmin(){	
 		if(!$this->ion_auth->logged_in()){
 			redirect('auth/login', 'refresh');
-		}
-		elseif ($this->ion_auth->in_group('admin')) {
+		} elseif ($this->ion_auth->in_group('admin')) {
 			$this->load->view('templates/naveadmin');
 			$this->load->view('evento/eventoadmin');
 			$this->load->view('templates/footadmin');
-			}
-		else{
+		} elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			$this->load->view('evento/eventoadmin');
+			$this->load->view('templates/footedit');
+		} else{
 			return show_error('You must be an administrator to view this page.');
 		}
 	}
@@ -38,6 +42,10 @@
 			$this->load->view('templates/naveadmin');
 			$this->load->view('evento/regevento');
 			$this->load->view('templates/footadmin');
+		} elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			$this->load->view('evento/regevento');
+			$this->load->view('templates/footedit');
 		} else{
 			return show_error('You must be an administrator to view this page.');
 		}
@@ -50,6 +58,10 @@
 			$this->load->view('templates/naveadmin');
 			$this->load->view('evento/editevento');
 			$this->load->view('templates/footadmin');
+		}elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			$this->load->view('evento/editevento');
+			$this->load->view('templates/footedit');
 		} else{
 			return show_error('You must be an administrator to view this page.');
 		}

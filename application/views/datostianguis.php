@@ -14,7 +14,7 @@
 				        <div class="row">
 				           <div class="col-xs-12 col-sm-5 text-center">
 				           		<div class="col-xs-12 col-sm-12">
-				           			<img class="img-dato" src="<?=base_url('')."assets/tianguis/"."$item->imagProd"?>">
+				           			<img src="<?= base_url('').'assets/tianguis/'.$item->imgProd ?>" class="img-dato">
 				           		</div>
 				           </div>
 				           <div class="col-xs-12 col-sm-7">

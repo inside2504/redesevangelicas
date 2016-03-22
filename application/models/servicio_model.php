@@ -24,6 +24,55 @@
             return $query;
         }
 
+         public function getAll() {
+            $this->db->order_by('servicio_AidiServi', 'desc');
+            $this->db->select('*');
+            $this->db->from('imgserv');
+            $this->db->join('servicio', 'servicio.AidiServi = imgserv.servicio_AidiServi');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
+        public function getImg($AidiServi){
+                return $this->db->select('imgServ')->from('imgserv')->where('servicio_AidiServi',$AidiServi)->get()->row()->imgServ;
+        }
+
+        public function subir($id,$imagen){
+            $data = array(
+                'servicio_AidiServi' => $id,
+                'imgServ' => $imagen
+            );
+            return $this->db->insert('imgserv', $data);
+        }
+
+        public function get_imagen($items = null, $order = "ASC") {
+            if($items){
+                return $this->db->select('*')->from($this->imgser)->order_by('idimgServ',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('servicio_AidiServi', 'desc');
+                $query = $this->db->get('imgserv')->result();
+                return $query;
+            }
+        }
+
+        public function updateImg($idi,$id,$imagen){
+            $this->db->where('idimgServ', $idi);
+            $data = array(
+                'idimgServ' => $idi,
+                'servicio_AidiServi' => $id,
+                'imgServ' => $imagen
+            );
+            $this->db->update(('imgserv'), $data);
+        }
+
+        public function findImg($id){
+            if (is_array($id)) {
+                return $this->db->select('*')->from($this->imgserv)->where_in('idimgServ', $id)->get()->result();
+            } else {
+                return $this->db->select('*')->from('imgserv')->where('idimgServ', $id)->get()->row();
+            }
+        }
+
 		public function find($id){
         	if (is_array($id)) {
            		return $this->db->select('*')->from($this->servicio)->where_in('AidiServi', $id)->get()->result();

@@ -17,7 +17,7 @@
                                 <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                                     <div class="media">
                                         <div class="pull-left">
-                                            <img class="taximan" src="<?=base_url('')."assets/taxi/"."$row->FotoTaxista"?>" alt="">
+                                            <img src="<?= base_url('').'assets/taxi/'.$this->my_model->getImg($row->AidiTaxi) ?>" class="media-object">
                                         </div>
                                     </div>
                                     <h4><?php echo $row->NombTaxista ?> <?php echo $row->ApePatTaxista ?> <?php echo $row->ApeMatTaxista ?></h4>

@@ -12,7 +12,7 @@
         </section>
         <section class="acciones">
             <p class="pure-u-1-3"><a href="<?php echo site_url('material/regmaterial')?>">Registrar un material</a></p>
-            <p class="pure-u-1-3"><a href="<?php echo site_url('materialesview')?>">Ir al apartado de materiales</a></p>
+            <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('materialesview')?>">Ir al apartado de materiales</a></p>
         </section>
     </div>
     <div class="content">
@@ -44,4 +44,36 @@
             </div>
         </section>
     </div>
+    <div class="content">
+            <section class="acciones">
+                <p class="pure-u-1-3"><a href="<?php echo site_url('material/regimg')?>">Registrar car&aacute;tula</a></p>
+            </section>
+        </div>
+        <div class="content">
+            <section>
+                <div>
+                    <table  class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
+                        <thead>
+                            <th>T&iacute;tulo</th>
+                            <th>Categor&iacute;a</th>
+                            <th>Car&aacute;tula</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                    foreach ($this->my_model->getAll() as $item) {
+                                        echo "<tr>
+                                                <td>$item->nombMate</td>
+                                                <td>$item->cateMate</td>
+                                                <td><img class='".'media-object'."' src='".base_url('')."".'assets/material/'."".$item->imgMate."'></td>
+                                                <td><a href='".site_url('material/editarImg/'.$item->idImgMate)."'>Editar imagen</a></td> 
+                                            </tr>
+                                        ";
+                                    }
+                                ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
 </div>

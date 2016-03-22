@@ -9,6 +9,7 @@
 	
 	<!-- core CSS -->
     <link href="<?=base_url('')."assets/css/bootstrap.min.css"?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="<?=base_url('')."assets/css/font-awesome.min.css"?>" rel="stylesheet">
     <link href="<?=base_url('')."assets/css/animate.min.css"?>" rel="stylesheet">
     <link href="<?=base_url('')."assets/css/prettyPhoto.css"?>" rel="stylesheet">
@@ -62,36 +63,32 @@
                         <li><a href="<?php echo site_url('#')?>">Inicio</a></li>
                         <li><a href="<?php echo site_url('nosotrosview')?>">Nosotros</a></li>
                         <li><a href="<?php echo site_url('iglesiasview')?>">Iglesias</a></li>
+                        <li><a href="<?php echo site_url('empresasview')?>">Empresas</a></li>
+                        <li><a href="<?php echo site_url('serviciosview')?>">Servicios</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Secciones <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="<?php echo site_url('empresasview')?>">Empresas</a>
+                                    <a href="<?php echo site_url('eventosview')?>">Eventos</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('serviciosview')?>">Profesionales</a>
+                                    <a href="<?php echo site_url('kidsview')?>">Kids</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('tianguisview')?>">Librer&iacute;a</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('materialesview')?>">Materiales</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('radioview')?>">Radio</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo site_url('taxiview')?>">Taxi</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Secciones <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo site_url('materialesview')?>">Materiales</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('eventosview')?>">Eventos</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('radioview')?>">Radio</a>
-                                </li>
-                            </ul>
                         </li> 
-                        <li><a href="<?php echo site_url('tianguisview')?>">Librer&iacute;a</a></li>
-                        <li><a href="<?php echo site_url('kidsview')?>">Kids</a></li>
+                        
                         <li><a href="<?php echo site_url('auth/login')?>">Ingresar</a></li>
                         <!-- Escribir codigo para el redireccionamiento dependiendo del tipo de usuario que exista, si no esta logueado entonces
                         que aparezca la leyenda ingresar que redireccione al formulario para iniciar sesion, si es administrador entonces que

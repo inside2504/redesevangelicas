@@ -17,11 +17,60 @@
 			}
 		}
 
+         public function getAll() {
+            $this->db->order_by('iglesia_idIgle', 'desc');
+            $this->db->select('*');
+            $this->db->from('logoigle');
+            $this->db->join('iglesia', 'iglesia.idIgle = logoigle.iglesia_idIgle');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
+        public function getImg($idIgle){
+                return $this->db->select('logo')->from('logoIgle')->where('iglesia_idIgle',$idIgle)->get()->row()->logo;
+        }
+
+        public function subir($id,$imagen){
+            $data = array(
+                'iglesia_idIgle' => $id,
+                'logo' => $imagen
+            );
+            return $this->db->insert('logoIgle', $data);
+        }
+
         public function get_iglesias($pagination, $segment) {
             $this->db->order_by('idIgle', 'desc');
             $this->db->limit($pagination, $segment);
             $query = $this->db->get('iglesia')->result();
             return $query;
+        }
+
+        public function get_imagen($items = null, $order = "ASC") {
+            if($items){
+                return $this->db->select('*')->from($this->logoigle)->order_by('idLogoIgle',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('iglesia_idIgle', 'desc');
+                $query = $this->db->get('logoigle')->result();
+                return $query;
+            }
+        }
+
+        public function updateImg($idi,$id,$imagen){
+            $this->db->where('idLogoIgle', $idi);
+            $data = array(
+                'idLogoIgle' => $idi,
+                'iglesia_idIgle' => $id,
+                'logo' => $imagen
+            );
+            $this->db->update(('logoigle'), $data);
+        }
+
+        public function findImg($id){
+            if (is_array($id)) {
+                return $this->db->select('*')->from($this->fototaxi)->where_in('idLogoIgle', $id)->get()->result();
+            } else {
+                return $this->db->select('*')->from('logoigle')->where('idLogoIgle', $id)->get()->row();
+            }
         }
 
 		public function find($id){

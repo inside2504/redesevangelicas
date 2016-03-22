@@ -8,6 +8,8 @@
 	                <li data-target="#main-slider" data-slide-to="2"></li>
 	                <li data-target="#main-slider" data-slide-to="3"></li>
 	                <li data-target="#main-slider" data-slide-to="4"></li>
+	                <li data-target="#main-slider" data-slide-to="5"></li>
+	                <li data-target="#main-slider" data-slide-to="6"></li>
             	</ol>
 
             	<!--Imagenes del carrusel-->
@@ -68,6 +70,30 @@
                                 	<div class="carousel-content">
 										<h1 class="animation animated-item-1">Iglesias cristianas</h1>
 										<a class="btn-slide animation animated-item-3" href="<?php echo site_url('iglesiasview')?>" role="button">Conoce m&aacute;s iglesias</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!--Termina elemento del carrusel-->
+					<div class="item" style="background-image: url(<?=base_url('')."assets/img/6carru.jpg"?>)">
+						<div class="container">
+                        	<div class="row slide-margin">
+                            	<div class="col-sm-6">
+                                	<div class="carousel-content">
+										<h1 class="animation animated-item-1">Radio cristiana</h1>
+										<a class="btn-slide animation animated-item-3" href="<?php echo site_url('radioview')?>" role="button">Escucha nuestra Radio</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!--Termina elemento del carrusel-->
+					<div class="item" style="background-image: url(<?=base_url('')."assets/img/7carru.jpg"?>)">
+						<div class="container">
+                        	<div class="row slide-margin">
+                            	<div class="col-sm-6">
+                                	<div class="carousel-content">
+										<h1 class="animation animated-item-1">Zona KIDS</h1>
+										<a class="btn-slide animation animated-item-3" href="<?php echo site_url('kidsview')?>" role="button">¡Vamos a la Zona KIDS!</a>
 									</div>
 								</div>
 							</div>
@@ -135,7 +161,8 @@
         </script>
         
 
-	<section id="feature">
+	<section id="space">
+		<!--
 		<div class="container">
 			<div class="center wow fadeInDown">
 				<h2>Testimonios</h2>
@@ -167,11 +194,15 @@
 					</div>
 				</div>
 			</div>
+			-->
 	</section><!-- end of about section -->
 
 	<div class="map-responsive">
      	<div id="mapa"></div>
     </div>
+
+    <section id="space">
+    </section>
 
     <section class="contact-info">
 			<div class="container">

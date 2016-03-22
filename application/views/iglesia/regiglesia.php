@@ -25,10 +25,6 @@
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text" placeholder="Eslogan">
 					</div>
-					<div class="pure-control-group">
-						<label for="logo">Logotipo:</label>
-	            		<input name="logo" class="pure-input-1-2" type="file" placeholder="" required maxlenght="50">
-					</div>
 				<legend>Direcci&oacute;n</legend>
 					<div class="pure-control-group">
 						<label for="calle">Calle:</label>

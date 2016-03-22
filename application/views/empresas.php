@@ -31,7 +31,7 @@
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<?=base_url('')."assets/empresa/"."$row->LogoEmpr"?>" alt="">
+                                    <img src="<?= base_url('').'assets/empresa/'.$this->my_model->getLogo($row->AidiEmpr) ?>" class="media-object">
                                 </div>
                                 <div class="media-body">  
                                     <h4><?php echo $row->NameEmpr ?></h4>

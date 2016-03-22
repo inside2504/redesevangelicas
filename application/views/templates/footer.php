@@ -46,7 +46,7 @@
         consoleBox.value = value +"\n" + consoleBox.value;
       }
 
-      var widgetUrl = "http://api.soundcloud.com/users/1539950/favorites";
+      var widgetUrl = "https://api.soundcloud.com/playlists/206551065";
 
 
       var iframe = document.querySelector('.sc-widget');
@@ -135,7 +135,7 @@
                 if (!result.error){
 	                var thefeeds=result.feed.entries
 	                for (var i=0; i<thefeeds.length; i++)
-	                rssoutput+="<p><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a><br></p>"
+	                rssoutput+="<p><a onclick='window.open(this.href); return false;' onkeypress='window.open(this.href); return false;' href='" + thefeeds[i].link + "'>" + thefeeds[i].title + ";</a><br></p>"
 	                feedcontainer.innerHTML=rssoutput
             	}
             else

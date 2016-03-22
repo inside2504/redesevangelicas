@@ -23,19 +23,20 @@
 	        <div class="team">
 				<div class="row clearfix">
 		        	<?php  if ($this->my_model->get() !=0):?>
-    					<?php foreach ($results as $row): ?>
+    					<?php foreach ($results as $item): ?>
 							<div class="col-md-3 col-sm-6">	
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
 										<div class="pull-left">
-											<img class="caratula" src="<?=base_url('')."assets/tianguis/"."$row->imagProd"?>" alt="">
+											<img src="<?= base_url('').'assets/tianguis/'.$item->imgProd ?>" class="libreria">
 										</div>
 										
 									</div><!--/.media -->
-									<h4><?php echo $row->nombProd ?></h4>
-									<h5><?php echo $row->autoProd ?></h5>
-									<p class="lead"><?php echo $row->descrProd ?></p>
-									<a href=<?php echo site_url("tianguisview/datos/".$row->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
+									<h4><?php echo $item->nombProd ?></h4>
+									<h5><?php echo $item->autoProd ?></h5>
+									<h5>Librer&iacute;a <?php echo $item->nombLibProd ?></h5>
+									<br>
+									<a href=<?php echo site_url("tianguisview/datos/".$item->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>
 							</div><!--/.col-lg-4 -->
 						<?php endforeach;?>

@@ -36,6 +36,9 @@ class Taxiview extends CI_Controller {
 
 	public function mostrar($id){
 		$this->data['item'] = $this->my_model->find($id);
-		echo $this->render->view('path/to/view/mostrar.html');
+		$this->data['fotoTaxi'] = $this->my_model->getImg($id);
+		$this->load->view('templates/navegacion');
+		echo $this->load->view('taxi', $this->data); 
+		$this->load->view('templates/footer');
 	}
 }

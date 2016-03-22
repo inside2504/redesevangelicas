@@ -32,7 +32,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="servofrece">Servicio que ofrece:</label>
-	            		<input name="servofrece" class="pure-input-1-2" type="text" placeholder="Servicio que ofrece" required maxlength="50">
+	            		<input name="servofrece" class="pure-input-1-2" type="text" placeholder="Servicio que ofrece" required maxlength="255">
 					</div>
 					<div class="pure-control-group">
 						<label for="descripbreve">Descripci&oacute;n de servicio(s):</label>
@@ -96,10 +96,6 @@
 					<div class="pure-control-group">
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text" placeholder="Eslogan" maxlength="100">
-					</div>
-					<div class="pure-control-group">
-						<label for="fotoservi">Foto del prestador de servicios:</label>
-	            		<input name="fotoservi" class="pure-input-1-2" type="file" placeholder="" required maxlength="50">
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>

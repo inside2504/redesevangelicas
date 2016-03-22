@@ -30,6 +30,8 @@ body {
   margin: 0;
 }
 
+.media-object{display:block;width:150px; height:150px;margin: 0 5% 5% 5%;}
+
 /* HTML5 display definitions
    ========================================================================== */
 
@@ -1456,7 +1458,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     font-size: inherit;
     margin: 0;
     overflow: visible; /*to make ths where the title is really long work*/
-    padding: 0.5em 1em; /* cell padding */
+    padding: 0.2em 0.5em; /* cell padding */
 }
 
 /* Consider removing this next declaration block, as it causes problems when

@@ -26,11 +26,6 @@
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text"  value="<?php echo $item->eslogIgle ?>">
 					</div>
-					<div class="pure-control-group">
-						<label for="logo">Logotipo:</label>
-						<img class="img-form" src="<?=base_url('')."assets/iglesias/"."$item->logo"?>">
-	            		<input name="logo" class="pure-input-1-2" type="file" maxlength="50">
-					</div>
 				<legend>Direcci&oacute;n</legend>
 					<div class="pure-control-group">
 						<label for="calle">Calle:</label>

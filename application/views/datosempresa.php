@@ -14,7 +14,7 @@
 				        <div class="row">
 				           <div class="col-xs-12 col-sm-5 text-center">
 				           		<div class="col-xs-12 col-sm-12">
-				           			<img class="img-dato" src="<?=base_url('')."assets/empresa/"."$item->LogoEmpr"?>">
+				           			<img class="img-dato" src="<?= base_url('').'assets/empresa/'.$this->my_model->getLogo($item->AidiEmpr) ?>">
 				           		</div>
 				           </div>
 				           <div class="col-xs-12 col-sm-7">
@@ -37,7 +37,7 @@
 				       <div class="row">
 				           <div class="col-xs-12 col-sm-5 text-center">
 				           		<div class="col-xs-12 col-sm-12">
-				           			<img class="img-dato" src="<?=base_url('')."assets/empresa/"."$item->FotoRespEmpr"?>">
+				           			<img class="img-dato" src="<?= base_url('').'assets/empresa/'.$this->my_model->getImg($item->AidiEmpr) ?>">
 				           		</div>
 				           </div>
 				           <div class="col-xs-12 col-sm-7">

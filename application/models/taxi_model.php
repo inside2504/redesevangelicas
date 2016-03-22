@@ -17,11 +17,60 @@
 			}
 		}
 
+         public function getAll() {
+            $this->db->order_by('taxi_AidiTaxi', 'desc');
+            $this->db->select('*');
+            $this->db->from('fototaxi');
+            $this->db->join('taxi', 'taxi.AidiTaxi = fototaxi.taxi_AidiTaxi');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
         public function get_taxistas($pagination, $segment) {
             $this->db->order_by('AidiTaxi', 'desc');
             $this->db->limit($pagination, $segment);
             $query = $this->db->get('taxi')->result();
             return $query;
+        }
+
+        public function getImg($AidiTaxi){
+                return $this->db->select('*')->from('fototaxi')->where('taxi_AidiTaxi',$AidiTaxi)->get()->row()->fotoTaxi;
+        }
+
+        public function subir($id,$imagen){
+            $data = array(
+                'taxi_AidiTaxi' => $id,
+                'fotoTaxi' => $imagen
+            );
+            return $this->db->insert('fototaxi', $data);
+        }
+
+        public function get_imagen($items = null, $order = "ASC") {
+            if($items){
+                return $this->db->select('*')->from($this->taxi)->order_by('idfotoTaxi',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('taxi_AidiTaxi', 'desc');
+                $query = $this->db->get('fotoTaxi')->result();
+                return $query;
+            }
+        }
+
+        public function updateImg($idi,$id,$imagen){
+            $this->db->where('idfotoTaxi', $idi);
+            $data = array(
+                'idfotoTaxi' => $idi,
+                'taxi_AidiTaxi' => $id,
+                'fototaxi' => $imagen
+            );
+            $this->db->update(('fototaxi'), $data);
+        }
+
+        public function findImg($id){
+            if (is_array($id)) {
+                return $this->db->select('*')->from($this->fototaxi)->where_in('idfotoTaxi', $id)->get()->result();
+            } else {
+                return $this->db->select('*')->from('fotoTaxi')->where('idfotoTaxi', $id)->get()->row();
+            }
         }
 
 		public function find($id){

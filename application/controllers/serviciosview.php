@@ -35,6 +35,7 @@ class Serviciosview extends CI_Controller {
 
 	public function datos($id){
 		$this->data['item'] = $this->my_model->find($id);
+		$this->data['imgServ'] = $this->my_model->getImg($id);
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('datosservicio.php', $this->data); 
 		$this->load->view('templates/footer');

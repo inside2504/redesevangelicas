@@ -17,11 +17,109 @@
 			}
 		}
 
+        public function getAllLogo() {
+            $this->db->order_by('empresa_AidiEmpr', 'desc');
+            $this->db->select('*');
+            $this->db->from('logoempr');
+            $this->db->join('empresa', 'empresa.AidiEmpr = logoempr.empresa_AidiEmpr');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
+        public function getAllFoto() {
+            $this->db->order_by('empresa_AidiEmpr', 'desc');
+            $this->db->select('*');
+            $this->db->from('fotoresp');
+            $this->db->join('empresa', 'empresa.AidiEmpr = fotoresp.empresa_AidiEmpr');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
         public function get_empresas($pagination, $segment) {
             $this->db->order_by('AidiEmpr', 'desc');
             $this->db->limit($pagination, $segment);
             $query = $this->db->get('empresa')->result();
             return $query;
+        }
+
+        public function getLogo($AidiEmpr){
+                return $this->db->select('logoEmpr')->from('logoempr')->where('empresa_AidiEmpr',$AidiEmpr)->get()->row()->logoEmpr;
+        }
+
+        public function subirLogo($id,$imagen){
+            $data = array(
+                'empresa_AidiEmpr' => $id,
+                'logoEmpr' => $imagen
+            );
+            return $this->db->insert('logoempr', $data);
+        }
+
+        public function getImg($AidiEmpr){
+                return $this->db->select('fotoResp')->from('fotoresp')->where('empresa_AidiEmpr',$AidiEmpr)->get()->row()->fotoResp;
+        }
+
+        public function subir($id,$imagen){
+            $data = array(
+                'empresa_AidiEmpr' => $id,
+                'fotoResp' => $imagen
+            );
+            return $this->db->insert('fotoresp', $data);
+        }
+
+        public function get_imagen($items = null, $order = "ASC") {
+            if($items){
+                return $this->db->select('*')->from($this->fotoresp)->order_by('idFotoResp',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('empresa_AidiEmpr', 'desc');
+                $query = $this->db->get('fotoresp')->result();
+                return $query;
+            }
+        }
+
+        public function updateImg($idi,$id,$imagen){
+            $this->db->where('idFotoResp', $idi);
+            $data = array(
+                'idFotoResp' => $idi,
+                'empresa_AidiEmpr' => $id,
+                'fotoResp' => $imagen
+            );
+            $this->db->update(('fotoresp'), $data);
+        }
+
+        public function findImg($id){
+            if (is_array($id)) {
+                return $this->db->select('*')->from($this->fotoresp)->where_in('idFotoResp', $id)->get()->result();
+            } else {
+                return $this->db->select('*')->from('fotoresp')->where('idFotoResp', $id)->get()->row();
+            }
+        }
+
+        public function get_logo($items = null, $order = "ASC") {
+            if($items){
+                return $this->db->select('*')->from($this->logoempr)->order_by('idLogoEmpr',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('empresa_AidiEmpr', 'desc');
+                $query = $this->db->get('logoempr')->result();
+                return $query;
+            }
+        }
+
+        public function updateLogo($idi,$id,$imagen){
+            $this->db->where('idLogoEmpr', $idi);
+            $data = array(
+                'idLogoEmpr' => $idi,
+                'empresa_AidiEmpr' => $id,
+                'logoEmpr' => $imagen
+            );
+            $this->db->update(('logoempr'), $data);
+        }
+
+        public function findLogo($id){
+            if (is_array($id)) {
+                return $this->db->select('*')->from($this->logoempr)->where_in('idLogoEmpr', $id)->get()->result();
+            } else {
+                return $this->db->select('*')->from('logoEmpr')->where('idLogoEmpr', $id)->get()->row();
+            }
         }
 
 		public function find($id){

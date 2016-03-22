@@ -67,124 +67,6 @@ class Auth extends CI_Controller {
 		}
 	}
 
-	public function mateadmin()
-	{	
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		elseif ($this->ion_auth->in_group('admin')) {
-			$this->load->view('templates/naveadmin');
-			$this->load->view('auth/mateadmin');
-			$this->load->view('templates/footadmin');
-		}
-		elseif ($this->ion_auth->in_group('Poster')) {
-			$this->load->view('templates/naveedit');
-			$this->load->view('auth/mateadmin');
-			$this->load->view('templates/footedit');
-		}
-		else{
-			return show_error('You must be an administrator to view this page.');
-		}
-	}
-
-	public function evenadmin()
-	{	
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		elseif ($this->ion_auth->in_group('admin')) {
-			$this->load->view('templates/naveadmin');
-			$this->load->view('auth/evenadmin');
-			$this->load->view('templates/footadmin');
-		}
-		elseif ($this->ion_auth->in_group('Poster')) {
-			$this->load->view('templates/naveedit');
-			$this->load->view('auth/evenadmin');
-			$this->load->view('templates/footedit');
-		}
-		else{
-			return show_error('You must be an administrator to view this page.');
-		}
-	}
-
-	public function tianadmin()
-	{	
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		elseif ($this->ion_auth->in_group('admin')) {
-			$this->load->view('templates/naveadmin');
-			$this->load->view('auth/tianadmin');
-			$this->load->view('templates/footadmin');
-		}
-		elseif ($this->ion_auth->in_group('Tianguis')) {
-			$this->load->view('templates/navelib');
-			$this->load->view('auth/tianadmin');
-			$this->load->view('templates/footlib');
-		}
-		else{
-			return show_error('You must be an administrator to view this page.');
-		}
-	}
-
-	//Controladores de todas las vistas para dar de alta
-
-	public function regmaterial(){
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		$this->load->view('templates/naveadmin');
-		$this->load->view('auth/regmaterial');
-		$this->load->view('templates/footadmin');
-	}
-
-	public function regevento(){
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		$this->load->view('templates/naveadmin');
-		$this->load->view('auth/regevento');
-		$this->load->view('templates/footadmin');
-	}
-
-	public function regproducto(){
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		$this->load->view('templates/naveadmin');
-		$this->load->view('auth/regproducto');
-		$this->load->view('templates/footadmin');
-	}
-
-	//Controladores de todas las vistas para editar
-
-	public function editmaterial(){
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		$this->load->view('templates/naveadmin');
-		$this->load->view('auth/editmaterial');
-		$this->load->view('templates/footadmin');
-	}
-
-	public function editevento(){
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		$this->load->view('templates/naveadmin');
-		$this->load->view('auth/editevento');
-		$this->load->view('templates/footadmin');
-	}
-
-	public function editproducto(){
-		if(!$this->ion_auth->logged_in()){
-			redirect('auth/login', 'refresh');
-		}
-		$this->load->view('templates/naveadmin');
-		$this->load->view('auth/editproducto');
-		$this->load->view('templates/footadmin');
-	}
-
 	// log the user in
 	function login()
 	{
@@ -193,8 +75,21 @@ class Auth extends CI_Controller {
 		//validate form input
 		$this->form_validation->set_rules('identity', 'Identity', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
-
-		if ($this->form_validation->run() == true)
+		if ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('auth/administrador');
+			$this->load->view('templates/footadmin');
+		}
+		elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			$this->load->view('auth/editor');
+			$this->load->view('templates/footedit');
+		}
+		elseif ($this->ion_auth->in_group('Tianguis')) {
+			$this->load->view('templates/navelib');
+			$this->load->view('auth/libreria');
+			$this->load->view('templates/footlib');
+		}elseif ($this->form_validation->run() == true)
 		{
 			// check to see if the user is logging in
 			// check for "remember me"

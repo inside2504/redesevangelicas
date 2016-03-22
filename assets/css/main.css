@@ -94,7 +94,7 @@ a:focus {
 }
 
 .dropdown-menu {
-  margin-top: -1px;
+  margin-top: 0px;
   min-width: 180px;
 }
 
@@ -345,7 +345,7 @@ input.search-form:hover {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
   border: 0;
   padding: 0;
-  margin-top: -25px;
+  margin-top: 0px;
   border-top: 0;
   border-radius: 5px;
   left: 0;
@@ -567,6 +567,11 @@ input.search-form:hover {
 #feature {
   background: #f2f2f2;
   padding-bottom: 40px;
+}
+
+#space {
+  background: #f2f2f2;
+  padding-bottom: 0px;
 }
 
 #title {
@@ -2294,16 +2299,19 @@ ul.faq li > div h3 {
 .tit-letters{
   font-size: 38px;
   margin-top: 10px;
+  color: #555;
 }
 
 .sub-letters{
   font-size: 28px;
   margin-top: 10px;
+  color: #555;
 }
 
 .bod-letters{
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 10px;
+  color: #555;
 }
 
 .blog .blog-item .blog-content {

@@ -34,6 +34,8 @@ class Empresasview extends CI_Controller {
 
 	public function datos($id){
 		$this->data['item'] 	= $this->my_model->find($id);
+		$this->data['logoEmpr'] = $this->my_model->getLogo($id);
+		$this->data['fotoResp'] = $this->my_model->getImg($id);
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('datosempresa.php', $this->data); 
 		$this->load->view('templates/footer');

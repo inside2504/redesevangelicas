@@ -20,8 +20,9 @@
                 <p class="pure-u-1-3"><?php echo anchor('auth/create_user', lang('index_create_user_link'))?></p>
                 <p class="pure-u-1-3"><?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
                 <p class="pure-u-1-3"><?php echo anchor('auth/change_password', lang('contrasena'))?></p>
-            </section>
-		<section>
+        </section>
+    </div>
+    <div class="content">
 			<table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
 				<thead>
 					<tr>
@@ -50,6 +51,5 @@
 					</tbody>
 				<?php endforeach;?>
 			</table>
-		</section>
 	</div>
 </div>

@@ -13,11 +13,11 @@
             </section>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('servicio/regservicio')?>">Registrar un servicio</a></p>
-                <p class="pure-u-1-3"><a href="<?php echo site_url('serviciosview')?>">Ir al apartado de servicios</a></p>
+                <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('serviciosview')?>">Ir al apartado de servicios</a></p>
             </section>
         </div>
         <div>
-            <div class="tablas">
+            <div class="content">
             <section>
                 <div>
                     <table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
@@ -51,6 +51,38 @@
                                     ";
                                 }
                             ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="content">
+            <section class="acciones">
+                <p class="pure-u-1-3"><a href="<?php echo site_url('servicio/regimg')?>">Registrar una foto</a></p>
+            </section>
+        </div>
+        <div class="content">
+            <section>
+                <div>
+                    <table  class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
+                        <thead>
+                            <th>Nombre</th>
+                            <th>Servicio</th>
+                            <th>Foto del servidor</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                    foreach ($this->my_model->getAll() as $item) {
+                                        echo "<tr>
+                                                <td>$item->NamePrestServ $item->ApePatPrestServ $item->ApeMatPrestServ</td>
+                                                <td>$item->ServOfrecido</td>
+                                                <td><img class='".'media-object'."' src='".base_url('')."".'assets/servicio/'."".$item->imgServ."'></td>
+                                                <td><a href='".site_url('servicio/editarImg/'.$item->idimgServ)."'>Editar foto</a></td> 
+                                            </tr>
+                                        ";
+                                    }
+                                ?>
                         </tbody>
                     </table>
                 </div>

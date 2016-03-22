@@ -85,10 +85,6 @@
 						<label for="eslogan">Eslogan:</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text" value="<?php echo $item->EslogEmpr ?>" maxlength="100">
 					</div>
-					<div class="pure-control-group">
-						<label for="logo">Logotipo:</label>
-	            		<input name="logo" class="pure-input-1-2" type="file" value="<?php echo $item->LogoEmpr ?>" maxlength="50">
-					</div>
 				<legend>Datos del responsable de la empresa</legend>
 					<div class="pure-control-group">
 						<label for="nombre">Nombre(s):</label>
@@ -105,10 +101,6 @@
 					<div class="pure-control-group">
 						<label for="teleres">Tel&eacute;fono:</label>
 	            		<input name="teleres" class="pure-input-1-2" type="text" value="<?php echo $item->TelefRespEmpr ?>" required maxlength="12">
-					</div>
-					<div class="pure-control-group">
-						<label for="foto">Foto del responsable:</label>
-	            		<input name="foto" class="pure-input-1-2" type="file" value="<?php echo $item->FotoRespEmpr ?>" maxlength="50">
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

@@ -12,7 +12,7 @@
         </section>
         <section class="acciones">
             <p class="pure-u-1-3"><a href="<?php echo site_url('kids/regkids')?>">Registrar una entrada</a></p>
-            <p class="pure-u-1-3"><a href="<?php echo site_url('kidsview')?>">Ir al apartado de Kids</a></p>
+            <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('kidsview')?>">Ir al apartado de Kids</a></p>
         </section>
     </div>
     <div class="content">

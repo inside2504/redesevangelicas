@@ -24,7 +24,11 @@
 				</div>
 				<h2></h2>
 			</div>		
-		</div><hr>
+		</div>
+		<hr>
+		<h2>*Para ver los eventos, haga clic en el d&iacute;a deseado del calendario. </h2>
+		<h2>**Si desea ver la hora de los eventos de un d&iacute;a en espec&iacute;fico, de doble clic sobre el d&iacute;a deseado. </h2>
+		<hr>
 		<div class="row">
 			<div id="calendar"></div>
 		</div>

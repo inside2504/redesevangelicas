@@ -13,10 +13,10 @@
             </section>
              <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('evento/regevento')?>">Registrar un evento</a></p>
-                <p class="pure-u-1-3"><a href="<?php echo site_url('eventosview')?>">Ir al apartado de eventos</a></p>
+                <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('eventosview')?>">Ir al apartado de eventos</a></p>
             </section>
         </div>
-        <div class="tablas">
+        <div class="content">
             <section>
                 <div>
                     <table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>

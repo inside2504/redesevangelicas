@@ -35,6 +35,7 @@ class Iglesiasview extends CI_Controller {
 
 	public function datos($id){
 		$this->data['item'] 	= $this->my_model->find($id);
+		$this->data['logo'] = $this->my_model->getImg($id); 
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('datosiglesia.php', $this->data); 
 		$this->load->view('templates/footer');

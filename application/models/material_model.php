@@ -17,11 +17,60 @@
 			}
 		}
 
+        public function getAll() {
+            $this->db->order_by('material_idMate', 'desc');
+            $this->db->select('*');
+            $this->db->from('imgmate');
+            $this->db->join('material', 'material.idMate = imgmate.material_idMate');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
         public function get_material($pagination, $segment) {
             $this->db->order_by('idMate', 'desc');
             $this->db->limit($pagination, $segment);
             $query = $this->db->get('material')->result();
             return $query;
+        }
+
+        public function getImg($idMate){
+                return $this->db->select('imgMate')->from('imgmate')->where('material_idMate',$idMate)->get()->row()->imgMate;
+        }
+
+        public function subir($id,$imagen){
+            $data = array(
+                'material_idMate' => $id,
+                'imgMate' => $imagen
+            );
+            return $this->db->insert('imgmate', $data);
+        }
+
+        public function get_imagen($items = null, $order = "ASC") {
+            if($items){
+                return $this->db->select('*')->from($this->imgmate)->order_by('idImgMate',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('material_idMate', 'desc');
+                $query = $this->db->get('imgmate')->result();
+                return $query;
+            }
+        }
+
+        public function updateImg($idi,$id,$imagen){
+            $this->db->where('idImgMate', $idi);
+            $data = array(
+                'idImgMate' => $idi,
+                'material_idMate' => $id,
+                'imgMate' => $imagen
+            );
+            $this->db->update(('imgmate'), $data);
+        }
+
+        public function findImg($id){
+            if (is_array($id)) {
+                return $this->db->select('*')->from($this->imgmate)->where_in('idImgMate', $id)->get()->result();
+            } else {
+                return $this->db->select('*')->from('imgmate')->where('idImgMate', $id)->get()->row();
+            }
         }
 
 		public function find($id){

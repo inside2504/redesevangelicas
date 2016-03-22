@@ -28,7 +28,7 @@
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
 										<div class="pull-left">
-											<img class="caratula" src="<?=base_url('')."assets/tianguis/"."$row->imagProd"?>" alt="">
+											<img class="caratula" src="<?=base_url('')."assets/tianguis/"."$row->imgProd"?>" alt="">
 										</div>
 										
 									</div><!--/.media -->

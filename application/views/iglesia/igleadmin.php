@@ -13,10 +13,10 @@
             </section>
              <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('iglesia/regiglesia')?>">Registrar una iglesia</a></p>
-                <p class="pure-u-1-3"><a href="<?php echo site_url('iglesiasview')?>">Ir al apartado de iglesias</a></p>
+                <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('iglesiasview')?>">Ir al apartado de iglesias</a></p>
             </section>
         </div>
-        <div class="tablas">
+        <div class="content">
             <section>
                 <div>
                     <table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
@@ -27,7 +27,6 @@
                             <th>N&uacute;mero</th>
                             <th>Colonia</th>
                             <th>Ciudad</th>
-                            <th>Estado</th>
                             <th>Tel&eacute;fono</th>
                             <th></th>
                             <th></th>
@@ -42,7 +41,6 @@
                                             <td>$row->numExtIgle</td>
                                             <td>$row->coloIgle</td>
                                             <td>$row->ciudadIgle</td>
-                                            <td>$row->edoIgle</td>
                                             <td>$row->telIgle</td>
                                             <td><a href='".site_url('iglesia/editar/'.$row->idIgle)."'>Editar</a></td> 
                                             <td><a href='".site_url('iglesia/eliminar/'.$row->idIgle)."'>Eliminar</a></td>
@@ -50,6 +48,38 @@
                                     ";
                                 }
                             ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="content">
+            <section class="acciones">
+                <p class="pure-u-1-3"><a href="<?php echo site_url('iglesia/regimg')?>">Registrar un logo</a></p>
+            </section>
+        </div>
+        <div class="content">
+            <section>
+                <div>
+                    <table  class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
+                        <thead>
+                            <th>Iglesia</th>
+                            <th>Pastor</th>
+                            <th>Logo de la iglesia</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                    foreach ($this->my_model->getAll() as $item) {
+                                        echo "<tr>
+                                                <td>$item->nomIgle</td>
+                                                <td>$item->pasIgle</td>
+                                                <td><img class='".'media-object'."' src='".base_url('')."".'assets/iglesias/'."".$item->logo."'></td>
+                                                <td><a href='".site_url('iglesia/editarImg/'.$item->idLogoIgle)."'>Editar logo</a></td> 
+                                            </tr>
+                                        ";
+                                    }
+                                ?>
                         </tbody>
                     </table>
                 </div>

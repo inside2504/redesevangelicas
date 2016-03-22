@@ -30,10 +30,6 @@
 						<label for="descrip">Descripci&oacute;n:</label>
 			       		<textarea name="descripcion" type="text" cols="45" rows="3" required maxlength="100"><?php echo $item->descMate?></textarea>
 			       	</div>
-			       	<div class="pure-control-group">
-						<label for="imagen">Imagen del material:</label>
-	            		<input name="imagen" class="pure-input-1-2" type="file" value="<?= $item->imgMate; ?>" maxlength="50"></span>
-					</div>
 					<div class="pure-control-group">
 						<label for="link" required>Link del material:</label>
 	            		<textarea name="link" class="pure-input-1-2" type="text" maxlength="100"><?php echo $item->linkMate?></textarea>

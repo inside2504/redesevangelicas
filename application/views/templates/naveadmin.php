@@ -67,7 +67,7 @@ ga('send', 'pageview');
                 	<a href="<?php echo site_url('empresa/empreadmin')?>" class="pure-menu-link">Empresas</a>
                 </li>
                 <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="<?php echo site_url('servicio/servadmin')?>" class="pure-menu-link">Profesionales</a>
+                    <a href="<?php echo site_url('servicio/servadmin')?>" class="pure-menu-link">Servicios</a>
                 </li>
                 <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
                     <a href="<?php echo site_url('taxi/taxiadmin')?>" class="pure-menu-link">Taxi</a>
