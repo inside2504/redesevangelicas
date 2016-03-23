@@ -27,8 +27,7 @@
 	            		<input name="link" class="pure-input-1-2" type="text" value="<?php echo $item->LinkKids ?>" required maxlength="50">
 					</div>
 					<div class="pure-controls">
-						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
-						<button type="submit" class="pure-button pure-button-primary">Registrar</button>
+						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>
 					</div>
 			</fieldset>
 		</form>

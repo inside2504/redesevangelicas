@@ -17,7 +17,7 @@
 	<div class="container">
 	    <div class="row"><br>
 
-	    <?php echo form_open(base_url('evento/editar')) ?>
+	    <?php echo form_open(base_url('index.php/evento/editar')) ?>
 	    <input name="id" class="pure-input-1-2" type="text" style="visibility:hidden" value="<?php echo $item->id ?>">
 	        <div class="col-sm-8 col-sm-offset-2" style="height:75px;">
 	           <div class='col-md-6'>

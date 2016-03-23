@@ -208,7 +208,6 @@
 				'descMate'	=> $this->input->post('descripcion'),
 				'linkMate'	=> $this->input->post('link'),
 			);
-			var_dump($data);
 			$this->my_model->update($id,$data);
 			redirect('material/mateadmin');
 		}

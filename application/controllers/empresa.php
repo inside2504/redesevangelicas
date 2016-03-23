@@ -61,12 +61,7 @@
 	}
 
 	public function guardar(){
-		if ((!$this->upload->do_upload($logo)) & (!$this->upload->do_upload($foto))) {
-            //*** ocurrio un error
-            $data['uploadError'] = $this->upload->display_errors();
-            echo $this->upload->display_errors();
-            return;
-		}elseif($this->form_validation->run('controller_validation') != false){
+		if($this->form_validation->run('controller_validation') != false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
 			var_dump('errors');
@@ -94,7 +89,6 @@
 			$data['ApePatRespEmpr'] 	= $this->input->post('apepat');
 			$data['ApeMatRespEmpr'] 	= $this->input->post('apemat');
 			$data['TelefRespEmpr'] 		= $this->input->post('teleres');
-			var_dump($data);
 			$this->my_model->create($data);
 			redirect('empresa/empreadmin');
 		}
@@ -163,15 +157,15 @@
         $config['upload_path'] = "assets/empresa/";
         $config['allowed_types'] = "jpg|jpeg|png|bmp";
         $config['max_size'] = '5000';
-        $config['max_width'] = '500';
-        $config['max_height'] = '500';
+        $config['max_width'] = '1000';
+        $config['max_height'] = '1000';
 
         $this->load->library('upload', $config);
         //SI LA IMAGEN FALLA AL SUBIR MOSTRAMOS EL ERROR EN LA VISTA UPLOAD_VIEW
         
         if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors());
-            $this->load->view('upload_view', $error);
+            $this->load->view('empresa/regimg', $error);
         } else {
         //EN OTRO CASO SUBIMOS LA IMAGEN, CREAMOS LA MINIATURA Y HACEMOS 
         //ENVÍAMOS LOS DATOS AL MODELO PARA HACER LA INSERCIÓN
@@ -315,7 +309,6 @@
 				'ApeMatRespEmpr' 		=> $this->input->post('apemat'),
 				'TelefRespEmpr' 		=> $this->input->post('teleres'),
 			);
-			var_dump($data);
 			$this->my_model->update($id,$data);
 			redirect('empresa/empreadmin');
 		}

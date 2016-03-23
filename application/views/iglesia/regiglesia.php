@@ -6,7 +6,7 @@
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('/iglesia/guardar');?>">
+		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/iglesia/guardar');?>">
 			<fieldset>
 				<legend>Datos de la iglesia</legend>
 					<div class="pure-control-group">
@@ -73,7 +73,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="mapa" required>Link del mapa:</label>
-	            		<textarea name="mapa" class="pure-input-1-2" type="text" placeholder="Ingrese el link del mapa" maxlength="100"></textarea>
+	            		<textarea name="mapa" class="pure-input-1-2" type="text" placeholder="Ingrese el link del mapa" maxlength="255"></textarea>
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>

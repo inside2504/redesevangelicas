@@ -213,7 +213,6 @@
 				'twIgle' 			=> $this->input->post('tw'),
 				'mapaIgle' 			=> $this->input->post('mapa'),
 			);
-			var_dump($data);
 			$this->my_model->update($id,$data);
 			redirect('iglesia/igleadmin');
 		}

@@ -6,7 +6,7 @@
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('/iglesia/subimg');?>">
+		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/iglesia/subimg');?>">
 			<fieldset>
 				<legend>Datos para el logo de la iglesia</legend>
 					<div class="pure-control-group">

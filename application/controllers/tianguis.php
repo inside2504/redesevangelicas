@@ -185,7 +185,6 @@
 				'fBLibProd' 		=> $this->input->post('fb'),
 				'tWLibProd' 		=> $this->input->post('tw')
 			);
-			var_dump($data);
 			$this->my_model->update($id,$data);
 			redirect('tianguis/tianadmin');
 		}

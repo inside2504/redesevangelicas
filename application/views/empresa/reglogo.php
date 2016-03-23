@@ -6,7 +6,7 @@
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('/empresa/sublogo');?>">
+		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/empresa/sublogo');?>">
 			<fieldset>
 				<legend>Datos de la foto</legend>
 					<div class="pure-control-group">

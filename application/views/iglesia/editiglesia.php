@@ -74,7 +74,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="mapa" required>Link del mapa:</label>
-	            		<textarea name="mapa" class="pure-input-1-2" type="text" maxlength="100"><?php echo $item->mapaIgle?></textarea>
+	            		<textarea name="mapa" class="pure-input-1-2" type="text" maxlength="255"><?php echo $item->mapaIgle?></textarea>
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

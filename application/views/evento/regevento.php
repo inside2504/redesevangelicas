@@ -17,7 +17,7 @@
 	</div>
 	<div class="container">
 	    <div class="row"><br>
-	    <?php echo form_open(base_url('evento/guardar')) ?>
+	    <?php echo form_open(base_url('index.php/evento/guardar')) ?>
 	        <div class="col-sm-8 col-sm-offset-2" style="height:75px;">
 	           <div class='col-md-6'>
 	                <div class="form-group">

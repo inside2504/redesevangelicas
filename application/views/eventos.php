@@ -32,7 +32,27 @@
 		<div class="row">
 			<div id="calendar"></div>
 		</div>
-
+		<section>
+			<div class="row clearfix">
+				<div class="col-md-2 col-sm-2">
+					<h3><div class="pull-left event event-info"></div>Reuni&oacute;n</h3>
+				</div>
+				<div class="col-md-2 col-sm-2">
+					<h3><div class="pull-left event event-success"></div>Concierto</h3>
+				</div>
+				<div class="col-md-2 col-sm-2">
+					<h3><div class="pull-left event event-inverse"></div>J&oacute;venes</h3>
+				</div>
+				<div class="col-md-2 col-sm-2">
+					<h3><div class="pull-left event event-important"></div>Aniversario</h3>
+				</div>
+				<div class="col-md-2 col-sm-2">
+					<h3><div class="pull-left event event-warning"></div>Invitado</h3>
+				</div>
+				<div class="col-md-2 col-sm-2">
+					<h3><div class="pull-left event event-special"></div>Otros</h3>
+				</div>
+		</section>
 		<!--ventana modal para el calendario-->
 		<div class="modal fade" id="events-modal">
 		    <div class="modal-dialog">
@@ -64,7 +84,7 @@
 
 		//establecemos los valores del calendario
 		var options = {
-			events_source: '<?php echo base_url() ?>eventosview/getAll',
+			events_source: '<?php echo base_url() ?>index.php/eventosview/getAll',
 			view: 'month',
 			language: 'es-ES',
 			tmpl_path: '<?php echo base_url() ?>bower_components/bootstrap-calendar/tmpls/',

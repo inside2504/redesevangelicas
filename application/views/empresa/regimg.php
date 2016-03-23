@@ -6,7 +6,7 @@
 		</section>
 	</div>
 	<div class="content">
-		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('/empresa/subimg');?>">
+		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/empresa/subimg');?>">
 			<fieldset>
 				<legend>Datos de la foto</legend>
 					<div class="pure-control-group">
@@ -23,7 +23,7 @@
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
-						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>
+						<button type="submit" class="pure-button pure-button-primary">Registrar</button>
 					</div>
 			</fieldset>
 		</form>

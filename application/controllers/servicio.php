@@ -222,7 +222,6 @@
 				'TwServ'			 => $this->input->post('tw'),
 				'EslogServ'			 => $this->input->post('eslogan'),
 			);
-			var_dump($data);
 			$this->my_model->update($id,$data);
 			redirect('servicio/servadmin');
 		}

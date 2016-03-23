@@ -95,8 +95,7 @@
 		if($this->form_validation->run('controller_validation')!=false){
 			$errors = validation_errors();
 			$this->session->set_flashdata('errors',$errors);
-			var_dump('errors');
-			redirect('kids/editkids/'.$id);
+			redirect('kids/kidsadmin/'.$id);
 
 		} else {
 			$id = $this->input->post('id');
@@ -106,7 +105,6 @@
 				'FechaCreacion'	 	=> $this->input->post('fecha'),
 				'LinkKids' 			=> $this->input->post('link')				
 			);
-			var_dump($data);
 			$this->my_model->update($id,$data);
 			redirect('kids/kidsadmin');
 		}

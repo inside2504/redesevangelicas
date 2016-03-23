@@ -50,7 +50,7 @@
                 return $this->db->select('*')->from($this->taxi)->order_by('idfotoTaxi',$order)->limit($rows)->get()->result();
             }else{
                 $this->db->order_by('taxi_AidiTaxi', 'desc');
-                $query = $this->db->get('fotoTaxi')->result();
+                $query = $this->db->get('fototaxi')->result();
                 return $query;
             }
         }
@@ -69,7 +69,7 @@
             if (is_array($id)) {
                 return $this->db->select('*')->from($this->fototaxi)->where_in('idfotoTaxi', $id)->get()->result();
             } else {
-                return $this->db->select('*')->from('fotoTaxi')->where('idfotoTaxi', $id)->get()->row();
+                return $this->db->select('*')->from('fototaxi')->where('idfotoTaxi', $id)->get()->row();
             }
         }
 

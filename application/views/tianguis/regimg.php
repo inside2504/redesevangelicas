@@ -7,7 +7,7 @@
 	</div>
 	<div class="content">
 		<span><?php echo validation_errors(); ?></span>
-		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('/tianguis/subimg');?>">
+		<form class="pure-form pure-form-aligned" enctype="multipart/form-data" method="POST" action="<?php echo base_url('index.php/tianguis/subimg');?>">
 			<fieldset>
 				<legend>Datos de la foto</legend>
 					<div class="pure-control-group">

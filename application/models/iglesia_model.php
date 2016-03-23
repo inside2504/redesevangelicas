@@ -27,7 +27,7 @@
         }
 
         public function getImg($idIgle){
-                return $this->db->select('logo')->from('logoIgle')->where('iglesia_idIgle',$idIgle)->get()->row()->logo;
+                return $this->db->select('logo')->from('logoigle')->where('iglesia_idIgle',$idIgle)->get()->row()->logo;
         }
 
         public function subir($id,$imagen){
@@ -35,7 +35,7 @@
                 'iglesia_idIgle' => $id,
                 'logo' => $imagen
             );
-            return $this->db->insert('logoIgle', $data);
+            return $this->db->insert('logoigle', $data);
         }
 
         public function get_iglesias($pagination, $segment) {
