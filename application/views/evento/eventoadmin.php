@@ -8,8 +8,8 @@
             <section>
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar un evento</em></strong> entonces haga clic en <strong><em>"Registrar un evento"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
-                <p>Si desea <strong><em>editar los datos de un evento</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
-                <p>Si desea <strong><em>eliminar una evento</em></strong> registrado, entonces haga clic en <strong><em>"Eliminar"</em></strong> para <strong><em>eliminarlo del sistema</em></strong>.</p>
+                <p>Si desea <strong><em>editar los datos de un evento</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> en la columna del evento que quiera editar para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
+                <p>Si desea <strong><em>eliminar una evento</em></strong> registrado, entonces haga clic en <strong><em>"Eliminar"</em></strong> en la columna del evento que quiera eliminar para <strong><em>eliminarlo del sistema</em></strong>.</p>
             </section>
              <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('evento/regevento')?>">Registrar un evento</a></p>

@@ -37,7 +37,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="numexterior">N&uacute;mero exterior:</label>
-	            		<input name="numexterior" class="pure-input-1-2" type="text" placeholder="Número exterior" required maxlength="4">
+	            		<input name="numexterior" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" placeholder="Número exterior" required maxlength="4">
 					</div>
 					<div class="pure-control-group">
 						<label for="numinterior">N&uacute;mero interior (si tiene):</label>
@@ -49,7 +49,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="codigo">C&oacute;digo postal:</label>
-	            		<input name="codigo" class="pure-input-1-2" type="text" placeholder="Código postal" required maxlength="5">
+	            		<input name="codigo" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" placeholder="Código postal" required maxlength="5">
 					</div>
 					<div class="pure-control-group">
 						<label for="ciudad">Ciudad:</label>
@@ -62,7 +62,7 @@
 				<legend>Contacto</legend>
 					<div class="pure-control-group">
 						<label for="telefono">Tel&eacute;fono:</label>
-	            		<input name="telefono" class="pure-input-1-2" type="text" placeholder="Teléfono" required maxlength="12">
+	            		<input name="telefono" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" placeholder="Teléfono" required maxlength="12">
 					</div>
 					<div class="pure-control-group">
 						<label for="correo">Correo electrónico:</label>
@@ -99,7 +99,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="teleres">Tel&eacute;fono:</label>
-	            		<input name="teleres" class="pure-input-1-2" type="text" placeholder="Teléfono" required maxlength="12">
+	            		<input name="teleres" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" placeholder="Teléfono" required maxlength="12">
 					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>

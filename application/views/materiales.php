@@ -5,7 +5,7 @@
 	</div>
 	<section class="container">
         <div class="pull-right">
-            <form action="<?php echo base_url('/materialesview/buscar');?>" method="GET" >
+            <form action="<?php echo base_url('index.php/materialesview/buscar');?>" method="GET" >
                 <fieldset>
                     <h3>Filtrar por tipo de material
                             <select type="text" autocomplete="off" name="buscar">

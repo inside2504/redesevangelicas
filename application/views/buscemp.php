@@ -5,7 +5,7 @@
     </div>
     <section class="container">
         <div class="pull-right">
-            <form action="<?php echo base_url('/empresasview/buscar');?>" method="GET" >
+            <form action="<?php echo base_url('index.php/empresasview/buscar');?>" method="GET" >
                 <fieldset>
                     <h3>Filtrar por tipo de empresa
                             <select type="text" autocomplete="off" name="buscar">
@@ -31,7 +31,7 @@
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<?=base_url('')."assets/empresa/"."$row->LogoEmpr"?>" alt="">
+                                    <img class="media-object" src="<?= base_url('').'assets/empresa/'.$this->my_model->getLogo($row->AidiEmpr) ?>">
                                 </div>
                                 <div class="media-body">  
                                     <h4><?php echo $row->NameEmpr ?></h4>

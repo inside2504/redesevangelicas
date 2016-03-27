@@ -22,6 +22,7 @@
 						<label for="userfile">Imagen del producto:</label>
 	            		<input name="userfile" class="pure-input-1-2" type="file" placeholder="Nombre" required maxlength="50">
 					</div>
+					<p class="pull-right">Los formatos admitidos son: .jpg, .jpeg y .png.<br>Las medidas de la imagen de la foto deben ser menores de 1000x1000px.</p>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>

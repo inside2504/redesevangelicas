@@ -18,7 +18,6 @@
 		</section>
 		<section class="acciones">
                 <p class="pure-u-1-3"><?php echo anchor('auth/create_user', lang('index_create_user_link'))?></p>
-                <p class="pure-u-1-3"><?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
                 <p class="pure-u-1-3"><?php echo anchor('auth/change_password', lang('contrasena'))?></p>
         </section>
     </div>
@@ -42,7 +41,7 @@
 				            <td><?php echo htmlspecialchars($user->CorreUser,ENT_QUOTES,'UTF-8');?></td>
 							<td>
 								<?php foreach ($user->groups as $group):?>
-									<?php echo anchor("auth/edit_group/".$group->AidiGrupo, htmlspecialchars($group->NeimGrupo,ENT_QUOTES,'UTF-8')) ;?><br />
+									<p value="$group->NeimGrupo"><?php echo $group->NeimGrupo ?></p>
 				                <?php endforeach?>
 							</td>
 							<td><?php echo ($user->Activo) ? anchor("auth/deactivate/".$user->AidiUsuario, lang('index_active_link')) : anchor("auth/activate/". $user->AidiUsuario, lang('index_inactive_link'));?></td>

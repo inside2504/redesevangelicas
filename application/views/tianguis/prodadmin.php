@@ -10,6 +10,7 @@
             <p>Si desea <strong><em>registrar un producto</em></strong> entonces haga clic en <strong><em>"Registrar un producto"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
             <p>Si desea <strong><em>editar los datos de un producto</em></strong> entonces haga clic en <strong><em>"Editar un producto"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
             <p>Si desea <strong><em>eliminar un producto</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar un producto"</em></strong> para <strong><em>eliminarlo del sistema</em></strong>.</p>
+            <p>Si no se cuenta con la imagen del producto entonces descargue <a href="<?=base_url('')."nocover.jpg"?>" download="nocoverproducto">aqu&iacute;</a> la imagen por defecto para poder subirla como car&aacute;tula</p>
         </section>
         <section class="acciones">
             <p class="pure-u-1-3"><a href="<?php echo site_url('tianguis/regproducto')?>">Registrar producto</a></p>

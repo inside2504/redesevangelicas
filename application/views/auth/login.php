@@ -35,7 +35,7 @@
       </div>
       <div class"row">
         <div class="col-sm-10 col-sm-offset-1">
-          <p class="lead pull-right"><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+          <p class="lead pull-right"><?php echo lang('login_forgot_password');?> Contacta al administrador para recuperarla.</p>
         </div>
     </div>
   </div>

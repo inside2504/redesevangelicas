@@ -7,8 +7,12 @@
             <section>
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar una empresa</em></strong> entonces haga clic en <strong><em>"Registrar una empresa"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
-                <p>Si desea <strong><em>editar los datos de una empresa</em></strong> entonces haga clic en <strong><em>"Editar una empresa"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
-                <p>Si desea <strong><em>eliminar una empresa</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar una empresa"</em></strong> para <strong><em>eliminarla del sistema</em></strong>.</p>
+                <p>Si desea <strong><em>editar los datos de una empresa</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> en la columna de la empresa que quiera editar para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
+                <p>Si desea <strong><em>eliminar una empresa</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar"</em></strong> en la columna de la empresa que quiera eliminar para <strong><em>eliminarla del sistema</em></strong>.</p>
+                <p>Al <strong><em>dar de alta una empresa</em></strong>, es necesario <strong><em>registrar el logo</em></strong> correspondiente. De clic en <strong><em>Registrar un logo</em></strong> para ingresar al formulario</p>
+                <p>As&iacute; mismo, al <strong><em>dar de alta una empresa</em></strong>, es necesario <strong><em>registrar la foto</em></strong> del responsable de la empresa correspondiente. De clic en <strong><em>Registrar un logo</em></strong> para ingresar al formulario</p>
+                <p>Si la empresa no cuenta con logo entonces descargue <a href="<?=base_url('')."nologo.jpg"?>" download="nologoempresa">aqu&iacute;</a> la imagen por defecto para poder subirla como logo.</p>
+                <p>Si no se cuenta con la foto del responsable entonces descargue <a href="<?=base_url('')."nofoto.jpg"?>" download="nofotoresponsable">aqu&iacute;</a> la imagen por defecto para poder subirla como foto</p>
             </section>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('empresa/regempresa')?>">Registrar una empresa</a></p>

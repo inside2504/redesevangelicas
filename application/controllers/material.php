@@ -114,8 +114,8 @@
         $config['upload_path'] = "assets/material/";
         $config['allowed_types'] = "jpg|jpeg|png|bmp";
         $config['max_size'] = '5000';
-        $config['max_width'] = '500';
-        $config['max_height'] = '500';
+        $config['max_width'] = '1000';
+        $config['max_height'] = '1000';
 
         $this->load->library('upload', $config);
         //SI LA IMAGEN FALLA AL SUBIR MOSTRAMOS EL ERROR EN LA VISTA UPLOAD_VIEW
@@ -142,9 +142,16 @@
     public function editarImg($id){
 		$this->data['cols'] 	= $this->my_model->findImg($id);
 		$this->data['errors'] 	= $this->session->flashdata('errors');
-		$this->load->view('templates/naveadmin');
-		echo $this->load->view('material/editimg.php', $this->data); 
-		$this->load->view('templates/footadmin');
+		if ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			echo $this->load->view('material/editimg.php', $this->data); 
+			$this->load->view('templates/footadmin');
+		}
+		elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			echo $this->load->view('material/editimg.php', $this->data);
+			$this->load->view('templates/footedit');
+		}	
 	}
 
     public function editimg($id) {
@@ -187,9 +194,16 @@
 	public function editar($id){
 		$this->data['item'] 	= $this->my_model->find($id);
 		$this->data['errors'] 	= $this->session->flashdata('errors');
-		$this->load->view('templates/naveadmin');
-		echo $this->load->view('material/editmaterial.php', $this->data); 
-		$this->load->view('templates/footadmin');
+		if ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			echo $this->load->view('material/editmaterial.php', $this->data); 
+			$this->load->view('templates/footadmin');
+		}
+		elseif ($this->ion_auth->in_group('Poster')) {
+			$this->load->view('templates/naveedit');
+			echo $this->load->view('material/editmaterial.php', $this->data);
+			$this->load->view('templates/footedit');
+		}	
 	}
 
 	public function actualizar($id){

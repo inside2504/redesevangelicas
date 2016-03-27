@@ -21,6 +21,7 @@
 	        <div class="col-sm-8 col-sm-offset-2" style="height:75px;">
 	           <div class='col-md-6'>
 	                <div class="form-group">
+	                	<label>Fecha de inicio</label>
 	                    <div class='input-group date' id='from'>
 	                        <input type='text' name="from" class="form-control" readonly required/>
 	                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
@@ -29,6 +30,7 @@
 	            </div>
 	            <div class='col-md-6'>
 	                <div class="form-group">
+	                	<label>Fecha de fin</label>
 	                    <div class='input-group date' id='to'>
 	                        <input type='text' name="to" class="form-control" readonly required/>
 	                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>

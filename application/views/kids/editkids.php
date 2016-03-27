@@ -23,7 +23,7 @@
 	            		<input name="fecha" class="pure-input-1-2" type="date" value="<?php echo $item->FechaCreacion ?>" required>
 	            	</div>
 					<div class="pure-control-group">
-						<label for="link">Link del contenido<br> <strong>*En la p&aacute;gina de youtube, copie a partir de lo que est&aacute; marcado en negritas y subrayado en el siguiente ejemplo:</strong><br>www.youtube.com/watch?v=<strong><em>PYjaFBE7NQI</em></strong></label>
+						<label for="link">Link del contenido<br><strong>Revise el <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?=base_url('')."Administrador.pdf"?>">manual de usuario</a> para saber c&oacute;mo encontrar el link del contenido.</strong></label>
 	            		<input name="link" class="pure-input-1-2" type="text" value="<?php echo $item->LinkKids ?>" required maxlength="50">
 					</div>
 					<div class="pure-controls">

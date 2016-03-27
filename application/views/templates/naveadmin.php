@@ -35,6 +35,15 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-41480445-1', 'purecss.io');
 ga('send', 'pageview');
 </script>
+<script type="text/javascript">
+    function validNumbers(e){
+    var keynum = window.event ? window.event.keyCode : e.which;
+    if ((keynum == 8) || (keynum == 46))
+    return true;
+         
+    return /\d/.test(String.fromCharCode(keynum));
+    }
+</script>
 
 
 </head>

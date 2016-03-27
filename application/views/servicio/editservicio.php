@@ -46,7 +46,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="numexterior">N&uacute;mero exterior:</label>
-	            		<input name="numexterior" class="pure-input-1-2" type="text" value="<?php echo $item->NumExtSer ?>" required maxlength="4">
+	            		<input name="numexterior" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" value="<?php echo $item->NumExtSer ?>" required maxlength="4">
 					</div>
 					<div class="pure-control-group">
 						<label for="numinterior">N&uacute;mero interior (si tiene):</label>
@@ -71,11 +71,11 @@
 				<legend>Contacto</legend>
 					<div class="pure-control-group">
 						<label for="telefono">Tel&eacute;fono:</label>
-	            		<input name="telefono" class="pure-input-1-2" type="text" value="<?php echo $item->TelefServ ?>" required maxlength="12">
+	            		<input name="telefono" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" value="<?php echo $item->TelefServ ?>" required maxlength="12">
 					</div>
 					<div class="pure-control-group">
 						<label for="celular">Celular:</label>
-	            		<input name="celular" class="pure-input-1-2" type="text" value="<?php echo $item->telCelServ ?>" required maxlength="12">
+	            		<input name="celular" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" value="<?php echo $item->telCelServ ?>" required maxlength="12">
 					</div>
 					<div class="pure-control-group">
 						<label for="correo">Correo electrónico:</label>

@@ -38,7 +38,7 @@
 	<div class="container">
         <div class="blog">
         	<div class="center">
-        		<h2>Blog<h2>
+        		<h2>Centro KIDS<h2>
         		<p class="lead">En esta secci&oacute;n encontrar&aacute;s caricaturas cristianas de historias b&iacute;blicas en video.</p>
         	</div>
             <div class="row">

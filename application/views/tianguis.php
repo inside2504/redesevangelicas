@@ -5,7 +5,7 @@
     </div>
     <section class="container">
         <div class="pull-right">
-            <form action="<?php echo base_url('/tianguisview/buscar');?>" method="GET" >
+            <form action="<?php echo base_url('index.php/tianguisview/buscar');?>" method="GET" >
                 <fieldset>
                     <h3>Filtrar por nombre
                         <input type="text" name="buscar" placeholder="Ingresa una palabra"/>

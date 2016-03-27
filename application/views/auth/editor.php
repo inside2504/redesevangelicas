@@ -1,24 +1,22 @@
 <div id="main">
         <div class="header">
-            <h1>Editor</h1>
-            <h2>Bienvenido</h2>
+            <h1>Bienvenido editor</h1>
         </div>
 
         <div class="content">
-            <h2 class="content-subhead">How to use this layout</h2>
-            <p>
-                To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/css/layouts/side-menu.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
-            </p>
-
-            <h2 class="content-subhead">Now Let's Speak Some Latin</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <h2 class="content-subhead">Try Resizing your Browser</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h2 class="content-subhead">¿Por d&oacute;nde empezar?</h2>
+            <p>Hola editor, como en todo sistema usted necesitar&aacute; leer el <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?=base_url('')."Editor.pdf"?>">manual de usuario</a> para entender c&oacute;mo
+                usar su sistema web. Le recomendamos lo lea con detenimiento y en caso de tener alguna duda al hacer uso del sistema lo consulte.</p>
+        </div>
+        <div class="content">
+            <h2 class="content-subhead">¿Cu&aacute;l es el siguiente paso?</h2>
+            <p>En su lado izquierdo se encuentra el men&uacute; donde podr&aacute; registrar, editar y eliminar el contenido
+                de las secciones que ah&iacute; se muestran.</p>
+        </div>
+        <div class="content">
+            <h2 class="content-subhead">Emprendamos el viaje</h2>
+            <p>En caso de tener alguna duda y no poder consultar el manual no se preocupe, existen instrucciones en las p&aacute;ginas principales de cada secci&oacute;n
+                aunque no se encuentra toda la informaci&oacute;n.</p>
         </div>
     </div>
 </div>

@@ -7,10 +7,13 @@
         <div class="content">
             <section>
                 <h2>Instrucciones</h2>
-                <p>Si desea <strong><em>registrar un producto</em></strong> entonces haga clic en <strong><em>"Registrar un producto"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
-                <p>Si desea <strong><em>editar los datos de un producto</em></strong> entonces haga clic en <strong><em>"Editar un producto"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
-                <p>Si desea <strong><em>eliminar un producto</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar un producto"</em></strong> para <strong><em>eliminarlo del sistema</em></strong>.</p>
-            </section>
+                <p>Si desea <strong><em>registrar una librer&iacute;a</em></strong> entonces haga clic en <strong><em>"Registrar una librer&iacute;a"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
+                <p>Si desea <strong><em>editar los datos de una librer&iacute;a</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> en la columna de la librer&iacute;a que quiera editar para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
+                <p>Si desea <strong><em>eliminar una librer&iacute;a</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar"</em></strong> en la columna de la librer&iacute;a que quiera eliminar para <strong><em>eliminarla del sistema</em></strong>.</p>
+                <p>Si desea <strong><em>registrar un producto</em></strong> entonces haga clic en <strong><em>"Registrar producto"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
+                <p>Si desea <strong><em>eliminar un producto</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar"</em></strong> en la columna del producto que quiera eliminar para <strong><em>eliminarlo del sistema</em></strong>.</p>   </section>
+                <p>*Tenga en cuenta que si elimina una librer&iacute;a tambi&eacute;n eliminar&aacute; todos los productos de esa librer&iacute;a.</p>
+                <p>Si no se cuenta con la foto producto entonces descargue <a href="<?=base_url('')."nocover.jpg"?>" download="nocoverproducto">aqu&iacute;</a> la imagen por defecto para poder subirla como car&aacute;tula</p>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('tianguis/reglibreria')?>">Registrar una librer&iacute;a</a></p>
                 <p class="pure-u-1-3"><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('tianguisview')?>">Ir al apartado de Librer&iacute;a</a></p>

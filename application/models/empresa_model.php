@@ -118,7 +118,7 @@
             if (is_array($id)) {
                 return $this->db->select('*')->from($this->logoempr)->where_in('idLogoEmpr', $id)->get()->result();
             } else {
-                return $this->db->select('*')->from('logoEmpr')->where('idLogoEmpr', $id)->get()->row();
+                return $this->db->select('*')->from('logoempr')->where('idLogoEmpr', $id)->get()->row();
             }
         }
 

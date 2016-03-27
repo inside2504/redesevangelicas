@@ -32,6 +32,10 @@ body {
 
 .media-object{display:block;width:150px; height:150px;margin: 0 5% 5% 5%;}
 
+.pull-right{
+  margin-left: 333px;
+}
+
 /* HTML5 display definitions
    ========================================================================== */
 

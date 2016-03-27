@@ -7,8 +7,10 @@
         <section>
             <h2>Instrucciones</h2>
             <p>Si desea <strong><em>registrar un material</em></strong> entonces haga clic en <strong><em>"Registrar un material"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
-            <p>Si desea <strong><em>editar los datos de un material</em></strong> entonces haga clic en <strong><em>"Editar un material"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
-            <p>Si desea <strong><em>eliminar un material</em></strong> registrado, entonces haga clic en <strong><em>"Eliminar un material"</em></strong> para <strong><em>eliminarlo del sistema</em></strong>.</p>
+            <p>Si desea <strong><em>editar los datos de un material</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> en la columna del material que quiera editar para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
+            <p>Si desea <strong><em>eliminar un material</em></strong> registrado, entonces haga clic en <strong><em>"Eliminar"</em></strong> en la columna del material que quiera eliminar para <strong><em>eliminarlo del sistema</em></strong>.</p>
+            <p>Al <strong><em>dar de alta un material</em></strong>, es necesario <strong><em>registrar la car&aacute;tula</em></strong> del material correspondiente. De clic en <strong><em>Registrar car&aacute;tula</em></strong> para ingresar al formulario</p>
+            <p>Si no se cuenta con la car&aacute;tula del material entonces descargue <a href="<?=base_url('')."nocover.jpg"?>" download="nocovermaterial">aqu&iacute;</a> la imagen por defecto para poder subirla como car&aacute;tula</p>
         </section>
         <section class="acciones">
             <p class="pure-u-1-3"><a href="<?php echo site_url('material/regmaterial')?>">Registrar un material</a></p>

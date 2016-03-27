@@ -34,7 +34,7 @@
 				<legend>Datos del taxi</legend>
 					<div class="pure-control-group">
 						<label for="numeco">N&uacute;mero econ&oacute;mico:</label>
-	            		<input name="numeco" class="pure-input-1-2" type="text" value="<?php echo $item->NumEcoTaxi ?>" required maxlength="5">
+	            		<input name="numeco" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" value="<?php echo $item->NumEcoTaxi ?>" required maxlength="5">
 					</div>
 					<div class="pure-control-group">
 						<label for="placa">N&uacute;mero de placa:</label>
@@ -47,7 +47,7 @@
 				<legend>M&aacute;s datos</legend>
 					<div class="pure-control-group">
 						<label for="telefono">Tel&eacute;fono:</label>
-	            		<input name="telefono" class="pure-input-1-2" type="text" value="<?php echo $item->TelefTaxi ?>" required maxlength="12">
+	            		<input name="telefono" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" value="<?php echo $item->TelefTaxi ?>" required maxlength="12">
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

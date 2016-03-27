@@ -34,7 +34,7 @@
           <?php echo lang('create_user_email_label', 'CorreUser');?>
           <?php echo form_input($CorreUser);?>
         </div>
-        <div class="pure-u-1 pure-u-md-1-3">
+        <div class="pure-u-1 pure-u-md-1-3" onkeypress="return validNumbers(event);";>
           <?php echo lang('create_user_phone_label', 'TelefUsuario');?>
           <?php echo form_input($TelefUsuario);?>
         </div>

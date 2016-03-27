@@ -31,12 +31,15 @@
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="precioprod">Precio:</label>
-			       		<input name="precioprod" class="pure-input-1-2" type="text" placeholder="Precio del producto (moneda nacional)" required maxlength="11">
+			       		<input name="precioprod" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" placeholder="Precio del producto (moneda nacional)" required maxlength="11">
 			       	</div>
 			       	<div class="pure-control-group">
 						<label for="userfile">Imagen del producto:</label>
 	            		<input name="userfile" class="pure-input-1-2" type="file" placeholder="Nombre" required maxlength="50">
-					</div>				
+					</div>
+					<p class="pull-right">Los formatos admitidos son: .jpg, .jpeg y .png.<br>
+						Las medidas de la imagen del producto deben ser menores de 1000x1000px.<br>
+						En la imagen del libro, prefer&iacute;blemente debe ser mayor la medida del alto que del ancho.</p>		
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>

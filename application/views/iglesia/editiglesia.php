@@ -33,7 +33,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="numexterior">N&uacute;mero exterior:</label>
-	            		<input name="numexterior" class="pure-input-1-2" type="text"  value="<?php echo $item->numExtIgle ?>" required maxlength="4">
+	            		<input name="numexterior"onkeypress="return validNumbers(event);";  class="pure-input-1-2" type="text"  value="<?php echo $item->numExtIgle ?>" required maxlength="4">
 					</div>
 					<div class="pure-control-group">
 						<label for="numinterior">N&uacute;mero interior (si tiene):</label>
@@ -45,7 +45,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="codigo">C&oacute;digo postal:</label>
-	            		<input name="codigo" class="pure-input-1-2" type="text"  value="<?php echo $item->codPostIgle ?>" required maxlength="5">
+	            		<input name="codigo" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" onkeypress="return validNumbers(event);"; value="<?php echo $item->codPostIgle ?>" required maxlength="5">
 					</div>
 					<div class="pure-control-group">
 						<label for="ciudad">Ciudad:</label>
@@ -58,7 +58,7 @@
 				<legend>Contacto</legend>
 					<div class="pure-control-group">
 						<label for="telefono">Tel&eacute;fono:</label>
-	            		<input name="telefono" class="pure-input-1-2" type="text"  value="<?php echo $item->telIgle ?>" required maxlength="12">
+	            		<input name="telefono" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text"  value="<?php echo $item->telIgle ?>" required maxlength="12">
 					</div>
 					<div class="pure-control-group">
 						<label for="correo">Correo electrónico:</label>
@@ -73,7 +73,7 @@
 	            		<input name="tw" class="pure-input-1-2" type="text"  value="<?php echo $item->tWIgle ?>" maxlength="50">
 					</div>
 					<div class="pure-control-group">
-						<label for="mapa" required>Link del mapa:</label>
+						<label for="mapa" required>Link del mapa:<br><strong>Revise el <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?=base_url('')."Administrador.pdf"?>">manual de usuario</a> para saber c&oacute;mo encontrar el link del mapa.</strong></label>
 	            		<textarea name="mapa" class="pure-input-1-2" type="text" maxlength="255"><?php echo $item->mapaIgle?></textarea>
 					</div>
 					<div class="pure-controls">

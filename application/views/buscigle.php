@@ -6,7 +6,7 @@
     </div>
     <section class="container">
         <div class="pull-right">
-            <form action="<?php echo base_url('/iglesiasview/buscar');?>" method="GET" >
+            <form action="<?php echo base_url('index.php/iglesiasview/buscar');?>" method="GET" >
                 <fieldset>
                     <h3>Filtrar por Iglesia
                             <select type="text" autocomplete="off" name="buscar">
@@ -32,7 +32,7 @@
                         <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<?=base_url('')."assets/iglesias/"."$row->logo"?>" alt="">
+                                    <img class="media-object" src="<?= base_url('').'assets/iglesias/'.$this->my_model->getImg($row->idIgle) ?>">
                                 </div>
                                 <div class="media-body">
                                     <h4><?php echo $row->nomIgle ?></h4>

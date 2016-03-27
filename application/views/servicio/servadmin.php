@@ -8,8 +8,10 @@
             <section>
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar un nuevo servicio</em></strong> entonces haga clic en <strong><em>"Registrar un servicio"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
-                <p>Si desea <strong><em>editar los datos de un servicio</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
-                <p>Si desea <strong><em>eliminar un servicio</em></strong> registrado, entonces haga clic en <strong><em>"Eliminar"</em></strong> para <strong><em>eliminarlo del sistema</em></strong>.</p>
+                <p>Si desea <strong><em>editar los datos de un servicio</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> en la columna del servicio que quiera editar para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
+                <p>Si desea <strong><em>eliminar un servicio</em></strong> registrado, entonces haga clic en <strong><em>"Eliminar"</em></strong> en la columna del servicio que quiera eliminar para <strong><em>eliminarlo del sistema</em></strong>.</p>
+                <p>Al <strong><em>dar de alta un servicio</em></strong>, es necesario <strong><em>registrar la foto</em></strong> del responsable del prestador de servicios. De clic en <strong><em>Registrar un logo</em></strong> para ingresar al formulario</p>
+                <p>Si no se cuenta con la foto del responsable entonces descargue <a href="<?=base_url('')."nofoto.jpg"?>" download="nofotoservidor">aqu&iacute;</a> la imagen por defecto para poder subirla como foto</p>
             </section>
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('servicio/regservicio')?>">Registrar un servicio</a></p>

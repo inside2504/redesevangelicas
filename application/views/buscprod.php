@@ -5,7 +5,7 @@
     </div>
     <section class="container">
         <div class="pull-right">
-            <form action="<?php echo base_url('/tianguisview/buscar');?>" method="GET" >
+            <form action="<?php echo base_url('index.php/tianguisview/buscar');?>" method="GET" >
                 <fieldset>
                     <h3>Buscar por nombre
                         <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
@@ -28,13 +28,12 @@
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
 										<div class="pull-left">
-											<img class="caratula" src="<?=base_url('')."assets/tianguis/"."$row->imgProd"?>" alt="">
+											<img src="<?= base_url('').'assets/tianguis/'.$row->imgProd ?>" class="media-object">
 										</div>
 										
 									</div><!--/.media -->
 									<h4><?php echo $row->nombProd ?></h4>
 									<h5><?php echo $row->autoProd ?></h5>
-									<p class="lead"><?php echo $row->descrProd ?></p>
 									<a href=<?php echo site_url("tianguisview/datos/".$row->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>
 							</div><!--/.col-lg-4 -->

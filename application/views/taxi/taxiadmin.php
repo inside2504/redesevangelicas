@@ -8,8 +8,10 @@
             <section>
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar a un taxista</em></strong> entonces haga clic en <strong><em>"Registrar un taxista"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
-                <p>Si desea <strong><em>editar los datos de un taxista</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
-                <p>Si desea <strong><em>eliminar un taxista</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar"</em></strong> para <strong><em>eliminarlo del sistema</em></strong>.</p>
+                <p>Si desea <strong><em>editar los datos de un taxista</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> en la columna del taxi que quiera editar para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
+                <p>Si desea <strong><em>eliminar un taxista</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar"</em></strong> en la columna del taxi que quiera eliminar para <strong><em>eliminarlo del sistema</em></strong>.</p>
+                <p>Al <strong><em>dar de alta un taxista</em></strong>, es necesario <strong><em>registrar la foto</em></strong> del taxista correspondiente. De clic en <strong><em>Registrar foto</em></strong> para ingresar al formulario</p>
+                <p>Si no se cuenta con la foto del taxista entonces descargue <a href="<?=base_url('')."nofoto.jpg"?>" download="nofototaxista">aqu&iacute;</a> la imagen por defecto para poder subirla como foto</p>
             </section>
              <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('taxi/regtaxi')?>">Registrar un taxista</a></p>

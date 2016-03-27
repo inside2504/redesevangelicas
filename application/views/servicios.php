@@ -6,7 +6,7 @@
     </div>
     <section class="container">
         <div class="pull-right">
-            <form action="<?php echo base_url('/serviciosview/buscar');?>" method="GET" >
+            <form action="<?php echo base_url('index.php/serviciosview/buscar');?>" method="GET" >
                 <fieldset>
                     <h3>Filtrar por tipo de servicio 
                             <select type="text" autocomplete="off" name="buscar">
