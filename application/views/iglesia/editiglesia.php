@@ -74,7 +74,7 @@
 					</div>
 					<div class="pure-control-group">
 						<label for="mapa" required>Link del mapa:<br><strong>Revise el <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?=base_url('')."Administrador.pdf"?>">manual de usuario</a> para saber c&oacute;mo encontrar el link del mapa.</strong></label>
-	            		<textarea name="mapa" class="pure-input-1-2" type="text" maxlength="255"><?php echo $item->mapaIgle?></textarea>
+	            		<textarea name="mapa" class="pure-input-1-2" type="text"><?php echo $item->mapaIgle?></textarea>
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

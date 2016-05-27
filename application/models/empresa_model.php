@@ -35,6 +35,17 @@
             return $query;
         }
 
+        public function getDistinct() {
+            $this->db->order_by('AidiEmpr', 'desc');
+            $this->db->distinct();
+            $this->db->group_by('GiroEmpres');
+            $this->db->select('*');
+            $this->db->from('fotoresp');
+            $this->db->join('empresa', 'empresa.AidiEmpr = fotoresp.empresa_AidiEmpr');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
         public function get_empresas($pagination, $segment) {
             $this->db->order_by('AidiEmpr', 'desc');
             $this->db->limit($pagination, $segment);

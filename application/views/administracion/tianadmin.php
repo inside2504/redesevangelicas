@@ -6,11 +6,11 @@
 
         <div class="content">
             <section class="acciones">
-                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/tianadmin/#')?>">Registrar un producto</a></p>
-                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/tianadmin/#')?>">Editar un producto</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/regproducto')?>">Registrar un producto</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/editproducto')?>">Editar un producto</a></p>
                 <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/tianadmin/#')?>">Eliminar un producto</a></p>
             </section>
-            <section>
+            <section class="instrucciones">
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar un producto</em></strong> entonces haga clic en <strong><em>"Registrar un producto"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
                 <p>Si desea <strong><em>editar los datos de un producto</em></strong> entonces haga clic en <strong><em>"Editar un producto"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>

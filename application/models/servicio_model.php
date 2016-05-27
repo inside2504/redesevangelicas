@@ -33,6 +33,17 @@
             return $query;
         }
 
+        public function getDistinct() {
+            $this->db->order_by('AidiServi', 'desc');
+            $this->db->distinct();
+            $this->db->group_by('ServOfrecido');
+            $this->db->select('*');
+            $this->db->from('imgserv');
+            $this->db->join('servicio', 'servicio.AidiServi = imgserv.servicio_AidiServi');
+            $query = $this->db->get()->result();
+            return $query;
+        }
+
         public function getImg($AidiServi){
                 return $this->db->select('imgServ')->from('imgserv')->where('servicio_AidiServi',$AidiServi)->get()->row()->imgServ;
         }

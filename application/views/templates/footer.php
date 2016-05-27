@@ -1,13 +1,11 @@
 	<footer id="footer" class="midnight-blue">
 		<div class="container">
 			<div class="row">
-                <div class="col-sm-6">
-                	<ul>
-                        
-                    </ul>
-                </div>
-                <div class="col-sm-6">
-					<p class="pull-right"> &copy; Redes evang&eacute;licas - Todos los derechos reservados.<br></p>
+        <div class="col-sm-6">
+         	<ul></ul>
+        </div>
+        <div class="col-sm-6">
+            <p class="pull-right"> &copy; Redes evang&eacute;licas - Todos los derechos reservados.<br></p>
 				</div>
 			</div>
 		</div>
@@ -46,11 +44,10 @@
         consoleBox.value = value +"\n" + consoleBox.value;
       }
 
-      var widgetUrl = "https://api.soundcloud.com/playlists/206551065";
-
+      var widgetUrl = "https://api.soundcloud.com/playlists/216218410";
 
       var iframe = document.querySelector('.sc-widget');
-      iframe.src = location.protocol + "//" + "wt.soundcloud.com/player/" + "?url=" + widgetUrl;
+      iframe.src = location.protocol + "//" + "w.soundcloud.com/player/" + "?url=" + widgetUrl;
       var widget = SC.Widget(iframe);
 
       var eventKey, eventName;
@@ -115,7 +112,105 @@
 
     }());
 		</script>
-		</script>
+
+    <script type="text/javascript">
+      (function(){
+
+      var host2widgetBaseUrl = {
+        "wt.soundcloud.dev" : "wt.soundcloud.dev:9200/",
+        "wt.soundcloud.com" : "wt.soundcloud.com/player/",
+        "w.soundcloud.com"  : "w.soundcloud.com/player/"
+      };
+
+      var consoleBox = document.querySelector('.console');
+
+      var forEach = Array.prototype.forEach;
+
+      function addEvent(element, eventName, callback) {
+        if (element.addEventListener) {
+          element.addEventListener(eventName, callback, false);
+        } else {
+          element.attachEvent(eventName, callback, false);
+        }
+      }
+
+      function clearConsole() {
+        consoleBox.value = '';
+      }
+
+      function updateConsole(value) {
+        consoleBox.value = value +"\n" + consoleBox.value;
+      }
+
+      var widgetUrl1 = "https://api.soundcloud.com/playlists/228265359";
+
+      var iframe = document.querySelector('.sound-widget');
+      iframe.src = location.protocol + "//" + "w.soundcloud.com/player/" + "?url=" + widgetUrl1;
+      var widget = SC.Widget(iframe);
+
+      var eventKey, eventName;
+      for (eventKey in SC.Widget.Events) {
+        (function(eventName, eventKey) {
+          eventName = SC.Widget.Events[eventKey];
+          widget.bind(eventName, function(eventData) {
+            updateConsole("SC.Widget.Events." + eventKey +  " " + JSON.stringify(eventData || {}));
+          });
+        }(eventName, eventKey))
+      }
+
+      var actionButtons = document.querySelectorAll('.actionButtons button');
+      forEach.call(actionButtons, function(button) {
+        addEvent(button, 'click', function(e) {
+          if (e.target !== this) {
+            e.stopPropagation();
+            return false;
+          }
+          var input = this.querySelector('input');
+          var value = input && input.value;
+          widget[this.className](value);
+        });
+      });
+
+      var getterButtons = document.querySelectorAll('.getterButtons button');
+      forEach.call(getterButtons, function(button){
+        addEvent(button, 'click', function(e) {
+          widget[this.className](function(value){
+            updateConsole(button.getAttribute('caption') + " " + JSON.stringify(value));
+          });
+        });
+      });
+
+      var widgetLinks = document.querySelectorAll('.widgetLinks a');
+      var widgetUrlInput = document.querySelector('.urlInput');
+      forEach.call(widgetLinks, function(link) {
+        addEvent(link, 'click', function(e) {
+          widgetUrlInput.value = this.getAttribute("href");
+          e.preventDefault();
+        });
+      });
+
+      var reloadButton = document.querySelector('.reload');
+      addEvent(reloadButton, 'click', function() {
+        clearConsole();
+        var widgetOptions = getWidgetOptions();
+        widgetOptions.callback = function(){
+          updateConsole('Widget is reloaded.')
+        };
+        widget.load(widgetUrlInput.value, widgetOptions);
+      });
+
+      function getWidgetOptions() {
+        var optionInputs = document.querySelectorAll('.widgetOptions input');
+        var widgetOptions = {};
+        forEach.call(optionInputs, function(option){
+          widgetOptions[option.id] = option.type === 'text' ? option.value : option.checked;
+        });
+        return widgetOptions;
+      }
+
+    }());
+    </script>
+
 	    <script type="text/javascript">
 	        google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
 	    </script>

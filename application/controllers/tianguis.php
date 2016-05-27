@@ -131,6 +131,7 @@
 			var_dump('errors');
 			redirect('tianguis/reglibreria');
 		} else{
+			$data['nombIgleProd'] 		= $this->input->post('nombreigle');
 			$data['nombLibProd'] 		= $this->input->post('nombrelib');
 			$data['calleLibProd'] 		= $this->input->post('calle');
 			$data['numExtLibProd'] 		= $this->input->post('numexterior');
@@ -172,6 +173,7 @@
 		} else {
 			$id = $this->input->post('id');
 			$data = array(
+				'nombIgleProd' 		=> $this->input->post('nombreigle'),
 				'nombLibProd' 		=> $this->input->post('nombrelib'),
 				'calleLibProd' 		=> $this->input->post('calle'),
 				'numExtLibProd' 	=> $this->input->post('numexterior'),

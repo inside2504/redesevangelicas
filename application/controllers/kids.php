@@ -67,11 +67,39 @@
 			var_dump('errors');
 			redirect('kids/regkids');
 		} else{
-			$data['TituloKids'] 		= $this->input->post('titulo');
-			$data['TextKids'] 			= $this->input->post('texto');
-			$data['FechaCreacion'] 		= $this->input->post('fecha');
-			$data['LinkKids'] 			= $this->input->post('link');
+			$data['TituloKids'] 					= $this->input->post('titulo');
+			$data['TituloSerie_idTituloSerie'] 		= $this->input->post('serie');
+			$data['TextKids'] 						= $this->input->post('texto');
+			$data['FechaCreacion'] 					= $this->input->post('fecha');
+			$data['LinkKids'] 						= $this->input->post('link');
 			$this->my_model->create($data);
+			redirect('kids/kidsadmin');
+		}
+	}
+
+	public function regtitulo(){	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('kids/regtitulo');
+			$this->load->view('templates/footadmin');
+		}
+		else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	public function guardartitulo(){
+		if($this->form_validation->run('controller_validation') != false){
+			$errors = validation_errors();
+			$this->session->set_flashdata('errors',$errors);
+			var_dump('errors');
+			redirect('kids/regtitulo');
+		} else{
+			$data['NombreSerie'] 		= $this->input->post('nombre');
+			$this->my_model->createtitulo($data);
 			redirect('kids/kidsadmin');
 		}
 	}
@@ -100,18 +128,51 @@
 		} else {
 			$id = $this->input->post('id');
 			$data = array(
-				'TituloKids'		=> $this->input->post('titulo'),
-				'TextKids'	 		=> $this->input->post('texto'),
-				'FechaCreacion'	 	=> $this->input->post('fecha'),
-				'LinkKids' 			=> $this->input->post('link')				
+				'TituloKids'						=> $this->input->post('titulo'),
+				'TituloSerie_idTituloSerie' 		=> $this->input->post('serie'),
+				'TextKids'	 						=> $this->input->post('texto'),
+				'FechaCreacion'	 					=> $this->input->post('fecha'),
+				'LinkKids' 							=> $this->input->post('link')				
 			);
 			$this->my_model->update($id,$data);
 			redirect('kids/kidsadmin');
 		}
 	}
 
+	public function editartitulo($id){
+		$this->data['item'] 	= $this->my_model->findtit($id);
+		$this->data['errors'] 	= $this->session->flashdata('errors');
+		$this->load->view('templates/naveadmin');
+		echo $this->load->view('kids/edittitulo.php', $this->data); 
+		$this->load->view('templates/footadmin');
+	}
+
+	public function actualizartitulo($id){
+		
+		$this->form_validation->set_rules('');
+		if($this->form_validation->run('controller_validation')!=false){
+			$errors = validation_errors();
+			$this->session->set_flashdata('errors',$errors);
+			redirect('kids/kidsadmin/'.$id);
+
+		} else {
+			$id = $this->input->post('id');
+			$data = array(
+				'NombreSerie' 		=> $this->input->post('nombre')			
+			);
+			var_dump($data);
+			$this->my_model->updatetitulo($id,$data);
+			redirect('kids/kidsadmin');
+		}
+	}
+
 	public function eliminar($id){
 		echo $this->my_model->delete($id);
+		redirect('kids/kidsadmin');
+	}
+
+	public function eliminartitulo($id){
+		echo $this->my_model->deletetitulo($id);
 		redirect('kids/kidsadmin');
 	}
 }

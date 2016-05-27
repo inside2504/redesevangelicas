@@ -20,6 +20,30 @@
     </section>
 </section>
 
+<div class="margen">
+    <div class="elementos">
+	    <div class="row clearfix">
+            <div class="col-md-10 col-sm-6 col-md-offset-1"> 
+		      	<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+					<div class="media">
+						<div class="pull-left">
+							<img class="media-object" src="<?=base_url('')."biblia_audio.jpg"?>">
+						</div>
+						<div class="media-body">
+							<h4>Biblia ambientada</h4>
+							<h3>Tenemos el Nuevo Testamento de la Biblia versión Reina Valera 1995 ambientada en audio.</h3>
+							<ul class="tag clearfix">
+								<li class="btn"><a>Audio</a></li>
+							</ul>
+							<a href=<?php echo site_url('materialesview/ambientada')?> class="btn-primary">Ver datos</a>
+						</div>
+					</div><!--/.media -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <section id="about-us">
     <div class="team">
         <div class="container">

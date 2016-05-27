@@ -6,11 +6,11 @@
 
         <div class="content">
             <section class="acciones">
-                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/igleadmin/#')?>">Registrar una iglesia</a></p>
-                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/igleadmin/#')?>">Editar una iglesia</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/regiglesia')?>">Registrar una iglesia</a></p>
+                <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/editiglesia')?>">Editar una iglesia</a></p>
                 <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/igleadmin/#')?>">Eliminar una iglesia</a></p>
             </section>
-            <section>
+            <section class="instrucciones">
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar una iglesia</em></strong> entonces haga clic en <strong><em>"Registrar una iglesia"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
                 <p>Si desea <strong><em>editar los datos de una iglesia</em></strong> entonces haga clic en <strong><em>"Editar una iglesia"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>

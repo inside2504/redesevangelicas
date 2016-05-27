@@ -35,6 +35,7 @@
 									<h4><?php echo $item->nombProd ?></h4>
 									<h5><?php echo $item->autoProd ?></h5>
 									<h5>Librer&iacute;a <?php echo $item->nombLibProd ?></h5>
+									<h5>Iglesia <?php echo $item->nombIgleProd ?></h5>
 									<br>
 									<a href=<?php echo site_url("tianguisview/datos/".$item->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>

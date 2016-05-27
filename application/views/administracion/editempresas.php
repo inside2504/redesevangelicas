@@ -40,6 +40,10 @@
 	            		<input id="numexterior" class="pure-input-1-2" type="text" placeholder="Número exterior">
 					</div>
 					<div class="pure-control-group">
+						<label for="numinterior">N&uacute;mero interior (si tiene):</label>
+	            		<input id="numinterior" class="pure-input-1-2" type="text" placeholder="Número interior">
+					</div>
+					<div class="pure-control-group">
 						<label for=colonia"">Colonia:</label>
 	            		<input id="colonia" class="pure-input-1-2" type="text" placeholder="Colonia">
 					</div>
@@ -57,7 +61,7 @@
 					</div>
 				<legend>Contacto</legend>
 					<div class="pure-control-group">
-						<label for="telefono">Tel&eacute;fonos:</label>
+						<label for="telefono">Tel&eacute;fono(s):</label>
 	            		<input id="telefono" class="pure-input-1-2" type="text" placeholder="Teléfonos">
 					</div>
 					<div class="pure-control-group">
@@ -69,12 +73,16 @@
 			       		<textarea id="descripserv" type="text" cols="45" rows="3" placeholder="Ingrese la descripción de servicios aquí (Máximo 100 caracteres)"></textarea>
 			       	</div>
 			       	<div class="pure-control-group">
-						<label for="fb">Facebook:</label>
+						<label for="fb">Facebook (si tiene):</label>
 	            		<input id="fb" class="pure-input-1-2" type="text" placeholder="Dirección de Facebook">
 					</div>
 					<div class="pure-control-group">
-						<label for="tw">Twitter:</label>
+						<label for="tw">Twitter (si tiene):</label>
 	            		<input id="tw" class="pure-input-1-2" type="text" placeholder="Dirección de Twitter">
+					</div>
+					<div class="pure-control-group">
+						<label for="otrasred">Otras redes (si tiene):</label>
+	            		<textarea id="otrasred" class="pure-input-1-2" type="text" placeholder="Ingrese los enlaces de sus otras redes."></textarea>
 					</div>
 					<div class="pure-control-group">
 						<label for="eslogan">Eslogan:</label>

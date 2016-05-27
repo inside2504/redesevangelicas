@@ -10,7 +10,7 @@
                 <fieldset>
                     <h3>Filtrar por tipo de servicio 
                             <select type="text" autocomplete="off" name="buscar">
-                                <?php foreach ($this->my_model->get() as $total): ?>
+                                <?php foreach ($this->my_model->getDistinct() as $total): ?>
                                 <option value="<?php echo $total->ServOfrecido ?>"><?php echo $total->ServOfrecido ?></option>
                                 <?php endforeach;?>
                             </select>

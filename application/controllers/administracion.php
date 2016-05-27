@@ -74,12 +74,12 @@ class Administracion extends CI_Controller {
 	}
 
 	//Controladores de todas las vistas para dar de alta
-	public function regempresas(){
+	public function regiglesia(){
 		if(!$this->ion_auth->logged_in()){
 			redirect('auth/login', 'refresh');
 		}
 		$this->load->view('templates/naveadmin');
-		$this->load->view('administracion/regempresas');
+		$this->load->view('administracion/regiglesia');
 		$this->load->view('templates/footadmin');
 	}
 
@@ -92,13 +92,49 @@ class Administracion extends CI_Controller {
 		$this->load->view('templates/footadmin');
 	}
 
-	//Controladores de todas las vistas para editar
-	public function editempresas(){
+	public function regempresas(){
 		if(!$this->ion_auth->logged_in()){
 			redirect('auth/login', 'refresh');
 		}
 		$this->load->view('templates/naveadmin');
-		$this->load->view('administracion/editempresas');
+		$this->load->view('administracion/regempresas');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function regmaterial(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/regmaterial');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function regevento(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/regevento');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function regproducto(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/regproducto');
+		$this->load->view('templates/footadmin');
+	}
+
+	//Controladores de todas las vistas para editar
+	public function editiglesia(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/editiglesia');
 		$this->load->view('templates/footadmin');
 	}
 
@@ -108,6 +144,42 @@ class Administracion extends CI_Controller {
 		}
 		$this->load->view('templates/naveadmin');
 		$this->load->view('administracion/editservicio');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editempresas(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/editempresas');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editmaterial(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/editmaterial');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editevento(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/editevento');
+		$this->load->view('templates/footadmin');
+	}
+
+	public function editproducto(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		$this->load->view('templates/naveadmin');
+		$this->load->view('administracion/editproducto');
 		$this->load->view('templates/footadmin');
 	}
 }

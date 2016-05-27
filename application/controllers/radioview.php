@@ -22,4 +22,10 @@ class Radioview extends CI_Controller {
 		$this->data['item'] = $this->my_model->find($id);
 		echo $this->render->view('path/to/view/mostrar.html');
 	}
+
+	public function biblia(){
+		$this->load->view('templates/navegacion');
+		$this->load->view('biblia');
+		$this->load->view('templates/footer');
+	}
 }

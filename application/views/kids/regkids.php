@@ -14,6 +14,14 @@
 	            		<input name="titulo" class="pure-input-1-2" type="text" placeholder="Título" required maxlength="50">
 					</div>
 					<div class="pure-control-group">
+						<label for="serie">Nombre de la serie</label>
+						<select name="serie" required maxlength="40">
+							<?php foreach ($this->my_model->gettitulo() as $total): ?>
+                                <option value="<?php echo $total->idTituloSerie ?>"><?php echo $total->NombreSerie ?></option>
+                            <?php endforeach;?>
+						</select>
+					</div>
+					<div class="pure-control-group">
 						<label for="texto">Texto de la entrada:</label>
 			       		<textarea name="texto" type="text" cols="45" rows="15" placeholder="Ingrese el texto del blog aquí" required></textarea>
 			       	</div>

@@ -10,6 +10,10 @@
 			<fieldset>
 				<legend>Localizaci&oacute;n de la librer&iacute;a</legend>
 					<div class="pure-control-group">
+						<label for="nombreigle">Iglesia a la que pertenece:</label>
+	            		<input name="nombreigle" class="pure-input-1-2" type="text" placeholder="Iglesia" required maxlength="50">
+					</div>
+					<div class="pure-control-group">
 						<label for="nombrelib">Nombre de la Librer&iacute;a:</label>
 	            		<input name="nombrelib" class="pure-input-1-2" type="text" placeholder="Nombre de la librería" required maxlength="50">
 					</div>

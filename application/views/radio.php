@@ -5,10 +5,31 @@
     </div>
 </section>
 
-<div class="container">
-	<iframe  class="sc-widget" scrolling="no"  frameborder="no" ></iframe> 
-</div>
-
+<section>
+  <div class="container">
+    <div class="container">
+      <div>
+        <h2>Nuevo testamento: La biblia ambientada. <a href="<?php echo site_url('radioview/biblia')?>">Da clic aqu&iacute; para abrir la p&aacute;gina y ver todos los libros del nuevo testamento</a></h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-6">
+        <h2>Alabanzas</h2>
+        <div>
+        	<iframe class="sc-widget" scrolling="no" frameborder="no"></iframe> 
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2>Predicaciones</h2>
+        <div>
+          <iframe class="sound-widget" scrolling="no" frameborder="no"></iframe> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
    <!-- <div class="right">
       <dl class="actionButtons">
         <dd><button class="play">Play</button></dd>

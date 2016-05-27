@@ -42,6 +42,12 @@ class Materialesview extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function ambientada(){
+		$this->load->view('templates/navegacion');
+		$this->load->view('ambientada.php');
+		$this->load->view('templates/footer');
+	}
+
 	public function buscar(){
 		$q=$_GET['buscar'];
 		$this->dato['total'] = $this->my_model->get();

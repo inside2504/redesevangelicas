@@ -11,6 +11,10 @@
 				<input name="id" class="pure-input-1-2" type="text" style="visibility:hidden" value="<?php echo $item->idLibreria ?>">
 				<legend>Localizaci&oacute;n de la librer&iacute;a</legend>
 					<div class="pure-control-group">
+						<label for="nombreigle">Nombre de la Librer&iacute;a:</label>
+	            		<input name="nombreigle" class="pure-input-1-2" type="text" value="<?php echo $item->nombIgleProd ?>" required maxlength="50">
+					</div>
+					<div class="pure-control-group">
 						<label for="nombrelib">Nombre de la Librer&iacute;a:</label>
 	            		<input name="nombrelib" class="pure-input-1-2" type="text" value="<?php echo $item->nombLibProd ?>" required maxlength="50">
 					</div>

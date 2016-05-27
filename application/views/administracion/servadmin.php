@@ -10,7 +10,7 @@
                 <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/editservicio')?>">Editar un servicio</a></p>
                 <p class="pure-u-1-3"><a href="<?php echo site_url('administracion/servadmin/#')?>">Eliminar un servicio</a></p>
             </section>
-            <section>
+            <section class="instrucciones">
                 <h2>Instrucciones</h2>
                 <p>Si desea <strong><em>registrar un nuevo servicio</em></strong> entonces haga clic en <strong><em>"Registrar un servicio"</em></strong> para entrar al formulario e <strong><em>ingresar los datos</em></strong>.</p>
                 <p>Si desea <strong><em>editar los datos de un servicio</em></strong> entonces haga clic en <strong><em>"Editar una servicio"</em></strong> para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>

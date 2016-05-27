@@ -11,7 +11,7 @@
 				<legend>Datos de la foto</legend>
 					<div class="pure-control-group">
 						<label for="id">Nombre de la empresa</label>
-						<select name="id" required maxlength="40">
+						<select name="id" required maxlength="200">
 							<?php foreach ($this->my_model->get() as $total): ?>
                                 <option value="<?php echo $total->AidiEmpr ?>"><?php echo $total->NameEmpr ?></option>
                             <?php endforeach;?>

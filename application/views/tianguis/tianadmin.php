@@ -24,6 +24,7 @@
                 <div>
                     <table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
                         <thead>
+                            <th>Iglesia</th>
                             <th>Librer&iacute;a</th>
                             <th>Calle</th>
                             <th>N&uacute;mero</th>
@@ -35,6 +36,7 @@
                             <?php
                                 foreach ($this->my_model->getLib() as $row) {
                                     echo "<tr>
+                                            <td>$row->nombIgleProd</td>
                                             <td>$row->nombLibProd</td>
                                             <td>$row->calleLibProd</td>
                                             <td>$row->numExtLibProd</td>

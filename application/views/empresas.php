@@ -9,13 +9,13 @@
                 <fieldset>
                     <h3>Filtrar por tipo de empresa
                             <select type="text" autocomplete="off" name="buscar">
-                                <?php foreach ($this->my_model->get() as $total): ?>
+                                <?php foreach ($this->my_model->getDistinct() as $total): ?>
                                 <option value="<?php echo $total->GiroEmpres ?>"><?php echo $total->GiroEmpres ?></option>
                                 <?php endforeach;?>
                             </select>
                          <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
                      </h3>
-                </fielfset>
+                </fieldset>
             </form>
         </div>
     </section>

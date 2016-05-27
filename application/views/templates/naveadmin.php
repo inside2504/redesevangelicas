@@ -90,8 +90,11 @@ ga('send', 'pageview');
                 <li class="pure-menu-item">
                 	<a href="<?php echo site_url('tianguis/tianadmin')?>" class="pure-menu-link">Librer&iacute;a</a>
                 </li>
-                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
+                <li class="pure-menu-item">
                     <a href="<?php echo site_url('kids/kidsadmin')?>" class="pure-menu-link">Kids</a>
+                </li>
+                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
+                    <a href="<?php echo site_url('materialkids/matekidsadmin')?>" class="pure-menu-link">Materiales Kids</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>

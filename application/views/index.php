@@ -9,7 +9,6 @@
 	                <li data-target="#main-slider" data-slide-to="3"></li>
 	                <li data-target="#main-slider" data-slide-to="4"></li>
 	                <li data-target="#main-slider" data-slide-to="5"></li>
-	                <li data-target="#main-slider" data-slide-to="6"></li>
             	</ol>
 
             	<!--Imagenes del carrusel-->
@@ -87,18 +86,6 @@
 							</div>
 						</div>
 					</div><!--Termina elemento del carrusel-->
-					<div class="item" style="background-image: url(<?=base_url('')."assets/img/7carru.jpg"?>)">
-						<div class="container">
-                        	<div class="row slide-margin">
-                            	<div class="col-sm-6">
-                                	<div class="carousel-content">
-										<h1 class="animation animated-item-1">Zona KIDS</h1>
-										<a class="btn-slide animation animated-item-3" href="<?php echo site_url('kidsview')?>" role="button">¡Vamos a la Zona KIDS!</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div><!--Termina elemento del carrusel-->
 				</div><!--Termina apartado de imagenes del carrusel-->
 				<!--Botones estilo flecha para avanzar o retroceder en el carrusel-->
 				<a class="prev hidden-xs" href="#main-slider" data-slide="prev">
@@ -109,6 +96,19 @@
         		</a><!--Termina botones estilo flecha del carrusel-->
         		</div><!--Terminan circulos blancos del carrusel-->
 	</section><!--Termina carrusel del carrusel-->
+
+	<section id="kids-background">
+		<div class="left">
+        	<h1>Zona KIDS</h1>
+		</div>
+		<div class="left">
+			<h1>Una zona donde los chiquitines aprender&aacute;n<br>cosas de la Biblia con contenido<br>
+			pensado exclus&iacute;vamente para ellos</h1>
+		</div>
+		<div class="left">
+			<a class="btn-primary" href="<?php echo site_url('kidsview')?>" role="button">¡Vamos a la Zona KIDS!</a>
+		</div>
+	</section>
 
 	<section id="news-background">
 		<div class="center">
@@ -161,8 +161,7 @@
         </script>
         
 
-	<section id="space">
-		<!--
+	<!--<section id="space">
 		<div class="container">
 			<div class="center wow fadeInDown">
 				<h2>Testimonios</h2>
@@ -194,15 +193,8 @@
 					</div>
 				</div>
 			</div>
-			-->
-	</section><!-- end of about section -->
-
-	<div class="map-responsive">
-     	<div id="mapa"></div>
-    </div>
-
-    <section id="space">
-    </section>
+	</section>
+	-->
 
     <section class="contact-info">
 			<div class="container">
@@ -215,12 +207,12 @@
 						<h1 class="glyphicon glyphicon-globe"></h1></i><span> Direcci&oacute;n:</span> Jes&uacute;s Garc&iacute;a #12, Colonia Centro, Xalapa, Veracruz
 					</ul>
                     <ul class="col-sm-5">
-						<h1 class="glyphicon glyphicon-calendar"></h1></i><span> Lunes a Viernes:</span> 10:00 AM to 7:00 PM
+						<h1 class="glyphicon glyphicon-calendar"></h1></i><span> Lunes a Viernes:</span> 10:00 AM a 7:00 PM
 					</ul>
 				</div>
 				<div class="row">
                     <ul class="col-sm-7">
-						<h1 class="glyphicon glyphicon-earphone"></h1><span> Tel&eacute;fono:</span>
+						<h1 class="glyphicon glyphicon-earphone"></h1><span> Tel&eacute;fono: 22-81-50-70-50</span>
 					</ul>
                     <ul class="col-sm-5">
 						<h1 class="glyphicon glyphicon-envelope"></h1><span> Email: contacto@redesevangelicas.com</span>
@@ -228,3 +220,7 @@
 				</div>
 			</div>
 	</section><!-- end of contact section -->
+
+	<div class="map-responsive">
+		<iframe class="mapa" frameborder="0" src="https://www.google.com/maps/d/embed?mid=zkH233drv6hQ.kq7c-TjX1lWw"></iframe>
+	</div>

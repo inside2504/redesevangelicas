@@ -23,7 +23,7 @@
 									<h2 class="sub-letters"><?php echo $item->autoProd ?></h2>
 									<p class="bod-letters"><?php echo $item->descrProd ?></p>
 									<p class="bod-letters">El precio de este producto es de: <strong>$<?php echo $item->precProd ?> pesos.*</strong></p>
-									<p class="bod-letters">Puedes encontrarlo en <strong>Librer&iacute;a <?php echo $item->nombLibProd ?>.</strong></p>
+									<p class="bod-letters">Puedes encontrarlo en <strong>Librer&iacute;a <?php echo $item->nombLibProd ?></strong> perteneciente a la <strong> iglesia <?php echo $item->nombIgleProd ?></strong>.</p>
 									<p class="bod-letters">Ubicada en <strong><?php echo $item->calleLibProd ?></strong>, n&uacute;mero: <strong><?php echo $item->numExtLibProd ?></strong> interior <strong><?php echo $item->numIntLibProd ?></strong>,
 									colonia <strong><?php echo $item->coloLibProd ?></strong>, c&oacute;digo postal <strong><?php echo $item->codPostLibProd ?></strong>, <strong><?php echo $item->ciuLibrProd ?></strong>, <strong><?php echo $item->edoLibProd ?></strong></p>
 									<p class="bod-letters">Tel&eacute;fono <strong><?php echo $item->telefLibProd ?></strong></p>
