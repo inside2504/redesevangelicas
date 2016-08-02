@@ -1,12 +1,12 @@
-
-	
-	
 	<script src="<?php echo base_url() ?>bower_components/jquery/jquery.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url() ?>bower_components/bootstrap-calendar/css/calendar.css">
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>bower_components/bootstrap-calendar/js/language/es-ES.js"></script>
 <section>
 	<div class="container">
+		<div class="center">
+			<h2>Eventos</h2>
+	 	</div>
 		<div class="row">
 			<div class="header">
 				<div class="pull-right form-inline">

@@ -10,12 +10,12 @@
             <p>Si desea <strong><em>editar una entrada del blog</em></strong> entonces haga clic en <strong><em>"Editar"</em></strong> en la entrada deseada para entrar al formulario y <strong><em>modificar los datos deseados</em></strong>.</p>
             <p>Si desea <strong><em>eliminar una entrada</em></strong> registrada, entonces haga clic en <strong><em>"Eliminar"</em></strong> para <strong><em>eliminarlo del sistema</em></strong>.</p>
         </section>
+    </div>
         <div class="content">
             <section class="acciones">
                 <p class="pure-u-1-3"><a href="<?php echo site_url('kids/regtitulo')?>">Registrar una serie</a></p>
             </section>
         </div>
-    </div>
     <div class="content">
         <section>
             <div>
@@ -40,6 +40,7 @@
                 </table>
             </div>
         </section>
+    </div>
     <div class="content">
         <section class="acciones">
             <p class="pure-u-1-3"><a href="<?php echo site_url('kids/regkids')?>">Registrar una entrada</a></p>

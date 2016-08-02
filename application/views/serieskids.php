@@ -1,4 +1,3 @@
-<div>
     <div class="blog">
       	<div class="tit">
        		<span id="publish_date"><h1>Centro KIDS</h1></span>
@@ -28,41 +27,38 @@
 				    	</section>
 				    </div>
 			    </div>
-	            <div class="row">
-	            	<?php  if ($this->my_model->getAlldesc() !=0):?>
-						<?php foreach ($results as $row): ?>
-			                 <div class="col-md-12">
-			                    <div class="blog-item">
-			                        <div class="row">
-			                            <div class="col-xs-12 col-sm-8 text-center">
-			                                <div class="entry-meta">
-			                                    <iframe class="YT-responsive" src="http://www.youtube.com/embed/<?php echo $row->LinkKids ?>" frameborder="0" allowfullscreen></iframe>
-			                                </div>
-			                            </div>
-			                                
-			                            <div class="col-xs-12 col-sm-4 blog-content">
-			                            	<div class="advice">
-				                                <div class="entry-meta">
-				                                    <span id="publish_date"><h1><?php echo $row->TituloKids ?></h1></span>
-				                                </div>
-				                                <p>Fecha de creaci&oacute;n: <?php echo $row->FechaCreacion ?></p>
-				                                <p>Serie <?php echo $row->NombreSerie ?></p>
-				                                <p><?php echo $row->TextKids ?></p>
+			    <div class="serie">
+		            <div class="row">
+		            	<?php  if ($this->my_model->getAlldesc() !=0):?>
+							<?php foreach ($results as $row): ?>
+				                 <div class="col-md-4 col-sm-6">
+				                    <div class="blog-item">
+				                        <div class="row">
+				                        	<div class="entry-meta">
+				                        		<span id="publish_date"><h1><?php echo $row->TituloKids ?></h1></span>
 				                            </div>
-			                        </div>    
-	                    		</div><!--/.blog-item-->
-	                		</div>
-	                	<?php endforeach;?>
-					<?php endif;?>
-	            </div>
-	        </div>
-        </div>
-        <div class="advice">
-	        <div class="container">
-		        <div class="pull-right">
-		            <h3><?=$this->pagination->create_links(); ?></h3>
+				                            <div class="entry-meta">
+				                            	<iframe class="YT-responsive" src="http://www.youtube.com/embed/<?php echo $row->LinkKids ?>" frameborder="0" allowfullscreen></iframe>
+				                            </div>
+				                            <div class="advice">
+						                        <p>Fecha de creaci&oacute;n: <?php echo $row->FechaCreacion ?></p>
+						                        <p>Serie <?php echo $row->NombreSerie ?></p>
+						                        <p><?php echo $row->TextKids ?></p>
+						                    </div>
+				                        </div>    
+		                    		</div><!--/.blog-item-->
+		                		</div>
+		                	<?php endforeach;?>
+						<?php endif;?>
+		            </div>
 		        </div>
-		    </div>
-		</div>
-    </div>
-</div> 
+	        </div>
+	        <div class="advice">
+		        <div class="container">
+			        <div class="pull-right">
+			            <h3><?=$this->pagination->create_links(); ?></h3>
+			        </div>
+			    </div>
+			</div>
+   		</div>
+	</div> 

@@ -32,6 +32,16 @@ body {
 
 .media-object{display:block;width:150px; height:150px;margin: 0 5% 5% 5%;}
 
+.presimg{
+  width: 200px;
+  height: 200px;
+}
+
+.tianadminimg{
+  width: 200px;
+  height: 200px;
+}
+
 .pull-right{
   margin-left: 333px;
 }

@@ -31,6 +31,20 @@
 		}
 	}
 
+	public function musiadmin(){	
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		}
+		elseif ($this->ion_auth->in_group('admin')) {
+			$this->load->view('templates/naveadmin');
+			$this->load->view('kids/musiadmin');
+			$this->load->view('templates/footadmin');
+			}
+		else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
 	public function regkids(){
 		if(!$this->ion_auth->logged_in()){
 			redirect('auth/login', 'refresh');
@@ -175,4 +189,84 @@
 		echo $this->my_model->deletetitulo($id);
 		redirect('kids/kidsadmin');
 	}
+
+	/* //////////////// Controladores para MusiKids /////////////////////*/
+
+	public function regmusic(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		} elseif ($this->ion_auth->in_group('admin')){
+			$this->load->view('templates/naveadmin');
+			$this->load->view('kids/regmusikids');
+			$this->load->view('templates/footadmin');
+		} else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	public function editmusic(){
+		if(!$this->ion_auth->logged_in()){
+			redirect('auth/login', 'refresh');
+		} elseif ($this->ion_auth->in_group('admin')){
+			$this->load->view('templates/naveadmin');
+			$this->load->view('kids/editmusikids');
+			$this->load->view('templates/footadmin');
+		} else{
+			return show_error('You must be an administrator to view this page.');
+		}
+	}
+
+	public function registrarMusica(){
+		$this->data['errors'] = $this->session->flashdata('errors');
+		echo $this->render->view('path/to/view/regmusikids.php', $this->data);
+	}
+
+	public function guardarMusica(){
+		if($this->form_validation->run('controller_validation') != false){
+			$errors = validation_errors();
+			$this->session->set_flashdata('errors',$errors);
+			var_dump('errors');
+			redirect('kids/regmusikids');
+		} else{
+			$data['nombreMusic'] 	= $this->input->post('nombre');
+			$data['autorMusic']		= $this->input->post('autor');
+			$data['linkMusic'] 		= $this->input->post('link');
+			$this->my_model->createMusic($data);
+			redirect('kids/musiadmin');
+		}
+	}
+
+	public function editarMusica($id){
+		$this->data['item'] 	= $this->my_model->findMus($id);
+		$this->data['errors'] 	= $this->session->flashdata('errors');
+		$this->load->view('templates/naveadmin');
+		echo $this->load->view('kids/editmusikids.php', $this->data); 
+		$this->load->view('templates/footadmin');
+	}
+
+	public function actualizarMusica($id){
+		
+		$this->form_validation->set_rules('');
+		if($this->form_validation->run('controller_validation')!=false){
+			$errors = validation_errors();
+			$this->session->set_flashdata('errors',$errors);
+			redirect('kids/musiadmin/'.$id);
+
+		} else {
+			$id = $this->input->post('id');
+			$data = array(
+				'nombreMusic'		=> $this->input->post('nombre'),
+				'autorMusic'		=> $this->input->post('autor'),
+				'linkMusic' 		=> $this->input->post('link'),			
+			);
+			$this->my_model->updateMusic($id,$data);
+			redirect('kids/musiadmin');
+		}
+	}
+
+	public function eliminarMusica($id){
+		echo $this->my_model->deleteMusic($id);
+		redirect('kids/musiadmin');
+	}
+
 }

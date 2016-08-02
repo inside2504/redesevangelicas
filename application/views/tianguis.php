@@ -1,7 +1,7 @@
 <section id="title">
 	<div class="center">
-        <h2>Librer&iacute;a</h2>
-        <p class="lead">Bienvenido al apartado de empresas, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las empresas que se encuentran afiliadas a Redes evang&eacute;licas.</p>
+        <h2>Tianguis</h2>
+        <p class="lead">Bienvenido al Tianguis, aqu&iacute; podr&aacute;s encontrar los productos se venden en el tianguis.</p>
     </div>
     <section class="container">
         <div class="pull-right">
@@ -27,17 +27,17 @@
 							<div class="col-md-3 col-sm-6">	
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
-										<div class="pull-left">
-											<img src="<?= base_url('').'assets/tianguis/'.$item->imgProd ?>" class="libreria">
+										<div>
+											<img src="<?= base_url('').'assets/tianguis/'.$item->imgProducto ?>" class="presimg">
 										</div>
 										
 									</div><!--/.media -->
-									<h4><?php echo $item->nombProd ?></h4>
-									<h5><?php echo $item->autoProd ?></h5>
-									<h5>Librer&iacute;a <?php echo $item->nombLibProd ?></h5>
-									<h5>Iglesia <?php echo $item->nombIgleProd ?></h5>
+									<h4><?php echo $item->nombreProducto ?></h4>
+									<h5><?php echo $item->nombreVendedor ?></h5>
+									<h5>Precio $<?php echo $item->precioProducto ?></h5>
+									<h5>Iglesia <?php echo $item->nombreIglesia ?></h5>
 									<br>
-									<a href=<?php echo site_url("tianguisview/datos/".$item->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
+									<a href=<?php echo site_url("tianguisview/datos/".$item->idTianguis) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>
 							</div><!--/.col-lg-4 -->
 						<?php endforeach;?>

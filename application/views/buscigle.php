@@ -1,7 +1,7 @@
-<section id="title">
+<section class="igle-back">
     <div class="center">
-        <h2>Iglesias</h2>
-        <p class="lead">Bienvenido al apartado de iglesias, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las iglesias que se encuentran afiliadas a Redes evang&eacute;licas.<br>
+        <h2>Iglesias y Ministerios</h2>
+        <p class="lead">Bienvenido al apartado de iglesias y ministerios, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las iglesias que se encuentran afiliadas a Redes evang&eacute;licas.<br>
         Tambi&eacute;n encontrar&aacute;s los datos por si est&aacute;s buscando d&oacute;nde congregarte.</p>
     </div>
     <section class="container">
@@ -20,10 +20,6 @@
             </form>
         </div>
     </section>
-</section>
-
-
-<section>
     <?php foreach ($item as $row): ?>
         <section>
             <section class="elementos">

@@ -9,6 +9,7 @@
 	                <li data-target="#main-slider" data-slide-to="3"></li>
 	                <li data-target="#main-slider" data-slide-to="4"></li>
 	                <li data-target="#main-slider" data-slide-to="5"></li>
+	                <li data-target="#main-slider" data-slide-to="6"></li>
             	</ol>
 
             	<!--Imagenes del carrusel-->
@@ -86,6 +87,18 @@
 							</div>
 						</div>
 					</div><!--Termina elemento del carrusel-->
+					<div class="item" style="background-image: url(<?=base_url('')."assets/img/7carru.jpg"?>)">
+						<div class="container">
+                        	<div class="row slide-margin">
+                            	<div class="col-sm-6">
+                                	<div class="carousel-content">
+										<h1 class="animation animated-item-1">Servicio de Taxi seguro</h1>
+										<a class="btn-slide animation animated-item-3" href="<?php echo site_url('taxiview')?>" role="button">Encuentra taxistas de confianza para transportarte en la ciudad</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!--Termina elemento del carrusel-->
 				</div><!--Termina apartado de imagenes del carrusel-->
 				<!--Botones estilo flecha para avanzar o retroceder en el carrusel-->
 				<a class="prev hidden-xs" href="#main-slider" data-slide="prev">
@@ -120,7 +133,7 @@
 		</div>
 	</section>
 	
-	<section id="taxi">
+	<!--<section id="taxi">
 		<div class="center">
 	       	<h1>Taxi seguro</h1>
 	    </div>
@@ -129,7 +142,7 @@
 				las personas, <br>con la confianza de que el chofer es cristiano recomendado por su pastor.</p><br>
 			<a class="btn-primary" href="<?php echo site_url('taxiview')?>">Pide tu Taxi</a>
 		</div>
-	</section>
+	</section> -->
 
         <script type="text/javascript">
             var feedcontainer=document.getElementById("news")
@@ -199,8 +212,9 @@
     <section class="contact-info">
 			<div class="container">
 				<div class="contact-heading">
-						<h1>Cont&aacute;ctanos</h1>
-						<h2>Informaci&oacute;n de contacto</h2>
+						<h1>¿Quieres unirte a Redes Evang&eacute;licas?</h1>
+						<h2>Te invitamos a ser parte de las Redes. Comun&iacute;cate con nosotros y entablemos una conversaci&oacute;n.</h2>
+						<h2>¡Esta es nuestra informaci&oacute;n de contacto!</h2>
 				</div>
 				<div class="row">
                     <ul class="col-sm-7">
@@ -215,7 +229,8 @@
 						<h1 class="glyphicon glyphicon-earphone"></h1><span> Tel&eacute;fono: 22-81-50-70-50</span>
 					</ul>
                     <ul class="col-sm-5">
-						<h1 class="glyphicon glyphicon-envelope"></h1><span> Email: contacto@redesevangelicas.com</span>
+						<h1 class="glyphicon glyphicon-envelope"></h1><span> Email: enlace@redesevangelicas.com</span>
+						<h1></h1>
 					</ul>
 				</div>
 			</div>

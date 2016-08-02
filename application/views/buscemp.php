@@ -1,4 +1,4 @@
-<section id="title">
+<section class="empre-back">
     <div class="center">
         <h2>Empresas</h2>
         <p class="lead">Bienvenido al apartado de empresas, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las empresas que se encuentran afiliadas a Redes evang&eacute;licas.</p>
@@ -19,9 +19,6 @@
             </form>
         </div>
     </section>
-</section>
-
-<section>
 <?php  if ($this->my_model->get() !=0):?>
     <?php foreach ($item as $row): ?>
         <section>

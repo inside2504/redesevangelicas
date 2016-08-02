@@ -1,28 +1,54 @@
-<div id="main">
-        <div class="header">
-            <h1>Libreria</h1>
-            <h2>Bienvenido</h2>
+<section id="title">
+	<div class="center">
+        <h2>Librer&iacute;a</h2>
+        <p class="lead">Bienvenido a la librer&iacute;a, aqu&iacute; podr&aacute;s encontrar los materiales de las librer&iacute;as.</p>
+    </div>
+    <section class="container">
+        <div class="pull-right">
+            <form action="<?php echo base_url('index.php/libreriaview/buscar');?>" method="GET" >
+                <fieldset>
+                    <h3>Filtrar por nombre
+                        <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
+                        <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
+                     </h3>
+                </fielfset>
+            </form>
         </div>
+    </section>
+</section>
 
-        <div class="content">
-            <h2 class="content-subhead">How to use this layout</h2>
-            <p>
-                To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/css/layouts/side-menu.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
-            </p>
-
-
-            <div class="pure-g">
-                <div class="pure-u-1-3">
-                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
-                </div>
-                <div class="pure-u-1-3">
-                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
-                </div>
-                <div class="pure-u-1-3">
-                    <img class="pure-img-responsive" src="http://farm6.staticflickr.com/5456/9121446012_c1640e42d0.jpg" alt="T-Shirt Store">
-                </div>
-            </div>
-
+<section id="about-us">
+    <div class="team">
+        <div class="container">
+	        <div class="team">
+				<div class="row clearfix">
+		        	<?php  if ($this->my_model->get() !=0):?>
+    					<?php foreach ($results as $item): ?>
+							<div class="col-md-3 col-sm-6">	
+								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+									<div class="media">
+										<div class="pull-left">
+											<img src="<?= base_url('').'assets/libreria/'.$item->imgProd ?>" class="libreria">
+										</div>
+										
+									</div><!--/.media -->
+									<h4><?php echo $item->nombProd ?></h4>
+									<h5><?php echo $item->autoProd ?></h5>
+									<h5>Librer&iacute;a <?php echo $item->nombLibProd ?></h5>
+									<h5>Iglesia <?php echo $item->nombIgleProd ?></h5>
+									<br>
+									<a href=<?php echo site_url("libreriaview/datos/".$item->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
+								</div>
+							</div><!--/.col-lg-4 -->
+						<?php endforeach;?>
+					<?php endif;?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+        <div class="pull-right">
+            <h2><?=$this->pagination->create_links(); ?></h2>
         </div>
     </div>
-</div>
+</section>

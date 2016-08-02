@@ -20,7 +20,7 @@ class Kidsview extends CI_Controller {
 
 	public function serieskids()
 	{
-		$pagination = 3;
+		$pagination = 6;
 	    $config['base_url'] = base_url().'index.php/kidsview/serieskids/';
 	    $config['total_rows'] = $this->db->get('kids')->num_rows();
 	    $config['per_page'] = $pagination;
@@ -54,6 +54,15 @@ class Kidsview extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function buscarMusi(){
+		$q=$_GET['buscar'];
+		$this->dato['total'] = $this->my_model->get_music();
+		$this->data['item'] = $this->my_model->get_likeMusic($q);
+		$this->load->view('templates/navegacion');
+		echo $this->load->view('buscmusic.php', $this->data, $this->dato); 
+		$this->load->view('templates/footer');
+	}
+
 	public function tvkids(){
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('tvkids.php'); 
@@ -61,8 +70,23 @@ class Kidsview extends CI_Controller {
 	}
 
 	public function musikids(){
+		$pagination = 9;
+	    $config['base_url'] = base_url().'index.php/kidsview/musikids/';
+	    $config['total_rows'] = $this->db->get('musikids')->num_rows();
+	    $config['per_page'] = $pagination;
+	    $config['num_links'] = 4;
+	    $config['uri_segment']  = 3;
+	    $config['first_link'] = 'Primero';
+	    $config['next_link'] = 'Siguiente »';
+	    $config['prev_link'] = '« Anterior';
+	    $config['last_link'] = 'Último';
+
+	    $this->pagination->initialize($config);
+
+	    $data['results'] = $this->my_model->getAllMusic($pagination, $this->uri->segment(3));
+
 		$this->load->view('templates/navegacion');
-		echo $this->load->view('musikids.php'); 
+		echo $this->load->view('musikids.php', $data); 
 		$this->load->view('templates/footer');
 	}
 

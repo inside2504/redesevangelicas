@@ -26,7 +26,7 @@ class Tianguisview extends CI_Controller {
 
 	    $this->pagination->initialize($config);
 
-	    $data['results'] = $this->my_model->get_all($pagination, $this->uri->segment(3));
+	    $data['results'] = $this->my_model->get_producto($pagination, $this->uri->segment(3));
 	    
 		$this->load->view('templates/navegacion');
 		$this->load->view('tianguis',$data);
@@ -34,7 +34,7 @@ class Tianguisview extends CI_Controller {
 	}
 
 	public function datos($id){
-		$this->data['item'] = $this->my_model->findAll($id);
+		$this->data['item'] = $this->my_model->findProd($id);
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('datostianguis.php', $this->data); 
 		$this->load->view('templates/footer');

@@ -41,4 +41,34 @@
                 </div>
             </section>
         </div>
+        <div class="content">
+            <section class="acciones">
+                <p class="pure-u-1-3"><a href="<?php echo site_url('evento/regimg')?>">Registrar la imagen del evento</a></p>
+            </section>
+        </div>
+        <div class="content">
+            <section>
+                <div>
+                    <table class="pure-table pure-table-bordered" cellpadding=0 cellspacing=10>
+                        <thead>
+                            <th>Evento</th>
+                            <th>Descripci&oacute;n</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach ($this->my_model->getTables() as $row) {
+                                    echo "<tr>
+                                            <td>$row->title</td>
+                                            <td>$row->body</td>
+                                            <td><img class='".'media-object'."' src='".base_url('')."".'assets/eventos/'."".$row->imgDir."'></td>
+                                        </tr>
+                                    ";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
 </div>

@@ -1,6 +1,6 @@
 <section id="title">
 	<div class="center">
-        <h2>Librer&iacute;a</h2>
+        <h2>Tianguis</h2>
         <p class="lead">Bienvenido al apartado de empresas, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las empresas que se encuentran afiliadas a Redes evang&eacute;licas.</p>
     </div>
     <section class="container">
@@ -27,14 +27,14 @@
 							<div class="col-md-3 col-sm-6">	
 								<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 									<div class="media">
-										<div class="pull-left">
-											<img src="<?= base_url('').'assets/tianguis/'.$row->imgProd ?>" class="media-object">
-										</div>
-										
+										<img src="<?= base_url('').'assets/tianguis/'.$row->imgProducto ?>" class="presimg">
 									</div><!--/.media -->
-									<h4><?php echo $row->nombProd ?></h4>
-									<h5><?php echo $row->autoProd ?></h5>
-									<a href=<?php echo site_url("tianguisview/datos/".$row->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
+									<h4><?php echo $row->nombreProducto ?></h4>
+									<h5><?php echo $row->nombreVendedor ?></h5>
+									<h5>Precio $<?php echo $row->precioProducto ?></h5>
+									<h5>Iglesia <?php echo $row->nombreIglesia ?></h5>
+									<br>
+									<a href=<?php echo site_url("tianguisview/datos/".$row->idTianguis) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>
 							</div><!--/.col-lg-4 -->
 						<?php endforeach;?>

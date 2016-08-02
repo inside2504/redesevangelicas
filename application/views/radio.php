@@ -29,6 +29,16 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-6">
+        <h2>C&aacute;psulas</h2>
+        <div>
+          <iframe class="capsulas" scrolling="no" frameborder="no"></iframe> 
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
    <!-- <div class="right">
       <dl class="actionButtons">

@@ -88,10 +88,19 @@ ga('send', 'pageview');
                 	<a href="<?php echo site_url('evento/eventoadmin')?>" class="pure-menu-link">Eventos</a>
                 </li>
                 <li class="pure-menu-item">
-                	<a href="<?php echo site_url('tianguis/tianadmin')?>" class="pure-menu-link">Librer&iacute;a</a>
+                	<a href="<?php echo site_url('libreria/libadmin')?>" class="pure-menu-link">Librer&iacute;a</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="<?php echo site_url('tianguis/tianadmin')?>" class="pure-menu-link">Tianguis</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="<?php echo site_url('bolsa/bolsaadmin')?>" class="pure-menu-link">Bolsa de trabajo</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="<?php echo site_url('kids/kidsadmin')?>" class="pure-menu-link">Kids</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="<?php echo site_url('kids/musiadmin')?>" class="pure-menu-link">Musi Kids</a>
                 </li>
                 <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
                     <a href="<?php echo site_url('materialkids/matekidsadmin')?>" class="pure-menu-link">Materiales Kids</a>

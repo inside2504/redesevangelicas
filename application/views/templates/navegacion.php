@@ -36,8 +36,8 @@
                     <div class="col-sm-12 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                <li><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="https://www.facebook.com/RedesEvangelicas1"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="<?php echo site_url('auth/login')?>"><span class="glyphicon glyphicon-log-in"></span></a></li>
                             </ul>
                        </div>
                     </div>
@@ -65,34 +65,30 @@
                         <li><a href="<?php echo site_url('iglesiasview')?>">Iglesias</a></li>
                         <li><a href="<?php echo site_url('empresasview')?>">Empresas</a></li>
                         <li><a href="<?php echo site_url('serviciosview')?>">Servicios</a></li>
+                        <li><a href="<?php echo site_url('taxiview')?>">Taxi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?php echo site_url('kidsview')?>">Kids</a></li>
+                        <li><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?php echo site_url('radioview')?>">Radio</a></li>
+                        <li><a href="<?php echo site_url('materialesview')?>">Materiales</a></li>
+                        <li><a href="<?php echo site_url('libreriaview')?>">Librer&iacute;a</a></li>
+                        <li><a href="<?php echo site_url('tianguisview')?>">Tianguis</a></li>
+                        <li><a href="<?php echo site_url('bolsaview')?>">Bolsa de trabajo</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Secciones <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Eventos <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="<?php echo site_url('eventosview')?>">Eventos</a>
+                                    <a href="<?php echo site_url('eventosview')?>">Por calendario</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('kidsview')?>">Kids</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('tianguisview')?>">Librer&iacute;a</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('materialesview')?>">Materiales</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('radioview')?>">Radio</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('taxiview')?>">Taxi</a>
+                                    <a href="<?php echo site_url('eventosview/anuncio')?>">Por lista</a>
                                 </li>
                             </ul>
-                        </li> 
-                        
-                        <li><a href="<?php echo site_url('auth/login')?>">Ingresar</a></li>
-                        <!-- Escribir codigo para el redireccionamiento dependiendo del tipo de usuario que exista, si no esta logueado entonces
-                        que aparezca la leyenda ingresar que redireccione al formulario para iniciar sesion, si es administrador entonces que
-                        redireccione al panel de administrador, si es editor al de editor y si es de la libreria al de la libreria.-->                             
+                        </li>
                     </ul>
                 </div>
             </div><!--/.container-->

@@ -1,4 +1,4 @@
-<section id="title">
+<section class="serv-back">
     <div class="center">
         <h2>Servicios</h2>
         <p class="lead">Bienvenido al apartado de servicios, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de los prestadores de servicios profesionales que se encuentran afiliados a Redes evang&eacute;licas.<br>
@@ -20,9 +20,6 @@
             </form>
         </div>
     </section>
-</section>
-
-<section>
     <?php foreach ($item as $row): ?>
         <section>
             <div class="elementos">

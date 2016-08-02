@@ -15,7 +15,7 @@ class Materialesview extends CI_Controller {
 	public function index()
 	{
 		$pagination = 12;
-	    $config['base_url'] = base_url().'materialesview/index/';
+	    $config['base_url'] = base_url().'index.php/materialesview/index/';
 	    $config['total_rows'] = $this->db->get('material')->num_rows();
 	    $config['per_page'] = $pagination;
 	    $config['num_links'] = 4;

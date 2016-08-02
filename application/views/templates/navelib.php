@@ -67,7 +67,7 @@ ga('send', 'pageview');
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item">
-                    <a href="<?php echo site_url('tianguis/tianadmin')?>" class="pure-menu-link">Librer&iacute;a</a>
+                    <a href="<?php echo site_url('libreria/libadmin')?>" class="pure-menu-link">Librer&iacute;a</a>
                 </li>
                 <li class="pure-menu-item">
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>

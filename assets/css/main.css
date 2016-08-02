@@ -115,6 +115,11 @@ a:focus {
   text-align: center;
 }
 
+.busc{
+  font-size: 20px;
+  color: #fff;
+}
+
 .media>.pull-left{
   margin-right: 20px;
 }
@@ -191,6 +196,11 @@ body > section {
 }
 
 .sound-widget{
+  width: 100%;
+  height: 465px;
+}
+
+.capsulas{
   width: 100%;
   height: 465px;
 }
@@ -1188,7 +1198,7 @@ a.accordion-toggle  i{
 }
 
 #kids-background{
-  background: #ccc url(../img/7carru.jpg);
+  background: #ccc url(../img/kidsban.jpg);
   width: 100%;
   height: 100%;
   background-attachment: fixed;
@@ -2481,6 +2491,13 @@ ul.faq li > div h3 {
   width:70%;
 }
 
+.blog .blog-item .img-prod {
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width:100%;
+}
+
 .tit-letters{
   font-size: 38px;
   margin-top: 10px;
@@ -2546,6 +2563,10 @@ ul.faq li > div h3 {
   color: #fff;
   padding: 5px 0;
   text-align: center;
+}
+
+#publish_date h1{
+  font-size: 20px;
 }
 
 .tit {
@@ -2640,7 +2661,7 @@ ul.sidebar-gallery {
 
 .YT-responsive{
   width: 100%;
-  height: 400px;
+  height: 300px;
 }
 
 .LS-responsive{
@@ -2657,6 +2678,85 @@ ul.sidebar-gallery {
   margin-top: 5px;
   border:0;
   outline:0;
+}
+
+.presimg{
+  width: 100%;
+  height: 200px;
+}
+
+.tianadminimg{
+  width: 100%;
+  height: 200px;
+}
+
+.sec-back{
+ background: #ffffff;
+background: -moz-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffd791 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(11%, #faf2eb), color-stop(57%, #ebd9cb), color-stop(100%, #ffd791));
+background: -webkit-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffd791 100%);
+background: -o-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffd791 100%);
+background: -ms-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffd791 100%);
+background: linear-gradient(to bottom, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffd791 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffd791', GradientType=0 );
+}
+
+.igle-back{
+  background: #ffffff;
+background: -moz-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(11%, #faf2eb), color-stop(57%, #ebd9cb), color-stop(100%, #ffa791));
+background: -webkit-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
+background: -o-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
+background: -ms-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
+background: linear-gradient(to bottom, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffa791', GradientType=0 );
+}
+
+.empre-back{
+  background: #ffffff;
+background: -moz-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(11%, #e1e6fa), color-stop(57%, #c3d1eb), color-stop(100%, #919aff));
+background: -webkit-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
+background: -o-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
+background: -ms-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
+background: linear-gradient(to bottom, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#919aff', GradientType=0 );
+}
+
+.serv-back{
+  background: #ffffff;
+background: -moz-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(11%, #e2fae1), color-stop(57%, #c7ebc3), color-stop(100%, #b4ff8f));
+background: -webkit-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
+background: -o-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
+background: -ms-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
+background: linear-gradient(to bottom, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b4ff8f', GradientType=0 );
+}
+
+/**********************
+**Anuncios single page css*
+**********************/
+
+@media(min-width:992px){
+  .banner{
+    width: 100%;
+    height: 600px;
+  }
+}
+
+@media(min-width:641px) and (max-width: 991px){
+  .banner{
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media(max-width: 640px){
+  .banner{
+    width: 100%;
+    height: 400px;
+  }
 }
 
 /**********************
@@ -2748,6 +2848,45 @@ ul.sidebar-gallery {
   width: 100%;
   height: 100%;
   background-attachment: fixed;
+}
+
+.serie{
+}
+
+@media(min-width:992px){
+  .serie .col-sm-6{
+    height: 770px;
+  }
+}
+
+@media(min-width:641px) and (max-width: 991px){
+  .serie .col-md-4{
+    height: 770px;
+  }
+
+  .serie .col-sm-6{
+    height: 770px;
+  }
+}
+
+.musi{
+
+}
+
+@media(min-width:992px){
+  .musi .col-sm-6{
+    height: 470px;
+  }
+}
+
+@media(min-width:641px) and (max-width: 991px){
+  .musi .col-md-4{
+    height: 470px;
+  }
+
+  .musi .col-sm-6{
+    height: 470px;
+  }
 }
 
 @media(min-width:992px){

@@ -8,45 +8,43 @@
 			<div class="advice">
 				<h2 class="center"> Todos los videos mostrados son listas de reproducci&oacute;n</h2>
 			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-6">
-					<div class="advice">
-						<h2 class="cent">Manuel Bonilla</h2>
-					</div>
-						<iframe class="LR-responsive" src="https://www.youtube.com/embed/videoseries?list=PL987zIIDeN6PqKLHd78CGOxV7YoaMOrrT" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="advice">
-						<h2 class="cent">Payasito Olivin</h2>
-					</div>
-					<iframe class="LR-responsive" src="https://www.youtube.com/embed/videoseries?list=PL987zIIDeN6OJJfbPOEu66xuapwMHwvck" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="advice">
-						<h2 class="cent">Biper y sus amigos</h2>
-					</div>
-					<iframe class="LR-responsive" src="https://www.youtube.com/embed/videoseries?list=PL987zIIDeN6MV-BdJZihJNQgrl2-Epr55" frameborder="0" allowfullscreen></iframe>
+			<section class="container">
+		        <div class="pull-right">
+		            <form action="<?php echo base_url('index.php/kidsview/buscarMusi');?>" method="GET" >
+		                <fieldset>
+		                    <h2 class="busc">Filtrar por autor
+		                            <select type="text" autocomplete="off" name="buscar">
+		                                <?php foreach ($this->my_model->getDistinctMusic() as $total): ?>
+		                                <option value="<?php echo $total->autorMusic ?>"><?php echo $total->autorMusic ?></option>
+		                                <?php endforeach;?>
+		                            </select>
+		                         <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
+		                     </h2>
+		                </fieldset>
+		            </form>
+		        </div>
+		    </section>
+			<div class="musi">
+				<div class="row">
+					<?php  if ($this->my_model->get_music() !=0):?>
+						<?php foreach ($results as $row): ?>
+							<div class="col-md-4 col-sm-6">
+								<div class="advice">
+									<h2 class="cent"><?php echo $row->nombreMusic ?> - <?php echo $row->autorMusic ?></h2>
+								</div>
+									<iframe class="YT-responsive" src="http://www.youtube.com/embed/<?php echo $row->linkMusic ?>" frameborder="0" allowfullscreen></iframe>
+							</div>
+						<?php endforeach;?>
+					<?php endif;?>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 col-sm-6">
-					<div class="advice">
-						<h2 class="cent">Lista Mix</h2>
-					</div>
-						<iframe class="LR-responsive" src="https://www.youtube.com/embed/videoseries?list=PL987zIIDeN6MmGRolBJHmLVM7m6vUA5hP" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="advice">
-						<h2 class="cent">Xtreme Kids</h2>
-					</div>
-					<iframe class="LR-responsive" src="https://www.youtube.com/embed/videoseries?list=PL987zIIDeN6McBXU2NNN7T4VbURPNKjFE" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div class="col-md-4 col-sm-6">
-					<div class="advice">
-						<h2 class="cent">Rey de Reyes</h2>
-					</div>
-						<iframe class="LR-responsive" src="https://www.youtube.com/embed/videoseries?list=PL987zIIDeN6O6nNKNqpTRJZ-vf6umRuCs" frameborder="0" allowfullscreen></iframe>
-				</div>
+			<div class="advice">
+		        <div class="container">
+			        <div class="pull-right">
+			            <h3><?=$this->pagination->create_links(); ?></h3>
+			        </div>
+			    </div>
+			</div>
 		</div>
 	</section>
 </div>

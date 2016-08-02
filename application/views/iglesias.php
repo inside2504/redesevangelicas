@@ -1,4 +1,4 @@
-<section id="title">
+<section class="igle-back">
     <div class="center">
         <h2>Iglesias y Ministerios</h2>
         <p class="lead">Bienvenido al apartado de iglesias y ministerios, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las iglesias que se encuentran afiliadas a Redes evang&eacute;licas.<br>
@@ -20,10 +20,6 @@
             </form>
         </div>
     </section>
-</section>
-
-
-<section>
     <?php if ($results !=0):?>
     <?php foreach ($results as $row): ?>
         <section>
@@ -39,11 +35,6 @@
                                     <h4><?php echo $row->nomIgle ?></h4>
                                     <h5>Pastor <strong><em><?php echo $row->pasIgle ?></em></strong></h5>
                                     <h5><strong><em><?php echo $row->eslogIgle ?></em></strong></h5>
-                                    <ul class="social_icons">
-                                        <li><a href="<?php echo $row->fBIgle;?>" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="<?php echo $row->tWIgle;?>" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-twitter"></i></a></li> 
-                                        <li><a href="#" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
                                 </div>
                             </div><!--/.media -->
                         <p class="lead"><?php echo $row->descIgle ?></p>
