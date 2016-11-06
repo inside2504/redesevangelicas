@@ -1,23 +1,25 @@
-<section id="title">
+<section id="tianguis">
 	<div class="center">
-        <h2>Tianguis</h2>
-        <p class="lead">Bienvenido al apartado de empresas, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las empresas que se encuentran afiliadas a Redes evang&eacute;licas.</p>
+        <h1>Tianguis</h1>
+        <p class="lead">Bienvenido al Tianguis, aqu&iacute; podr&aacute;s encontrar los productos se venden en el tianguis.</p>
     </div>
     <section class="container">
         <div class="pull-right">
             <form action="<?php echo base_url('index.php/tianguisview/buscar');?>" method="GET" >
                 <fieldset>
-                    <h3>Buscar por nombre
-                        <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
+                    <h3>Filtrar por regi&oacute;n
+                        <select type="text" autocomplete="off" name="buscar">
+                            <?php foreach ($this->my_model->getLocalidad() as $total): ?>
+                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+                            <?php endforeach;?>
+                        </select>
                         <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
                      </h3>
-                </fielfset>
+                </fieldset>
             </form>
         </div>
     </section>
-</section>
 
-<section id="about-us">
     <div class="team">
         <div class="container">
 	        <div class="team">
@@ -32,7 +34,6 @@
 									<h4><?php echo $row->nombreProducto ?></h4>
 									<h5><?php echo $row->nombreVendedor ?></h5>
 									<h5>Precio $<?php echo $row->precioProducto ?></h5>
-									<h5>Iglesia <?php echo $row->nombreIglesia ?></h5>
 									<br>
 									<a href=<?php echo site_url("tianguisview/datos/".$row->idTianguis) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>

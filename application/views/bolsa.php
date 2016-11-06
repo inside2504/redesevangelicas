@@ -1,23 +1,25 @@
-<section id="title">
+<section id="bolsaBack">
 	<div class="center">
-        <h2>Bolsa de trabajo</h2>
+        <h1>Bolsa de trabajo</h1>
         <p class="lead">Bienvenido a la bolsa de trabajo, aqu&iacute; podr&aacute;s encontrar ofertas laborales para que encuentres el trabajo que necesitas.</p>
     </div>
     <section class="container">
         <div class="pull-right">
             <form action="<?php echo base_url('index.php/bolsaview/buscar');?>" method="GET" >
                 <fieldset>
-                    <h3>Filtrar por nombre
-                        <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
+                    <h3>Filtrar por regi&oacute;n
+                        <select type="text" autocomplete="off" name="buscar">
+                            <?php foreach ($this->my_model->getLocalidad() as $total): ?>
+                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+                            <?php endforeach;?>
+                        </select>
                         <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
                      </h3>
-                </fielfset>
+                </fieldset>
             </form>
         </div>
     </section>
-</section>
 
-<section id="about-us">
     <div class="team">
         <div class="container">
 	        <div class="team">
@@ -32,11 +34,11 @@
 										</div>
 										
 									</div> --><!--/.media -->
-									<h4>Puesto: <br><?php echo $item->tituloOferta ?></h4>
-									<h3>Solicitante: <br><?php echo $item->solicitanteOferta ?></h3>
-									<h3>Pertenece a la iglesia: <br><?php echo $item->iglesiaVendedor ?></h3>
-									<h3>Ubicaci&oacute;n: <br><?php echo $item->ubicacionOferta ?></h3>
-									<h3>Fecha de publicaci&oacute;n: <br><?php echo $item->fechaPublicacion ?></h3>
+									<h3>Puesto: <br><?php echo $item->tituloOferta ?></h4>
+									<h4>Solicitante: <br><?php echo $item->solicitanteOferta ?></h3>
+									<h4>Pertenece a la iglesia: <br><?php echo $item->iglesiaVendedor ?></h3>
+									<h4>Ubicaci&oacute;n: <br><?php echo $item->ubicacionOferta ?></h3>
+									<h4>Fecha de publicaci&oacute;n: <br><?php echo $item->fechaPublicacion ?></h3>
 									<br>
 									<a href=<?php echo site_url("bolsaview/datos/".$item->idbolsaTrab) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>

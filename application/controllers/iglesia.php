@@ -7,6 +7,7 @@
 			$this->load->helper('url');
 			$this->load->library(array('ion_auth','form_validation'));
 			$this->load->model('iglesia_model','my_model');
+			$this->load->model('localidad_model','index');
 			if (!$this->ion_auth->in_group('admin')){
 				redirect('/');
 			}
@@ -97,6 +98,7 @@
 			$data['fbIgle'] = $this->input->post('fb');
 			$data['twIgle'] = $this->input->post('tw');
 			$data['mapaIgle'] = $this->input->post('mapa');
+			$data['localidad'] = $this->input->post('localidad');
 			$this->my_model->create($data);
 			redirect('iglesia/igleadmin');
 		}
@@ -212,6 +214,7 @@
 				'fbIgle' 			=> $this->input->post('fb'),
 				'twIgle' 			=> $this->input->post('tw'),
 				'mapaIgle' 			=> $this->input->post('mapa'),
+				'localidad'			=> $this->input->post('localidad')
 			);
 			$this->my_model->update($id,$data);
 			redirect('iglesia/igleadmin');

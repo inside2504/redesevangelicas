@@ -62,6 +62,10 @@
 						<label for="tw">Twitter (si tiene):</label>
 	            		<input name="tw" class="pure-input-1-2" type="text" placeholder="Dirección de Twitter" maxlength="50">
 					</div>
+					<div class="pure-control-group">
+						<label for="localidad">Localidad:</label>
+	            		<input name="localidad" class="pure-input-1-2" type="text" placeholder="Localidad" required maxlength="12">
+					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>

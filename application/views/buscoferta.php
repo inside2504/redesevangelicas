@@ -1,23 +1,25 @@
-<section id="title">
+<section id="bolsaBack">
 	<div class="center">
-        <h2>Bolsa de trabajo</h2>
-        <p class="lead">Est&aacute;s viendo los resultados de tu b&uacute;squeda.</p>
+        <h1>Bolsa de trabajo</h1>
+        <p class="lead">Bienvenido a la bolsa de trabajo, aqu&iacute; podr&aacute;s encontrar ofertas laborales para que encuentres el trabajo que necesitas.</p>
     </div>
     <section class="container">
         <div class="pull-right">
             <form action="<?php echo base_url('index.php/bolsaview/buscar');?>" method="GET" >
                 <fieldset>
-                    <h3>Buscar por nombre
-                        <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
+                    <h3>Filtrar por regi&oacute;n
+                        <select type="text" autocomplete="off" name="buscar">
+                            <?php foreach ($this->my_model->getLocalidad() as $total): ?>
+                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+                            <?php endforeach;?>
+                        </select>
                         <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
                      </h3>
-                </fielfset>
+                </fieldset>
             </form>
         </div>
     </section>
-</section>
 
-<section id="about-us">
     <div class="team">
         <div class="container">
 	        <div class="team">

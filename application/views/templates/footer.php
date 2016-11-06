@@ -12,7 +12,7 @@
 	</footer>
 		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD3v08DqpB_oPV6UYljRryuk7ZEKR9yOF4&libraries=places"></script>
 		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
 		<script type="text/javascript" src="<?=base_url('')."/assets/js/maps.js"?>"></script>
 		<script type="text/javascript" src="<?=base_url('')."/assets/js/api.js"?>"></script>
 		<script type="text/javascript">
@@ -352,5 +352,18 @@
         </script>
 		
 		<script src="<?=base_url('')."assets/js/bootstrap.min.js"?>"></script>
+    <script>
+
+    //Inicializar el script
+    $(function(){
+      //Evento cuando se hace el cambio de localidad
+      $(document).on('change','#localidad', function(){
+        $.post('/index/setLocalidad', { localidad: $(this).val() }, function (res) {
+          window.location.reload();
+        });
+      });
+    });
+
+    </script>
 	</body>
 </html>

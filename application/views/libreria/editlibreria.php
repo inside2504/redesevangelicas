@@ -63,6 +63,14 @@
 						<label for="tw">Twitter (si tiene):</label>
 	            		<input name="tw" class="pure-input-1-2" type="text" value="<?php echo $item->tWLibProd ?>" maxlength="50">
 					</div>
+					<div class="pure-control-group">
+						<label for="localidad">Localidad:</label>
+	            		<select name="localidad" required maxlength="40">
+							<?php foreach ($this->index->getLocalidad() as $total): ?>
+	                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+	                        <?php endforeach;?>
+						</select>
+					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>
 					</div>

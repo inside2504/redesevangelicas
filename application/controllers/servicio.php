@@ -7,6 +7,7 @@
 			$this->load->helper('url');
 			$this->load->library(array('ion_auth','form_validation'));
 			$this->load->model('servicio_model','my_model');
+			$this->load->model('localidad_model','index');
 			if (!$this->ion_auth->in_group('admin')){
 				redirect('/');
 			}
@@ -68,7 +69,6 @@
 			redirect('servicio/regservicio');
 		} else{
 			$data['IglePert'] = $this->input->post('iglesia');
-			$data['PastRec'] = $this->input->post('pastor');
 			$data['NamePrestServ'] = $this->input->post('nombre');
 			$data['ApePatPrestServ'] = $this->input->post('apepat');
 			$data['ApeMatPrestServ'] = $this->input->post('apemat');
@@ -88,6 +88,8 @@
 			$data['FbServ'] = $this->input->post('fb');
 			$data['TwServ'] = $this->input->post('tw');
 			$data['EslogServ'] = $this->input->post('eslogan');
+			$data['localidad'] = $this->input->post('localidad');
+			$data['tipoRec'] 			= $this->input->post('tipoRec');
 			$this->my_model->create($data);
 			redirect('servicio/servadmin');
 		}
@@ -201,7 +203,6 @@
 			$id = $this->input->post('id');
 			$data = array(
 				'IglePert'			 => $this->input->post('iglesia'),
-				'PastRec'			 => $this->input->post('pastor'),
 				'NamePrestServ'		 => $this->input->post('nombre'),
 				'ApePatPrestServ'	 => $this->input->post('apepat'),
 				'ApeMatPrestServ'	 => $this->input->post('apemat'),
@@ -221,6 +222,8 @@
 				'FbServ'			 => $this->input->post('fb'),
 				'TwServ'			 => $this->input->post('tw'),
 				'EslogServ'			 => $this->input->post('eslogan'),
+				'localidad'			 => $this->input->post('localidad'),
+				'tipoRec'				=> $this->input->post('tipoRec')
 			);
 			$this->my_model->update($id,$data);
 			redirect('servicio/servadmin');

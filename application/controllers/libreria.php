@@ -7,6 +7,7 @@
 			$this->load->helper('url');
 			$this->load->library(array('ion_auth','form_validation'));
 			$this->load->model('libreria_model','my_model');
+			$this->load->model('localidad_model','index');
 			$grupos = array('admin','Tianguis');
 			if (!$this->ion_auth->in_group($grupos)){
 				redirect('/');
@@ -144,6 +145,7 @@
 			$data['correEleLibProd'] 	= $this->input->post('correo');
 			$data['fBLibProd'] 			= $this->input->post('fb');
 			$data['tWLibProd'] 			= $this->input->post('tw');
+			$data['localidad'] 			= $this->input->post('localidad');
 			$this->my_model->create($data);
 			redirect('libreria/libadmin');
 		}
@@ -185,7 +187,8 @@
 				'telefLibProd' 		=> $this->input->post('telefono'),
 				'correEleLibProd' 	=> $this->input->post('correo'),
 				'fBLibProd' 		=> $this->input->post('fb'),
-				'tWLibProd' 		=> $this->input->post('tw')
+				'tWLibProd' 		=> $this->input->post('tw'),
+				'localidad' 		=> $this->input->post('localidad')
 			);
 			$this->my_model->update($id,$data);
 			redirect('libreria/libadmin');

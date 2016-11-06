@@ -1,8 +1,10 @@
 <section class="serv-back">
-    <div class="center">
-        <h2>Servicios</h2>
-        <p class="lead">Bienvenido al apartado de servicios, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de los prestadores de servicios profesionales que se encuentran afiliados a Redes evang&eacute;licas.<br>
-        Revisa la informaci&oacute;n de los prestadores de servicios profesionales para encontrar el servicio que buscas.</p>
+    <div class="container">
+        <div class="center">
+            <h1>Servicios</h1>
+            <p class="lead">Bienvenido al apartado de servicios, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de los prestadores de servicios profesionales que se encuentran afiliados a Redes evang&eacute;licas.<br>
+            Revisa la informaci&oacute;n de los prestadores de servicios profesionales para encontrar el servicio que buscas.</p>
+        </div>
     </div>
     <section class="container">
         <div class="pull-right">
@@ -20,47 +22,49 @@
             </form>
         </div>
     </section>
-<?php if ($this->my_model->get() !=0):?>
-    <?php foreach ($results as $row): ?>
-        <section>
-            <div class="elementos">
+
+    <div class="divisores">
+        <div class="container">
+            <div class="divisores">
                 <div class="row clearfix">
-                    <div class="col-md-10 col-sm-6 col-md-offset-1"> 
-                        <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img src="<?= base_url('').'assets/servicio/'.$this->my_model->getImg($row->AidiServi) ?>" class="media-object">
-                                </div>
-                                <div class="media-body">
-                                    <h4><?php echo $row->NamePrestServ ?> <?php echo $row->ApePatPrestServ ?> <?php echo $row->ApeMatPrestServ ?></h4>
-                                    <h5><strong><em><?php echo $row->ServOfrecido ?></em></strong></h5>
-                                    <h5><strong><em><?php echo $row->EslogServ ?></em></strong></h5>
+                    <?php if ($this->my_model->get() !=0):?>
+                        <?php foreach ($results as $row): ?>
+                            <div class="col-md-4 col-sm-6"> 
+                                <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img src="<?= base_url('').'assets/servicio/'.$this->my_model->getImg($row->AidiServi) ?>" class="media-object">
+                                        </div>
+                                        <div class="media-body">
+                                            
+                                            
+                                        </div>
+                                    </div><!--/.media -->
+                                    <h3><div class="<?php echo $row->tipoRec; ?>">Esta usuario es de tipo <?php echo $row->tipoRec?></div></h3>
+                                    <h3><?php echo $row->NamePrestServ ?> <?php echo $row->ApePatPrestServ ?> <?php echo $row->ApeMatPrestServ ?></h3>
+                                    <h3><em><?php echo $row->ServOfrecido ?></em></h3>
                                     <ul class="tag clearfix">
-                                        <li class="btn"><a href="#"><?php echo $row->ServOfrecido ?></a></li>
+                                        <li><h4 href="#"><?php echo $row->ServOfrecido ?></h4></li>
                                     </ul>
-                                    <ul class="social_icons">
-                                        <li><a href="<?php echo $row->FbServ ?>" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                    
+                                    <h4>Direcci&oacute;n: <em><?php echo $row->CalleServ ?></em> n&uacute;mero exterior <em><?php echo $row->NumExtSer ?></em>,
+                                        n&uacute;mero interior <em><?php echo $row->NumIntServ ?></em>, colonia <em><?php echo $row->ColServ ?></em>,
+                                        C&oacute;digo postal <em><?php echo $row->CodPostServ ?></em>, <em><?php echo $row->CiudadServ ?></em>, 
+                                        <em><?php echo $row->EdoServ ?></em>.</h4>
+                                    <h4>Tel&eacute;fonos: <em><?php echo $row->TelefServ ?></em> y <em><?php echo $row->telCelServ ?></em>.</h4>
+                                    <a href=<?php echo site_url("serviciosview/datos/".$row->AidiServi) ?> class="btn-primary">M&aacute;s informaci&oacute;n</a>
                                 </div>
-                            </div><!--/.media -->
-                        <p class="lead"><?php echo $row->DescServi ?></p>
-                        <p class="lead">Recomendado por <strong><em><?php echo $row->IglePert ?></em></strong>.</p>
-                        <p class="lead">Direcci&oacute;n: <strong><em><?php echo $row->CalleServ ?></em></strong> n&uacute;mero exterior <strong><em><?php echo $row->NumExtSer ?></em></strong>, n&uacute;mero interior <strong><em><?php echo $row->NumIntServ ?></em></strong>, colonia <strong><em><?php echo $row->ColServ ?></em></strong>, C&oacute;digo postal <strong><em><?php echo $row->CodPostServ ?></em></strong>, <strong><em><?php echo $row->CiudadServ ?></em></strong>, <strong><em><?php echo $row->EdoServ ?></em></strong>.</p>
-                        <p class="lead">Tel&eacute;fonos: <strong><em><?php echo $row->TelefServ ?></em></strong> y <strong><em><?php echo $row->telCelServ ?></em></strong>.</p>
-                        <a href=<?php echo site_url("serviciosview/datos/".$row->AidiServi) ?> class="btn-primary">M&aacute;s informaci&oacute;n</a>
-                        </div>
-                    </div>
+                            </div>
+                        <?php endforeach;?>
+                    <?php endif;?>
                 </div>
             </div>
-        </section>
-    <?php endforeach;?>
-    <div class="container">
-        <div class="pull-right">
-            <h2><?=$this->pagination->create_links(); ?></h2>
+        </div>
+    
+        <div class="container">
+            <div class="pull-right">
+                <h2><?=$this->pagination->create_links(); ?></h2>
+            </div>
         </div>
     </div>
-<?php endif;?>
+
 </section>

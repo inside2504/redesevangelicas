@@ -26,8 +26,10 @@ class Taxiview extends CI_Controller {
 
 	    $this->pagination->initialize($config);
 
+	    //Obtener la cookie
+		$localidad = isset($_COOKIE['localidad']) ? $_COOKIE['localidad'] : 'Xalapa';
 	   
-	    $data['results'] = $this->my_model->get_taxistas($pagination, $this->uri->segment(3));
+	    $data['results'] = $this->my_model->get_taxistas($pagination, $this->uri->segment(3),$localidad);
 		$this->load->view('templates/navegacion');
 		
 		$this->load->view('taxi',$data);

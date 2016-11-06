@@ -7,6 +7,7 @@
 			$this->load->helper('url');
 			$this->load->library(array('ion_auth','form_validation'));
 			$this->load->model('taxi_model','my_model');
+			$this->load->model('localidad_model','localidad');
 			if (!$this->ion_auth->in_group('admin')){
 				redirect('/');
 			}
@@ -68,7 +69,6 @@
 			redirect('taxi/regtaxi');
 		} else{
 			$data['IglePerTaxi'] = $this->input->post('iglesia');
-			$data['PastIgleTaxi'] = $this->input->post('pastor');
 			$data['NombTaxista'] = $this->input->post('nombre');
 			$data['ApePatTaxista'] = $this->input->post('apepaterno');
 			$data['ApeMatTaxista'] = $this->input->post('apematerno');
@@ -76,6 +76,7 @@
 			$data['PlacaNumTaxi'] = $this->input->post('placa');
 			$data['HorarioTaxi'] = $this->input->post('horario');
 			$data['TelefTaxi'] = $this->input->post('telefono');
+			$data['localidad'] = $this->input->post('localidad');
 			$this->my_model->create($data);
 			redirect('taxi/Taxiadmin');
 		}
@@ -190,7 +191,6 @@
 			$id = $this->input->post('id');
 			$data = array(
 				'IglePerTaxi'		=> $this->input->post('iglesia'),
-				'PastIgleTaxi'		=> $this->input->post('pastor'),
 				'NombTaxista'	 	=> $this->input->post('nombre'),
 				'ApePatTaxista' 	=> $this->input->post('apepaterno'),
 				'ApeMatTaxista' 	=> $this->input->post('apematerno'),
@@ -198,6 +198,7 @@
 				'PlacaNumTaxi'	 	=> $this->input->post('placa'),
 				'HorarioTaxi' 		=> $this->input->post('horario'),
 				'TelefTaxi' 		=> $this->input->post('telefono'),
+				'localidad' 		=> $this->input->post('localidad'),
 			);
 			$this->my_model->update($id,$data);
 			redirect('taxi/Taxiadmin');

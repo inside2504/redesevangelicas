@@ -14,7 +14,7 @@ class Serviciosview extends CI_Controller {
 
 	public function index()
 	{
-		$pagination = 3;
+		$pagination = 12;
 	    $config['base_url'] = base_url().'serviciosview/index/';
 	    $config['total_rows'] = $this->db->get('servicio')->num_rows();
 	    $config['per_page'] = $pagination;
@@ -25,10 +25,12 @@ class Serviciosview extends CI_Controller {
 	    $config['last_link'] = 'Último »';
 
 	    $this->pagination->initialize($config);
+
+	    //Obtener la cookie
+		$localidad = isset($_COOKIE['localidad']) ? $_COOKIE['localidad'] : 'Xalapa';
 	   
-	    $data['results'] = $this->my_model->get_servicio($pagination, $this->uri->segment(3));
+	    $data['results'] = $this->my_model->get_servicio($pagination, $this->uri->segment(3), $localidad);
 		$this->load->view('templates/navegacion');
-		
 		$this->load->view('servicios', $data);
 		$this->load->view('templates/footer');
 	}

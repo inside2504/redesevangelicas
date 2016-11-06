@@ -745,7 +745,10 @@ input.search-form:hover {
   padding-bottom: 10px;
 }
 
-
+#calend {
+  background: #fff;
+  padding-bottom: 10px;
+}
 
 .features{
   padding: 0;
@@ -1450,6 +1453,35 @@ a.accordion-toggle  i{
 }
 
 .elementos .btn {
+  background:transparent;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 3px;
+  padding: 1px 5px;
+  text-transform: uppercase;
+  border:1px solid#ddd;
+  margin-right: 3px;
+}
+
+.divisores {
+  margin-top: 0px;
+  margin-bottom: -50px;
+}
+
+.divisores {
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.divisores h4 {
+  margin-top: 0;
+}
+
+.divisores h5 {
+  font-weight: 300;
+}
+
+.divisores .btn {
   background:transparent;
   font-size: 12px;
   font-weight: 300;
@@ -2458,6 +2490,136 @@ ul.faq li > div h3 {
   background-attachment: fixed;
 }
 
+#anuncioBack{
+  background: #fff url(../img/evento.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#anuncioBack p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#anuncioBack h2{
+  color: #fff;
+  font-size: 18px;
+}
+
+#anuncioBack h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#anuncioBack h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#anuncioBack h5{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#bolsaBack{
+  background: #fff url(../img/bolsa.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#bolsaBack p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#bolsaBack h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#bolsaBack h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#bolsaBack h5{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#bolsaData{
+  background: #fff url(../img/bolsa.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#bolsaData p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#bolsaData h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#bolsaData h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#bolsaData h5{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#local{
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#local p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#local h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#local h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#local h5{
+  color: #fff;
+  font-size: 14px;
+}
+
+.Oro{
+  color: #ffd700;
+}
+
+.Plata{
+  color: #e3e4e5;
+}
+
+.Bronce{
+  color: #CD7F32;
+}
+
 #taxi{
   background: #fff url(../img/taxi.jpg);
   background-size: cover;
@@ -2469,6 +2631,137 @@ ul.faq li > div h3 {
 #taxi p{
   color: #fff;
   font-size: 20px;
+}
+
+#taxi h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#taxi h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#taxi h5{
+  color: #fff;
+  font-size: 14px;
+}
+
+#tianguis{
+  background: #fff url(../img/tianguis.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#tianguis p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#tianguis h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#tianguis h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#tianguis h5{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#radioBack{
+  background: #fff url(../img/radio.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#radioBack p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#radioBack h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#radioBack h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#radioBack h5{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#materialBack{
+  background: #fff url(../img/material.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#materialBack p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#materialBack h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#materialBack h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#materialBack h5{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#libreriaBack{
+  background: #fff url(../img/libreria.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+#libreriaBack p{
+  color: #fff;
+  font-size: 20px;
+}
+
+#libreriaBack h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+#libreriaBack h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+#libreriaBack h5{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .blog-item {
@@ -2685,6 +2978,11 @@ ul.sidebar-gallery {
   height: 200px;
 }
 
+.presigle{
+  width: 100%;
+  height: 270px;
+}
+
 .tianadminimg{
   width: 100%;
   height: 200px;
@@ -2702,36 +3000,87 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .igle-back{
-  background: #ffffff;
-background: -moz-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(11%, #faf2eb), color-stop(57%, #ebd9cb), color-stop(100%, #ffa791));
-background: -webkit-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
-background: -o-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
-background: -ms-linear-gradient(top, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
-background: linear-gradient(to bottom, #ffffff 0%, #faf2eb 11%, #ebd9cb 57%, #ffa791 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffa791', GradientType=0 );
+  background: #fff url(../img/igleback.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+.igle-back p{
+  color: #fff;
+  font-size: 20px;
+}
+
+.igle-back h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+.igle-back h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+.igle-back h5{
+  color: #fff;
+  font-size: 14px;
 }
 
 .empre-back{
-  background: #ffffff;
-background: -moz-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(11%, #e1e6fa), color-stop(57%, #c3d1eb), color-stop(100%, #919aff));
-background: -webkit-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
-background: -o-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
-background: -ms-linear-gradient(top, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
-background: linear-gradient(to bottom, #ffffff 0%, #e1e6fa 11%, #c3d1eb 57%, #919aff 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#919aff', GradientType=0 );
+  background: #fff url(../img/empreback.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+.empre-back p{
+  color: #fff;
+  font-size: 20px;
+}
+
+.empre-back h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+.empre-back h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+.empre-back h5{
+  color: #fff;
+  font-size: 14px;
 }
 
 .serv-back{
-  background: #ffffff;
-background: -moz-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(11%, #e2fae1), color-stop(57%, #c7ebc3), color-stop(100%, #b4ff8f));
-background: -webkit-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
-background: -o-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
-background: -ms-linear-gradient(top, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
-background: linear-gradient(to bottom, #ffffff 0%, #e2fae1 11%, #c7ebc3 57%, #b4ff8f 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b4ff8f', GradientType=0 );
+  background: #fff url(../img/servback.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+.serv-back p{
+  color: #fff;
+  font-size: 20px;
+}
+
+.serv-back h3{
+  color: #fff;
+  font-size: 18px;
+}
+
+.serv-back h4{
+  color: #fff;
+  font-size: 16px;
+}
+
+.serv-back h5{
+  color: #fff;
+  font-size: 14px;
 }
 
 /**********************
@@ -2857,6 +3206,47 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   .serie .col-sm-6{
     height: 770px;
   }
+
+  .igle-back .col-sm-6{
+    height: 650px;
+  }
+
+  .empre-back .col-sm-6{
+    height: 600px;
+  }
+
+  .serv-back .col-sm-6{
+    height: 520px;
+  }
+
+  #materialBack .col-sm-6{
+    height: 420px;
+  }
+
+  #bolsaBack .col-sm-6{
+    height: 350px;
+  }
+
+  #bolsaData .col-sm-6{
+    height: 500px;
+  }
+
+  #taxiBack .col-sm-6{
+    height: 420px;
+  }
+
+  #libreriaBack .col-sm-6{
+    height: 420px;
+  }
+
+  #tianguis .col-sm-6{
+    height: 420px;
+  }
+
+  #anuncioBack .col-sm-6{
+    height: 850px;
+  }
+
 }
 
 @media(min-width:641px) and (max-width: 991px){
@@ -2867,6 +3257,47 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   .serie .col-sm-6{
     height: 770px;
   }
+
+  .empre-back .col-sm-6{
+    height: 600px;
+  }
+
+  .serv-back .col-sm-6{
+    height: 500px;
+  }
+
+  .igle-back .col-sm-6{
+    height: 650px;
+  }
+
+  #materialBack .col-sm-6{
+    height: 420px;
+  }
+
+  #libreriaBack .col-sm-6{
+    height: 420px;
+  }
+
+  #taxiBack .col-sm-6{
+    height: 420px;
+  }
+
+  #tianguis .col-sm-6{
+    height: 420px;
+  }
+
+  #bolsaBack .col-sm-6{
+    height: 350px;
+  }
+
+  #bolsaData .col-sm-6{
+    height: 500px;
+  }
+
+  #anuncioBack .col-sm-6{
+    height: 700px;
+  }
+
 }
 
 .musi{

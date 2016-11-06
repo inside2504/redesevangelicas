@@ -9,12 +9,13 @@ class Iglesiasview extends CI_Controller {
 		$this->load->database();
 		$this->load->helper('url');
 		$this->load->model('iglesia_model','my_model');
+		$this->load->model('localidad_model','localidad');
 		$this->load->library('pagination');
 	}
 
 	public function index()
 	{	
-		$pagination = 3;
+		$pagination = 12;
 	    $config['base_url'] = base_url().'iglesiasview/index/';
 	    $config['total_rows'] = $this->db->get('iglesia')->num_rows();
 	    $config['per_page'] = $pagination;
@@ -26,7 +27,10 @@ class Iglesiasview extends CI_Controller {
 
 	    $this->pagination->initialize($config);
 
-	    $data['results'] = $this->my_model->get_iglesias($pagination, $this->uri->segment(3));
+	    //Obtener la cookie
+		$localidad = isset($_COOKIE['localidad']) ? $_COOKIE['localidad'] : 'Xalapa';
+
+	    $data['results'] = $this->my_model->get_iglesias($pagination, $this->uri->segment(3),$localidad);
 
 		$this->load->view('templates/navegacion');
 		$this->load->view('iglesias',$data);

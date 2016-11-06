@@ -43,12 +43,13 @@
             return $query;
         }
 
-        public function get_all($pagination, $segment) {
+        public function get_all($pagination, $segment, $localidad) {
             $this->db->order_by('idProd', 'desc');
             $this->db->limit($pagination, $segment);
             $this->db->select('*');
             $this->db->from('producto');
             $this->db->join('libreria', 'libreria.idLibreria = producto.libreria_idLibreria');
+            $this->db->like('producto.localidad',$localidad);
             $query = $this->db->get()->result();
             return $query;
         }
@@ -99,7 +100,7 @@
     	}
 
     	public function get_like($conditions){
-        	return $this->db->select('*')->from('producto')->like('nombProd',$conditions)->get()->result();
+        	return $this->db->select('*')->from('producto')->join('libreria', 'libreria.idLibreria = producto.libreria_idLibreria')->like('nombProd',$conditions)->get()->result();
     	}
 
 		public function create($array){

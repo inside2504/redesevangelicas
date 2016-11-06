@@ -9,6 +9,7 @@ class Tianguisview extends CI_Controller {
 		$this->load->database();
 		$this->load->helper('url');
 		$this->load->model('tianguis_model','my_model');
+		$this->load->model('localidad_model','localidad');
 		$this->load->library('pagination');
 	}
 
@@ -42,7 +43,7 @@ class Tianguisview extends CI_Controller {
 
 	public function buscar(){
 		$q=$_GET['buscar'];
-		$this->dato['total'] = $this->my_model->get();
+		$this->dato['total'] = $this->my_model->getLocalidad();
 		$this->data['item'] = $this->my_model->get_like($q);
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('buscprod.php', $this->data, $this->dato); 

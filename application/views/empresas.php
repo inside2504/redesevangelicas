@@ -1,6 +1,6 @@
 <section class="empre-back">
     <div class="center">
-        <h2>Empresas</h2>
+        <h1>Empresas</h1>
         <p class="lead">Bienvenido al apartado de empresas, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las empresas que se encuentran afiliadas a Redes evang&eacute;licas.</p>
     </div>
     <section class="container">
@@ -19,46 +19,48 @@
             </form>
         </div>
     </section>
-<?php  if ($this->my_model->get() !=0):?>
-    <?php foreach ($results as $row): ?>
-        <section>
-            <div class="elementos">
+
+    <div class="divisores">
+        <div class="container">
+            <div class="divisores">
                 <div class="row clearfix">
-                    <div class="col-md-10 col-sm-6 col-md-offset-1"> 
-                        <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img src="<?= base_url('').'assets/empresa/'.$this->my_model->getLogo($row->AidiEmpr) ?>" class="media-object">
-                                </div>
-                                <div class="media-body">  
-                                    <h4><?php echo $row->NameEmpr ?></h4>
-                                    <h5>Responsable de la empresa: <strong><em><?php echo $row->NombRespEmpr ?> <?php echo $row->ApePatRespEmpr ?> <?php echo $row->ApeMatRespEmpr ?></em></strong></h5>
+                    <?php  if ($this->my_model->get() !=0):?>
+                        <?php foreach ($results as $row): ?>
+                            <div class="col-md-3 col-sm-6"> 
+                                <div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img src="<?= base_url('').'assets/empresa/'.$this->my_model->getLogo($row->AidiEmpr) ?>" class="media-object">
+                                        </div>
+                                        <div class="media-body">  
+                                            
+                                            
+                                        </div>
+                                    </div><!--/.media -->
+                                    <h3><div class="<?php echo $row->tipoRec; ?>">Esta empresa es de tipo <?php echo $row->tipoRec?></div></h3>
+                                    <h3><?php echo $row->NameEmpr ?></h3>
+                                    <h3>Responsable de la empresa: <em><?php echo $row->NombRespEmpr ?> <?php echo $row->ApePatRespEmpr ?> <?php echo $row->ApeMatRespEmpr ?></em></h3>
                                     <ul class="tag clearfix">
-                                        <li class="btn"><a href="#"><?php echo $row->GiroEmpres ?></a></li>
+                                        <li class="btn"><h5 href="#"><?php echo $row->GiroEmpres ?></h5></li>
                                     </ul>
-                                    <ul class="social_icons">
-                                        <li><a href="<?php echo $row->FbEmpr;?>" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-twitter"></i></a></li> 
-                                        <li><a href="#" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
+                                    <h4>Dirección: <em><?php echo $row->CalleEmpr ?></em>, n&uacute;mero exterior <em><?php echo $row->NumExtEmpr ?></em>, 
+                                        n&uacute;mero interior: <em><?php echo $row->NumIntEmpr ?></em> , colonia <em><?php echo $row->ColEmpr ?></em>. 
+                                        Código postal: <em><?php echo $row->CodPostEmpr ?></em>, <em><?php echo $row->CiudadEmpr ?></em>, <em><?php echo $row->EdoEmpr ?></em>.</h4>
+                                    <h4>Teléfonos: <em><?php echo $row->TelefEmpr ?></em>, <em><?php echo $row->TelefRespEmpr ?>.</em></h4>
+                                    <a href=<?php echo site_url("empresasview/datos/".$row->AidiEmpr) ?> class="btn-primary">M&aacute;s informaci&oacute;n</a>
                                 </div>
-                            </div><!--/.media -->
-                        <p class="lead"><?php echo $row->DescrEmpr ?></p>
-                        <p class="lead">Recomendado por el pastor <strong><em><?php echo $row->PastRecEmpr ?></em></strong> de la iglesia <em><strong><?php echo $row->IglePertEmpr ?></em></strong></p>
-                        <p class="lead">Dirección: <strong><em><?php echo $row->CalleEmpr ?></em></strong>, n&uacute;mero exterior <strong><em><?php echo $row->NumExtEmpr ?></em></strong>, n&uacute;mero interior: <strong><em><?php echo $row->NumIntEmpr ?></em></strong> , colonia <strong><em><?php echo $row->ColEmpr ?></em></strong>. Código postal: <strong><em><?php echo $row->CodPostEmpr ?></em></strong>, <strong><em><?php echo $row->CiudadEmpr ?></em></strong>, <strong><em><?php echo $row->EdoEmpr ?></em></strong>.</p>
-                        <p class="lead">Teléfonos: <strong><em><?php echo $row->TelefEmpr ?></em></strong>, <strong><em><?php echo $row->TelefRespEmpr ?>.</em></strong></p>
-                        <p class="lead">Correo electrónico: <strong><em><?php echo $row->CorreElectEmpr ?></em></strong></p>
-                        <a href=<?php echo site_url("empresasview/datos/".$row->AidiEmpr) ?> class="btn-primary">M&aacute;s informaci&oacute;n</a>
-                        </div>
-                    </div>
+                            </div> 
+                        <?php endforeach;?>
+                    <?php endif;?>
                 </div>
             </div>
-        </section>
-    <?php endforeach;?>
-    <div class="container">
-        <div class="pull-right">
-            <h2><?=$this->pagination->create_links(); ?></h2>
+        </div>
+    
+        <div class="container">
+            <div class="pull-right">
+                <h3><?=$this->pagination->create_links(); ?></h3>
+            </div>
         </div>
     </div>
-<?php endif;?>
+
 </section>

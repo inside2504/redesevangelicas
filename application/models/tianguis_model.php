@@ -16,6 +16,16 @@
             }
 		}
 
+        public function getLocalidad($rows = null, $order = "ASC"){
+            if($rows){
+                return $this->db->select('*')->from($this->localidad)->order_by('idlocalidad',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('idlocalidad', 'asc');
+                $query = $this->db->get('Localidad')->result();
+                return $query;
+            }
+        }
+
         public function getProductos() {
             $this->db->order_by('idTianguis', 'desc');
             $this->db->select('*');
@@ -44,6 +54,7 @@
         public function get_producto($pagination, $segment) {
             $this->db->order_by('idTianguis', 'desc');
             $this->db->limit($pagination, $segment);
+            $this->db->like('localidad');
             $query = $this->db->get('tianguis')->result();
             return $query;
         }
@@ -52,7 +63,7 @@
                 return $this->db->select('imgVendedor')->from('vendedortianguis')->where('tianguis_idTianguis',$idTianguis)->get()->row()->imgVendedor;
         }
 
-        public function subir($imagen,$nomigle,$nompas,$nomven,$nomprod,$desc,$tel,$prec,$stat){
+        public function subir($imagen,$nomigle,$nompas,$nomven,$nomprod,$desc,$tel,$prec,$stat,$localidad){
             $data = array(
                 'nombreIglesia' => $nomigle,
                 'nombrePastor' => $nompas,
@@ -63,6 +74,7 @@
                 'precioProducto' => $prec,
                 'imgProducto' => $imagen,
                 'statusProducto' => $stat,
+                'localidad' => $localidad,
             );
             return $this->db->insert('tianguis', $data);
         }
@@ -88,7 +100,7 @@
     	}
 
     	public function get_like($conditions){
-        	return $this->db->select('*')->from('tianguis')->like('nombreProducto',$conditions)->get()->result();
+        	return $this->db->select('*')->from('tianguis')->like('localidad',$conditions)->get()->result();
     	}
 
 		public function create($array){

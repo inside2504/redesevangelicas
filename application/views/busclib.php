@@ -1,23 +1,21 @@
-<section id="title">
+<section id="libreriaBack">
 	<div class="center">
-        <h2>Librer&iacute;a</h2>
-        <p class="lead">Bienvenido al apartado de empresas, aqu&iacute; podr&aacute;s encontrar el cat&aacute;logo de las empresas que se encuentran afiliadas a Redes evang&eacute;licas.</p>
+        <h1>Librer&iacute;a</h1>
+        <p class="lead">Bienvenido a la librer&iacute;a, aqu&iacute; podr&aacute;s encontrar los materiales de las librer&iacute;as.</p>
     </div>
     <section class="container">
         <div class="pull-right">
             <form action="<?php echo base_url('index.php/libreriaview/buscar');?>" method="GET" >
                 <fieldset>
-                    <h3>Buscar por nombre
+                    <h3>Filtrar por nombre
                         <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
                         <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
                      </h3>
-                </fielfset>
+                </fieldset>
             </form>
         </div>
     </section>
-</section>
 
-<section id="about-us">
     <div class="team">
         <div class="container">
 	        <div class="team">
@@ -34,6 +32,8 @@
 									</div><!--/.media -->
 									<h4><?php echo $row->nombProd ?></h4>
 									<h5><?php echo $row->autoProd ?></h5>
+									<h5>Librer&iacute;a <?php echo $row->nombLibProd ?></h5>
+									<br>
 									<a href=<?php echo site_url("libreriaview/datos/".$row->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>
 							</div><!--/.col-lg-4 -->

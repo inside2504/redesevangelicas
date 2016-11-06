@@ -38,9 +38,10 @@
             return $this->db->insert('logoigle', $data);
         }
 
-        public function get_iglesias($pagination, $segment) {
+        public function get_iglesias($pagination, $segment,$localidad) {
             $this->db->order_by('idIgle', 'desc');
             $this->db->limit($pagination, $segment);
+            $this->db->like('localidad',$localidad);
             $query = $this->db->get('iglesia')->result();
             return $query;
         }

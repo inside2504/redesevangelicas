@@ -49,7 +49,11 @@
 						</select>
 					</div>
 					<p class="pull-right">Los formatos admitidos son: .jpg, .jpeg y .png.<br>
-						Las medidas de la imagen del producto deben ser menores de 1000x1000px.<br>		
+						Las medidas de la imagen del producto deben ser menores de 1000x1000px.<br>	
+					<div class="pure-control-group">
+						<label for="localidad">Localidad:</label>
+	            		<input name="localidad" class="pure-input-1-2" type="text" placeholder="Localidad" required maxlength="12">
+					</div>	
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>

@@ -1,6 +1,6 @@
-<section id="title">
+<section id="libreriaBack">
 	<div class="center">
-        <h2>Librer&iacute;a</h2>
+        <h1>Librer&iacute;a</h1>
         <p class="lead">Bienvenido a la librer&iacute;a, aqu&iacute; podr&aacute;s encontrar los materiales de las librer&iacute;as.</p>
     </div>
     <section class="container">
@@ -11,13 +11,11 @@
                         <input type="text" name="buscar" placeholder="Ingresa una palabra"/>
                         <button class="btn-primary" type="submit" value="Buscar">Buscar</button>
                      </h3>
-                </fielfset>
+                </fieldset>
             </form>
         </div>
     </section>
-</section>
 
-<section id="about-us">
     <div class="team">
         <div class="container">
 	        <div class="team">
@@ -35,7 +33,6 @@
 									<h4><?php echo $item->nombProd ?></h4>
 									<h5><?php echo $item->autoProd ?></h5>
 									<h5>Librer&iacute;a <?php echo $item->nombLibProd ?></h5>
-									<h5>Iglesia <?php echo $item->nombIgleProd ?></h5>
 									<br>
 									<a href=<?php echo site_url("libreriaview/datos/".$item->idProd) ?> class="btn-primary">Ver m&aacute;s</a>
 								</div>
@@ -45,10 +42,11 @@
 				</div>
 			</div>
 		</div>
+	
+		<div class="container">
+	        <div class="pull-right">
+	            <h2><?=$this->pagination->create_links(); ?></h2>
+	        </div>
+	    </div>
 	</div>
-	<div class="container">
-        <div class="pull-right">
-            <h2><?=$this->pagination->create_links(); ?></h2>
-        </div>
-    </div>
 </section>

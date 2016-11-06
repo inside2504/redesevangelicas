@@ -7,6 +7,7 @@
 			$this->load->helper('url');
 			$this->load->library(array('ion_auth','form_validation'));
 			$this->load->model('bolsa_model','my_model');
+			$this->load->model('localidad_model','index');
 			$grupos = array('admin');
 			if (!$this->ion_auth->in_group($grupos)){
 				redirect('/');
@@ -82,6 +83,7 @@
 			$data['experienciaOferta'] 	= $this->input->post('experiencia');
 			$data['telefonoVendedor'] 	= $this->input->post('telef');
 			$data['correoContacto'] 	= $this->input->post('correo');
+			$data['localidad'] 	= $this->input->post('localidad');
 			$this->my_model->create($data);
 			redirect('bolsa/bolsaadmin');
 		}
@@ -123,7 +125,8 @@
 				'diasLaborales' 		=> $this->input->post('dias'),
 				'experienciaOferta' 	=> $this->input->post('experiencia'),
 				'telefonoVendedor'	 	=> $this->input->post('telef'),
-				'correoContacto'		=> $this->input->post('correo')
+				'correoContacto'		=> $this->input->post('correo'),
+				'localidad'		=> $this->input->post('localidad')
 			);
 			$this->my_model->update($id,$data);
 			redirect('bolsa/bolsaadmin');

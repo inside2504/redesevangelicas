@@ -86,7 +86,8 @@
 			$tel = $this->input->post('telefono');
 			$prec= $this->input->post('precioprod');
 			$stat = $this->input->post('status');
-            $subir = $this->my_model->subir($imagen,$nomigle,$nompas,$nomven,$nomprod,$desc,$tel,$prec,$stat);
+			$localidad = $this->input->post('localidad');
+            $subir = $this->my_model->subir($imagen,$nomigle,$nompas,$nomven,$nomprod,$desc,$tel,$prec,$stat,$localidad);
 
             $data['imgProducto'] = $imagen;
             $data['nombreIglesia'] = $nomigle;
@@ -97,6 +98,7 @@
 			$data['telefVendedor'] = $tel;
 			$data['precioProducto'] = $prec;
 			$data['status'] = $stat;
+			$data['localidad'] = $localidad;
             redirect('tianguis/regvendedor');
 		}
 	}

@@ -26,9 +26,10 @@
             return $query;
         }
 
-        public function get_taxistas($pagination, $segment) {
+        public function get_taxistas($pagination, $segment, $localidad) {
             $this->db->order_by('AidiTaxi', 'desc');
-            $this->db->limit($pagination, $segment);
+            $this->db->limit($pagination, $segment, $localidad);
+            $this->db->like('localidad',$localidad);
             $query = $this->db->get('taxi')->result();
             return $query;
         }

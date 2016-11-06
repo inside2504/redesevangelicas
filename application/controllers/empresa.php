@@ -7,6 +7,7 @@
 			$this->load->helper('url');
 			$this->load->library(array('ion_auth','form_validation'));
 			$this->load->model('empresa_model','my_model');
+			$this->load->model('localidad_model','index');
 			if (!$this->ion_auth->in_group('admin')){
 				redirect('/');
 			}
@@ -68,7 +69,6 @@
 			redirect('empresa/regempresa');
 		} else{
 			$data['IglePertEmpr'] 		= $this->input->post('iglesia');
-			$data['PastRecEmpr'] 		= $this->input->post('pastor');
 			$data['NameEmpr'] 			= $this->input->post('empresa');
 			$data['GiroEmpres'] 		= $this->input->post('giro');
 			$data['DescrEmpr'] 			= $this->input->post('descripcion');
@@ -89,6 +89,8 @@
 			$data['ApePatRespEmpr'] 	= $this->input->post('apepat');
 			$data['ApeMatRespEmpr'] 	= $this->input->post('apemat');
 			$data['TelefRespEmpr'] 		= $this->input->post('teleres');
+			$data['localidad'] 			= $this->input->post('localidad');
+			$data['tipoRec'] 			= $this->input->post('tipoRec');
 			$this->my_model->create($data);
 			redirect('empresa/empreadmin');
 		}
@@ -287,7 +289,6 @@
 			$id = $this->input->post('id');
 			$data = array(
 				'IglePertEmpr'	 		=> $this->input->post('iglesia'),
-				'PastRecEmpr' 			=> $this->input->post('pastor'),
 				'NameEmpr'	 			=> $this->input->post('empresa'),
 				'GiroEmpres' 			=> $this->input->post('giro'),
 				'DescrEmpr' 			=> $this->input->post('descripcion'),
@@ -308,6 +309,8 @@
 				'ApePatRespEmpr' 		=> $this->input->post('apepat'),
 				'ApeMatRespEmpr' 		=> $this->input->post('apemat'),
 				'TelefRespEmpr' 		=> $this->input->post('teleres'),
+				'localidad'				=> $this->input->post('localidad'),
+				'tipoRec'				=> $this->input->post('tipoRec')
 			);
 			$this->my_model->update($id,$data);
 			redirect('empresa/empreadmin');

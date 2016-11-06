@@ -16,6 +16,16 @@
             }
 		}
 
+        public function getLocalidad($rows = null, $order = "ASC"){
+            if($rows){
+                return $this->db->select('*')->from($this->localidad)->order_by('idlocalidad',$order)->limit($rows)->get()->result();
+            }else{
+                $this->db->order_by('idlocalidad', 'asc');
+                $query = $this->db->get('Localidad')->result();
+                return $query;
+            }
+        }
+
         public function getBolsa($items = null, $order = "DESC") {
             if($items){
                 return $this->db->select('*')->from($this->bolsa)->order_by('idbolsaTrab',$order)->limit($rows)->get()->result();
@@ -39,6 +49,7 @@
             $this->db->limit($pagination, $segment);
             $this->db->select('*');
             $this->db->from('bolsatrabajo');
+            $this->db->like('localidad');
             $query = $this->db->get()->result();
             return $query;
         }
@@ -68,7 +79,7 @@
     	}
 
     	public function get_like($conditions){
-        	return $this->db->select('*')->from('bolsatrabajo')->like('tituloOferta',$conditions)->get()->result();
+        	return $this->db->select('*')->from('bolsatrabajo')->like('localidad',$conditions)->get()->result();
     	}
 
 		public function create($array){

@@ -26,7 +26,6 @@
                             <th>N&uacute;mero</th>
                             <th>Nombre</th>
                             <th>Iglesia</th>
-                            <th>Pastor</th>
                             <th>N&uacute;mero</th>
                             <th>Placa</th>
                             <th>Horario</th>
@@ -40,7 +39,6 @@
                                             <td>$row->AidiTaxi</td>
                                             <td>$row->NombTaxista $row->ApePatTaxista $row->ApeMatTaxista</td>
                                             <td>$row->IglePerTaxi</td>
-                                            <td>$row->PastIgleTaxi</td>
                                             <td>$row->NumEcoTaxi</td>
                                             <td>$row->PlacaNumTaxi</td>
                                             <td>$row->HorarioTaxi</td>

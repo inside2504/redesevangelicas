@@ -24,6 +24,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     
 </head><!--/head-->
 
@@ -66,9 +67,11 @@
                         <li><a href="<?php echo site_url('empresasview')?>">Empresas</a></li>
                         <li><a href="<?php echo site_url('serviciosview')?>">Servicios</a></li>
                         <li><a href="<?php echo site_url('taxiview')?>">Taxi</a></li>
+                        <li><a href="<?php echo site_url('regionesview')?>">Regiones</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="container">
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -92,5 +95,35 @@
                     </ul>
                 </div>
             </div><!--/.container-->
+
+            <hr>
+                <div class="container">
+                    <div id="local">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4>La regi&oacute;n seleccionada es: <?php echo $_COOKIE['localidad'] ?></h4>
+                                <h4>La opci&oacute;n por defecto es Xalapa</h4>
+                            </div>
+                            <form action="<?php echo base_url('/index/setLocalidad');?>" method="POST" >
+                                <fieldset>
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">Localidad</span>
+                                            <select type="text" id="localidad" name="localidad" class="form-control">
+                                                <option value="Xalapa" selected="">Xalapa</option>
+                                                <option calue="Misantla">Misantla</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="">
+                                            <button type="submit" class=" btn btn-success">Buscar</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                        </form>
+                    </div>
+                </div>
+            <hr>
         </nav><!--/nav-->
     </header><!--/header-->

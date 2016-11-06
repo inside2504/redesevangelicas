@@ -9,6 +9,7 @@ class Libreriaview extends CI_Controller {
 		$this->load->database();
 		$this->load->helper('url');
 		$this->load->model('libreria_model','my_model');
+		$this->load->model('localidad_model', 'localidad');
 		$this->load->library('pagination');
 	}
 
@@ -26,7 +27,10 @@ class Libreriaview extends CI_Controller {
 
 	    $this->pagination->initialize($config);
 
-	    $data['results'] = $this->my_model->get_all($pagination, $this->uri->segment(3));
+	    //Obtener la cookie
+		$localidad = isset($_COOKIE['localidad']) ? $_COOKIE['localidad'] : 'Xalapa';
+
+	    $data['results'] = $this->my_model->get_all($pagination, $this->uri->segment(3), $localidad);
 	    
 		$this->load->view('templates/navegacion');
 		$this->load->view('libreria',$data);
@@ -42,7 +46,7 @@ class Libreriaview extends CI_Controller {
 
 	public function buscar(){
 		$q=$_GET['buscar'];
-		$this->dato['total'] = $this->my_model->get();
+		$this->dato['total'] = $this->my_model->getAll();
 		$this->data['item'] = $this->my_model->get_like($q);
 		$this->load->view('templates/navegacion');
 		echo $this->load->view('busclib.php', $this->data, $this->dato); 

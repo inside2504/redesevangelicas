@@ -17,9 +17,10 @@
 			}
 		}
 
-        public function get_servicio($pagination, $segment) {
+        public function get_servicio($pagination, $segment, $localidad) {
             $this->db->order_by('AidiServi', 'desc');
             $this->db->limit($pagination, $segment);
+            $this->db->like('localidad',$localidad);
             $query = $this->db->get('servicio')->result();
             return $query;
         }

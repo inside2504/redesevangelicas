@@ -1,11 +1,9 @@
-<section id="title">
+<section id="tianguis">
         <div class="center">
-            <h2>Tianguis</h2>
+            <h1>Tianguis</h1>
             <p class="lead">Est&aacute;s viendo los datos del producto que seleccionaste. </p>
         </div>
-</section>
 
-<section id="about-us">
 	<div class="container">
 		<div class="blog">
 			<div class="row">
@@ -19,12 +17,12 @@
 				           </div>
 				           <div class="col-xs-12 col-sm-7">
 								<div class="col-xs-12 col-sm-12">
-									<h2 class="tit-letters"><?php echo $item->nombreProducto ?></h2>
-									<p class="bod-letters">Descripci&oacute;n del producto: <strong><?php echo $item->descripcionProducto ?></strong></p>
-									<p class="bod-letters">Status del producto: <strong><?php echo $item->statusProducto?></strong></p>
-									<p class="bod-letters">El precio de este producto es de: <strong>$<?php echo $item->precioProducto ?> pesos.*</strong></p>
-									<p class="bod-letters">El vendedor pertenece a la <strong>Iglesia <?php echo $item->nombreIglesia ?></strong> cuyo <strong> Pastor es <?php echo $item->nombrePastor ?></strong>.</p>
-									<p class="bod-letters">Para mayores informes comun&iacute;quese directamente con el vendedor. Su n&uacute;mero de <strong>tel&eacute;fono</strong> es: <strong><?php echo $item->telefVendedor ?></strong></p>
+									<h1><?php echo $item->nombreProducto ?></h1>
+									<p>Descripci&oacute;n del producto: <strong><?php echo $item->descripcionProducto ?></strong></p>
+									<p>Status del producto: <strong><?php echo $item->statusProducto?></strong></p>
+									<p>El precio de este producto es de: <strong>$<?php echo $item->precioProducto ?> pesos.*</strong></p>
+									<p>El vendedor pertenece a la <strong>Iglesia <?php echo $item->nombreIglesia ?></strong>.</p>
+									<p>Para mayores informes comun&iacute;quese directamente con el vendedor. Su n&uacute;mero de <strong>tel&eacute;fono</strong> es: <strong><?php echo $item->telefVendedor ?></strong></p>
 								</div>
 							</div>
 				       </div>
@@ -36,8 +34,8 @@
 				           	</div>
 				           	<div class="col-xs-12 col-sm-7">
 								<div class="col-xs-12 col-sm-12">
-									<h2 class="sub-letters">Vendedor</h2>
-									<h2 class="sub-letters"><?php echo $item->nombreVendedor ?></h2>
+									<h1>Vendedor</h1>
+									<p><?php echo $item->nombreVendedor ?></p>
 								</div>
 							</div>
 				       </div>

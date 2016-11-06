@@ -1,28 +1,25 @@
-<section id="title">
+<section id="radioBack">
 	<div class="center">
-        <h2>Radio</h2>
+        <h1>Radio</h1>
         <p class="lead">Contamos con una radio cristiana. Puedes dar clic en el bot&oacute;n de Play para comenzar a escuchar lo que tenemos para ti.</p>
     </div>
-</section>
-
-<section>
   <div class="container">
     <div class="container">
       <div>
-        <h2>Nuevo testamento: La biblia ambientada. <a href="<?php echo site_url('radioview/biblia')?>">Da clic aqu&iacute; para abrir la p&aacute;gina y ver todos los libros del nuevo testamento</a></h2>
+        <p class="lead">Nuevo testamento: La biblia ambientada. <a href="<?php echo site_url('radioview/biblia')?>">Da clic aqu&iacute; para abrir la p&aacute;gina y ver todos los libros del nuevo testamento</a></p>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="container">
       <div class="col-md-6">
-        <h2>Alabanzas</h2>
+        <p class="lead">Alabanzas</p>
         <div>
         	<iframe class="sc-widget" scrolling="no" frameborder="no"></iframe> 
         </div>
       </div>
       <div class="col-md-6">
-        <h2>Predicaciones</h2>
+        <p class="lead">Predicaciones</p>
         <div>
           <iframe class="sound-widget" scrolling="no" frameborder="no"></iframe> 
         </div>
@@ -32,7 +29,7 @@
   <div class="row">
     <div class="container">
       <div class="col-md-6">
-        <h2>C&aacute;psulas</h2>
+        <p class="lead">C&aacute;psulas</p>
         <div>
           <iframe class="capsulas" scrolling="no" frameborder="no"></iframe> 
         </div>

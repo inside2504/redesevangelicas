@@ -62,6 +62,14 @@
 						<label for="correo">Correo electrónico (En caso de no poner tel&eacute;fono):</label>
 	            		<input name="correo" class="pure-input-1-2" type="text" placeholder="Correo para enviar solicitud" maxlength="50">
 					</div>
+					<div class="pure-control-group">
+						<label for="localidad">Localidad:</label>
+	            		<select name="localidad" required maxlength="40">
+							<?php foreach ($this->index->getLocalidad() as $total): ?>
+	                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+	                        <?php endforeach;?>
+						</select>
+					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>

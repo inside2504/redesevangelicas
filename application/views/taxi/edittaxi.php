@@ -14,10 +14,6 @@
 						<label for="iglesia">Nombre de la iglesia:</label>
 	            		<input name="iglesia" class="pure-input-1-2" type="text" value="<?php echo $item->IglePerTaxi ?>" required maxlength="50">
 					</div>
-					<div class="pure-control-group">
-						<label for="pastor">Pastor de la iglesia:</label>
-	            		<input name="pastor" class="pure-input-1-2" type="text" value="<?php echo $item->PastIgleTaxi ?>" required maxlength="50">
-					</div>
 				<legend>Datos del taxista</legend>
 					<div class="pure-control-group">
 						<label for="nombre">Nombre:</label>
@@ -48,6 +44,22 @@
 					<div class="pure-control-group">
 						<label for="telefono">Tel&eacute;fono:</label>
 	            		<input name="telefono" onkeypress="return validNumbers(event);"; class="pure-input-1-2" type="text" value="<?php echo $item->TelefTaxi ?>" required maxlength="12">
+					</div>
+					<div class="pure-control-group">
+						<label for="localidad">Localidad:</label>
+	            		<select name="localidad" required maxlength="40">
+							<?php foreach ($this->index->getLocalidad() as $total): ?>
+	                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+	                        <?php endforeach;?>
+						</select>
+					</div>
+					<div class="pure-control-group">
+						<label for="tipoRec">Tipo de recomendaci&oacute;n:</label>
+	            		<select name="tipoRec" required maxlength="40">
+							<option value="Oro">Oro</option>
+							<option value="Plata">Plata</option>
+							<option value="Bronce">Bronce</option>
+						</select>
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

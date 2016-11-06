@@ -106,6 +106,12 @@ ga('send', 'pageview');
                     <a href="<?php echo site_url('materialkids/matekidsadmin')?>" class="pure-menu-link">Materiales Kids</a>
                 </li>
                 <li class="pure-menu-item">
+                    <a href="<?php echo site_url('localidad/localadmin')?>" class="pure-menu-link">Localidad</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="<?php echo site_url('regiones/regionesadmin')?>" class="pure-menu-link">Regiones</a>
+                </li>
+                <li class="pure-menu-item">
                     <a href="<?php echo site_url('/auth/logout')?>" class="pure-menu-link">Salir</a>
                 </li>
             </ul>

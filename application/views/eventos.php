@@ -2,10 +2,10 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>bower_components/bootstrap-calendar/css/calendar.css">
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url() ?>bower_components/bootstrap-calendar/js/language/es-ES.js"></script>
-<section>
+<section id="anuncioBack">
 	<div class="container">
 		<div class="center">
-			<h2>Eventos</h2>
+			<h1>Eventos</h1>
 	 	</div>
 		<div class="row">
 			<div class="header">
@@ -26,12 +26,14 @@
 			</div>		
 		</div>
 		<hr>
-		<h2>*Para ver los eventos, haga clic en el d&iacute;a deseado del calendario. </h2>
-		<h2>**Si desea ver la hora de los eventos de un d&iacute;a en espec&iacute;fico, de doble clic sobre el d&iacute;a deseado. </h2>
+		<h3>*Para ver los eventos, haga clic en el d&iacute;a deseado del calendario. </h3>
+		<h3>**Si desea ver la hora de los eventos de un d&iacute;a en espec&iacute;fico, de doble clic sobre el d&iacute;a deseado. </h3>
 		<hr>
-		<div class="row">
-			<div id="calendar"></div>
-		</div>
+		<section id="calend">
+			<div class="row">
+				<div id="calendar"></div>
+			</div>
+		</section>
 		<section>
 			<div class="row clearfix">
 				<div class="col-md-2 col-sm-2">

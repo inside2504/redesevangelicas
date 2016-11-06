@@ -14,10 +14,6 @@
 						<label for="iglesia">Iglesia perteneciente:</label>
 	            		<input name="iglesia" class="pure-input-1-2" type="text" value="<?php echo $item->IglePert ?>" required maxlength="50">
 					</div>
-					<div class="pure-control-group">
-						<label for="pastor">Pastor que lo recomienda:</label>
-	            		<input name="pastor" class="pure-input-1-2" type="text" value="<?php echo $item->PastRec ?>" required maxlength="50">
-					</div>
 				<legend>Datos del prestador de servicios </legend>
 					<div class="pure-control-group">
 						<label for="nombre">Nombre(s):</label>
@@ -97,6 +93,22 @@
 					<div class="pure-control-group">
 						<label for="eslogan">Eslogan (si cuenta con uno):</label>
 	            		<input name="eslogan" class="pure-input-1-2" type="text" value="<?php echo $item->EslogServ ?>" maxlength="100">
+					</div>
+					<div class="pure-control-group">
+						<label for="localidad">Localidad:</label>
+	            		<select name="localidad" required maxlength="40">
+							<?php foreach ($this->index->getLocalidad() as $total): ?>
+	                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+	                        <?php endforeach;?>
+						</select>
+					</div>
+					<div class="pure-control-group">
+						<label for="tipoRec">Tipo de recomendaci&oacute;n:</label>
+	            		<select name="tipoRec" required maxlength="40">
+							<option value="Oro">Oro</option>
+							<option value="Plata">Plata</option>
+							<option value="Bronce">Bronce</option>
+						</select>
 					</div>
 					<div class="pure-controls">
 						<button type="submit" class="pure-button pure-button-primary">Actualizar</button>

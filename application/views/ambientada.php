@@ -1,11 +1,9 @@
-<section id="title">
+<section id="materialBack">
         <div class="center">
-            <h2>Materiales</h2>
+            <h1>Materiales</h1>
             <p class="lead">Est&aacute;s viendo los datos del material que seleccionaste. </p>
         </div>
-</section>
 
-<section id="about-us">
 	<div class="container">
 		<div class="blog">
 			<div class="row">
@@ -19,10 +17,10 @@
 				           </div>
 				           <div class="col-xs-12 col-sm-7">
 								<div class="col-xs-12 col-sm-12">
-									<h2 class="tit-letters">Biblia en audio ambientada</h2>
-									<h2 class="sub-letters">Enlace Cristiano Banderilla</h2>
-									<p class="bod-letters">Audio</p>
-									<p class="bod-letters">Tenemos el Nuevo Testamento de la Biblia versi&oacute;n Reina Valera 1995 ambientada en audio. 
+									<h1>Biblia en audio ambientada</h1>
+									<h3>Enlace Cristiano Banderilla</h3>
+									<p>Audio</p>
+									<p>Tenemos el Nuevo Testamento de la Biblia versi&oacute;n Reina Valera 1995 ambientada en audio. 
 										Deber&aacute; hacer clic en el bot&oacute;n "Descargar" para ingresar a la p&aacute;gina donde tenemos las 
 										carpetas ordenadas por los libros y proceder con la descarga del audio a trav&eacute;s
 										de la p&aacute;gina donde las tenemos alojadas. Por el momento s&oacute;lo tenemos disponibles los libros de

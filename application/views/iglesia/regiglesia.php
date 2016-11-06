@@ -75,6 +75,14 @@
 						<label for="mapa" required>Link del mapa:<br><strong>Revise el <a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="<?=base_url('')."Administrador.pdf"?>">manual de usuario</a> para saber c&oacute;mo encontrar el link del mapa.</strong></label>
 	            		<textarea name="mapa" class="pure-input-1-2" type="text" placeholder="Ingrese el link del mapa"></textarea>
 					</div>
+					<div class="pure-control-group">
+						<label for="localidad">Localidad:</label>
+	            		<select name="localidad" required maxlength="40">
+							<?php foreach ($this->index->getLocalidad() as $total): ?>
+	                            <option value="<?php echo $total->nombreLocalidad ?>"><?php echo $total->nombreLocalidad ?></option>
+	                        <?php endforeach;?>
+						</select>
+					</div>
 					<div class="pure-controls">
 						<button type="reset" class="pure-button pure-button-cancel">Borrar datos</button>
 						<button type="submit" class="pure-button pure-button-primary">Registrar</button>
